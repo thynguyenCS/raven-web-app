@@ -1,0 +1,14 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#efef9b" id="canvas_background" height="302" width="702" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text style="cursor: move;" font-weight="bold" font-style="italic" stroke="#000" transform="matrix(7.90434799498611,0,0,9.051342402992747,-570.712793388844,-780.1579712144968) " xml:space="preserve" text-anchor="start" font-family="'Courier New', Courier, monospace" font-size="24" id="svg_1" y="109.465062" x="79.117316" stroke-width="0" fill="#e070d3">RAVEN</text>
+ </g>
+</svg>

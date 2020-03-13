@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>RAVEN</h1>
+
+        <div class="content">
+
+            <form id="add-vendor-form"></form>
+
+            <ul id="Vendor-list"></ul>
+
+        </div>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB8edToE3CAv33r6qTD7Lp-A62HWq7P-Sk",
+                authDomain: "raven-c24a9.firebaseapp.com",
+                databaseURL: "https://raven-c24a9.firebaseio.com",
+                projectId: "raven-c24a9",
+                storageBucket: "raven-c24a9.appspot.com",
+                messagingSenderId: "943246302988",
+                appId: "1:943246302988:web:a9f8a382e223fc71b23329",
+                measurementId: "G-051571D12T"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const db = firebase.firestore();
+            //db.settings({ timestampsInSnapshots: true });
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
