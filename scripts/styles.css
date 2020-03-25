@@ -1,4 +1,33 @@
+
 body{
+	background: url(../img/partnership.jpg);
+	background-position: center;
+	background-size: cover;
+}
+html{
+	height: 100%;
+	width: 100%;
+}
+h1{
+	font-size: 5em;
+	font-weight: 700;
+}
+hr{
+	width: 400px;
+}
+#content{
+	text-align: center;
+	padding-top: 25%;
+	color: white;
+	font-family: "Lato";
+}
+
+
+
+
+
+/* body{
+
     background: #939b92;
     font-family: ubuntu;
 }
@@ -99,4 +128,4 @@ button{
     font-family: ubuntu;
     letter-spacing: 1px;
     color: rgb(80, 58, 58);
-}
+} */
