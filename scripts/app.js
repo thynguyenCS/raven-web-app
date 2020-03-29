@@ -21,7 +21,7 @@ function renderVendor(doc){
 
 
 
-db.collection('Vendor').get().then((snapshot) => {
+db.collection('vendors').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderVendor(doc);
     });
