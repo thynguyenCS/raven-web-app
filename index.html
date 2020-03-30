@@ -18,19 +18,19 @@
         <!-- <img src="img/transparent.png" style="width: 170px; margin-top: 0px;"> -->
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Vendor</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
           </li>
         </span>
@@ -45,7 +45,7 @@
       <form id="signup-form">
         <div class="input-field">
           <input type="email" id="signup-email" required />
-          <label for="signup-email">Email address</label>
+          <label for="signup-email">Email address (@sjsu.edu)</label>
         </div>
         <div class="input-field">
           <input type="password" id="signup-password" required />
@@ -93,7 +93,7 @@
         </div>
         <div class="input-field">
           <textarea id="content" class="materialize-textarea" required></textarea>
-          <label for="content">Vendor-Field</label>
+          <label for="content">Location</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Create</button>
       </form>

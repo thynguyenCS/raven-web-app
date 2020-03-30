@@ -1,16 +1,35 @@
-db.collection('vendors').get().then(snapshot => {
-    setupVendors(snapshot.docs);
-  });
-  
   // listen for auth status changes
-  auth.onAuthStateChanged(user => {
-    if (user) {
-      console.log('user logged in: ', user);
-    } else {
-      console.log('user logged out');
-    }
-  })
-  
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log('user logged in: ', user);
+    db.collection('guides').onSnapshot(snapshot => {
+      setupVendors(snapshot.docs);
+      setupUI(user);
+    }, err => console.log(err.message));
+  } else {
+    console.log('user logged out');
+    setupUI();
+    setupVendors([]);
+  }
+})
+
+// create new vendor
+const createForm = document.querySelector('#create-form');
+createForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  db.collection('vendors').add({
+    name: createForm.title.value,
+    city: createForm.content.value
+  }).then(() => {
+    // close the create modal & reset form
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    createForm.reset();
+  }).catch(err => {
+    console.log(err.message);
+  });
+});
+
   // signup
   const signupForm = document.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
@@ -19,14 +38,28 @@ db.collection('vendors').get().then(snapshot => {
     // get user info
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
-  
-    // sign up the user
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
+
+    var acceptList = [ "sjsu.edu" ];
+    //var emailValue = email; // To Get Value (can use getElementById)
+    var splitArray = email.split('@'); // To Get Array
+
+    if(acceptList.indexOf(splitArray[1]) >= 0)
+    {
+      // Means it has the rejected domains
+      //return true;
+        // sign up the user
+      auth.createUserWithEmailAndPassword(email, password).then(cred => {
       // close the signup modal & reset form
       const modal = document.querySelector('#modal-signup');
       M.Modal.getInstance(modal).close();
       signupForm.reset();
-    });
+      });
+    } else{
+
+      //return false;
+      
+    }
+
   });
   
   // logout
