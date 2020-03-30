@@ -1,4 +1,5 @@
 // DOM elements
+//need to change guides to vendors
 const VendorList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');

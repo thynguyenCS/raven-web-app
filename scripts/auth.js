@@ -2,6 +2,7 @@
 auth.onAuthStateChanged(user => {
   if (user) {
     console.log('user logged in: ', user);
+    //need to change guides to vendors
     db.collection('guides').onSnapshot(snapshot => {
       setupVendors(snapshot.docs);
       setupUI(user);
@@ -17,7 +18,8 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  db.collection('vendors').add({
+  //need to change guides to vendors
+  db.collection('guides').add({
     name: createForm.title.value,
     city: createForm.content.value
   }).then(() => {
