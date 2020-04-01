@@ -1,0 +1,131 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.limiter {
+    width: 100%;
+    margin: -100 auto;
+}
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    /* background: #f2f2f2; */
+    background: #484f5b;
+    flex-direction: column;
+}
+.login-wrap {
+    width: 390px;
+    background: #363b45;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 44px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.login-form {
+    width: 100%;
+}
+.header {
+    font-family: Poppins-Bold;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    margin-top: 16px;
+    padding-bottom: 10px;
+}
+.login-form-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 30px;
+    color: black;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 48px;
+}
+p {
+    color: white;
+    
+    margin-top: 16px;
+    font-size: 26px;
+}
+
+input {
+    color: white;
+    
+}
+
+.input100 {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    padding: 0 5px;
+}
+
+/* label {
+    color: white;
+    opacity: 0.8;
+} */
+.field-warp {
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    text-align: center;
+}
+/* .input-field{
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px;
+} */
+
+.icon {
+    color: lightgrey;
+
+}
+
+.wrap-login-form-btn {
+    width: 100%;
+    height: 100%;
+    padding-top: 48px;
+    display: block;
+    overflow: hidden;
+   
+}
+.login-button {
+    color: white;
+    text-decoration: double;
+    
+    background-color: #755ee8;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+    height: 60px;
+}
+
+.forget-pass-link {
+    text-decoration: underline;
+    font-size: 20px;
+    color: lightgrey;
+    text-align: center;
+}
+.link-wrap {
+    position: relative;
+    display: block;
+    padding-top: 50px;
+    text-align: center;
+}
+.button-wrap {
+    padding-top: 40px;
+}
