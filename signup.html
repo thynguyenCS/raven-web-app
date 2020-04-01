@@ -1,0 +1,91 @@
+<!-- TUONG CHU IS WORKING ON THIS FILE  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- External stylesheets -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+ 
+ <!-- Custom stylesheets -->
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+ <!-- icon -->
+ <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
+ <title>Raven</title>
+</head>
+<body>
+  <div class="limiter">
+    <!-- login -->
+    <div class="container-login">
+      <a href="index.html" ><img src=img/ravenCircle.png alt="raven" width="80px"></a>
+        <!-- <img src="img/ravenCircle.png" alt="raven" width="100px"> -->
+        <p>Real people. Real reviews.</p>
+      
+      <div class="login-wrap">
+        <form class="login-form">
+          <!-- email field -->
+          <div class="field-wrap input-field" data-validate="Valid email is: a@b.c">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required>  
+          </div>
+          <!-- password field -->
+          <div class="field-wrap input-field" data-validate="Enter password">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required>
+          </div>
+          <div class="button-wrap">
+            <button class="login-signup-button">Sign up</button>
+            <p class="error pink-text center-align"></p>
+          </div>
+        </form>
+      </div>
+      <div class="link-wrap">
+        <span><p>Already have an account?
+        <a href="index.html" class="underline">Login</a></p></span>
+      </div>
+    </div>
+  </div>
+
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8edToE3CAv33r6qTD7Lp-A62HWq7P-Sk",
+    authDomain: "raven-c24a9.firebaseapp.com",
+    databaseURL: "https://raven-c24a9.firebaseio.com",
+    projectId: "raven-c24a9",
+    storageBucket: "raven-c24a9.appspot.com",
+    messagingSenderId: "943246302988",
+    appId: "1:943246302988:web:a9f8a382e223fc71b23329",
+    measurementId: "G-051571D12T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  //make auth and firestore reference
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+</script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+  </body>
+</html>
