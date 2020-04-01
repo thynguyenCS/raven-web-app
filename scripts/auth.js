@@ -2,7 +2,7 @@
 auth.onAuthStateChanged(user => {
   if (user) {
     console.log('user logged in: ', user);
-    //need to change guides to vendors
+                                                          //need to change guides to vendors
     db.collection('guides').onSnapshot(snapshot => {
       setupVendors(snapshot.docs);
       setupUI(user);
@@ -18,7 +18,7 @@ auth.onAuthStateChanged(user => {
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  //need to change guides to vendors
+                                                          //need to change guides to vendors
   db.collection('guides').add({
     name: createForm.title.value,
     city: createForm.content.value
@@ -50,20 +50,24 @@ createForm.addEventListener('submit', (e) => {
       // Means it has the rejected domains
       //return true;
         // sign up the user
-      auth.createUserWithEmailAndPassword(email, password).then(cred => {
-      // close the signup modal & reset form
-      const modal = document.querySelector('#modal-signup');
-      M.Modal.getInstance(modal).close();
-      signupForm.reset();
-      });
-    } else{
-
-      //return false;
-      
-    }
+        
+        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+          return db.collection('users').doc(cred.user.uid).set({
+            username: signupForm['user-name'].value
+          });
+        }).then(() => {
+          // close the signup modal & reset form
+          const modal = document.querySelector('#modal-signup');
+          M.Modal.getInstance(modal).close();
+          signupForm.reset();
+          signupForm.querySelector('.error').innerHTML = '';
+          }).catch(err => {
+            signupForm.querySelector('.error').innerHTML = err.message;
+          });
+        }
 
   });
-  
+
   // logout
   const logout = document.querySelector('#logout');
   logout.addEventListener('click', (e) => {
@@ -82,10 +86,13 @@ createForm.addEventListener('submit', (e) => {
   
     // log the user in
     auth.signInWithEmailAndPassword(email, password).then((cred) => {
-      // close the signup modal & reset form
-      const modal = document.querySelector('#modal-login');
-      M.Modal.getInstance(modal).close();
-      loginForm.reset();
-    });
+        // close the signup modal & reset form
+        const modal = document.querySelector('#modal-login');
+        M.Modal.getInstance(modal).close();
+        loginForm.reset();
+        loginForm.querySelector('.error').innerHTML = '';
+      }).catch(err => {
+        loginForm.querySelector('.error').innerHTML = err.message;
+  });
   
   });

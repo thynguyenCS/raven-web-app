@@ -8,10 +8,15 @@ const accountDetails = document.querySelector('.account-details');
 const setupUI = (user) => {
   if (user) {
     // account info
-    const html = `
-      <div>Logged in as ${user.email}</div>
-    `;
-    accountDetails.innerHTML = html;
+    //create another collection to store username with the same user.uid
+    db.collection('users').doc(user.uid).get().then(doc => {
+      const html = `
+        <div>Logged in as ${user.email}</div>
+        <div>User name: ${doc.data().username}</div>
+      `;
+      accountDetails.innerHTML = html;
+    });
+
     // toggle user UI elements
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none');
@@ -23,6 +28,7 @@ const setupUI = (user) => {
     loggedOutLinks.forEach(item => item.style.display = 'block');
   }
 };
+
 
 // setup vendors
 const setupVendors = (data) => {
