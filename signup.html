@@ -26,6 +26,11 @@
         </header>
         <div class="signup-wrap">
           <form id="signup-form" class="signup-form" autocomplete="off">
+            <!-- Full name field ADDED BY THY-->
+            <secion class="input-field ">
+              <input class="form-control" type="text" id="display-name" >
+              <label for="display-name">Your full name</label>  
+            </secion>
             <!-- email field -->
             <secion class="input-field ">
               <input class="form-control" type="text" id="signup-email" >
@@ -33,7 +38,7 @@
             </secion>
             <!-- password field -->
             <secion class="input-field">
-              <input class="form-control" type="text" id="signup-password"> 
+              <input class="form-control" type="password" id="signup-password"> 
               <label for="signup-password">Password</label> 
             </secion>
             <!-- signup-button field -->
@@ -225,8 +230,12 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="scripts/auth.js"></script>
-  <script src="scripts/index.js"></script>
+  <!-- <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script> -->
+
   <script src="scripts/validate.js"></script>
+  
+  <script src="scripts/signup.js"></script>
+  <!-- <script src="scripts/auth.js"></script> -->
 </body>
 </html>

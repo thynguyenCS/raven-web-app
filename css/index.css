@@ -152,7 +152,7 @@ input {
     text-align: center;
     margin-bottom: -700px;
 } */
-.login-button, .signup-button {
+.login-button, .signup-button, .logout-button{
     color: white;
     text-decoration: double;
     
