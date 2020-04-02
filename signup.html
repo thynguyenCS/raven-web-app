@@ -18,38 +18,179 @@
 </head>
 <body>
   <div class="limiter">
+    <main>
+      <article  class="signup-container">
+        <header class="header-container">
+          <a href="index.html" ><img src=img/ravenCircle.png alt="raven" class="header-img"></a>
+          <p>Real people. Real reviews.</p>
+        </header>
+        <div class="signup-wrap">
+          <form id="signup-form" class="signup-form" autocomplete="off">
+            <!-- email field -->
+            <secion class="input-field ">
+              <input class="form-control" type="text" id="signup-email" >
+              <label for="signup-email">Email</label>  
+            </secion>
+            <!-- password field -->
+            <secion class="input-field">
+              <input class="form-control" type="text" id="signup-password"> 
+              <label for="signup-password">Password</label> 
+            </secion>
+            <!-- signup-button field -->
+            <section class="button-wrap">
+              <input type="submit" value="Sign up" class="signup-button" onclick="validate('signup-email','signup-password')">
+              <!-- <button class="signup-button">Sign up</button> -->
+              <p class="error pink-text center-align"></p>
+            </section>
+          </form>
+        </div>
+        <footer class="footer-container">
+            <p>Already have an account?
+            <a href="index.html" class="link">Login</a></p>
+        </footer>
+      </article>
+    </main>
+  </div>
     <!-- login -->
-    <div class="container-login">
+    <!-- <div class="header">
       <a href="index.html" ><img src=img/ravenCircle.png alt="raven" width="80px"></a>
-        <!-- <img src="img/ravenCircle.png" alt="raven" width="100px"> -->
+        <img src="img/ravenCircle.png" alt="raven" width="100px"> 
         <p>Real people. Real reviews.</p>
-      
+    </div>
+    <div class="container-login">
       <div class="login-wrap">
         <form class="login-form">
-          <!-- email field -->
+       
           <div class="field-wrap input-field" data-validate="Valid email is: a@b.c">
-            <label for="signup-email">Email</label>
-            <input type="email" id="signup-email" required>  
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required>  
           </div>
-          <!-- password field -->
+          
           <div class="field-wrap input-field" data-validate="Enter password">
-            <label for="signup-password">Password</label>
-            <input type="password" id="signup-password" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
           </div>
+          
+          <div class="link-wrap">
+            <a href="#" class="underline">Forgot your password?</a>
+          </div>
+          
           <div class="button-wrap">
-            <button class="login-signup-button">Sign up</button>
+            <button class="login-signup-button">Login</button>
             <p class="error pink-text center-align"></p>
           </div>
         </form>
       </div>
-      <div class="link-wrap">
-        <span><p>Already have an account?
-        <a href="index.html" class="underline">Login</a></p></span>
-      </div>
+      <div class="footer">
+        <span><p>Don't have an account?
+        <a href="signup.html" class="underline"> Sign up</a></p></span>
+      </div> -->
     </div>
   </div>
+  <!-- NAVBAR - user will see this bar after logging in -->
+  <!-- <nav class="z-depth-0 grey darken-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="img/ravenCircle.png" style="width: 50px; margin-top: 5px;">
+         <img src="img/transparent.png" style="width: 170px; margin-top: 0px;"> 
+        </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Vendor</a>
+          </li>
+          <li class="logged-out" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav> -->
 
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- SIGN UP MODAL -->
+  <!-- <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address (@sjsu.edu)</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <div class="input-field">
+          <input type="username" id="user-name" required />
+          <label for="username">user name</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+        <p class="error pink-text center-align"></p>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- LOGIN MODAL -->
+  <!-- <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <p class="error pink-text center-align"></p>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- ACCOUNT MODAL -->
+  <!-- <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div> -->
+
+  <!-- CREATE VENDOR MODAL -->
+  <!-- <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Vendor</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Vendor-Name</label>
+        </div>
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Location</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- VENDOR LIST -->
+  <!-- <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+     
+    </ul>
+  </div>
+   -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
@@ -86,5 +227,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-  </body>
+  <script src="scripts/validate.js"></script>
+</body>
 </html>

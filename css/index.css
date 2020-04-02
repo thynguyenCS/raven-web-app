@@ -1,43 +1,91 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+    font-size: 20px;
 }
 .limiter {
     width: 100%;
-    margin: -100 auto;
-    height: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
 }
-.container-login {
-    width: 100%;
+main {
+    /* height: 100vh; */
     min-height: 100vh;
+    background:  #484f5b;
     display: flex;
-    flex-wrap: wrap;
+    /* align-items: center; */
+}
+.login-container, .signup-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 36px;
+    /* margin: 3em; */
     /* background: #f2f2f2; */
-    background: #484f5b;
+    /* background: #484f5b; */
     flex-direction: column;
 }
-.login-wrap {
+.login-wrap, .signup-wrap {
     width: 390px;
     background: #363b45;
     border-radius: 10px;
     overflow: hidden;
-    padding: 44px 55px 33px 55px;
+    /* display: flex; */
+    /* padding: 44px 55px 33px 55px; */
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
-.login-form {
+.login-form, .signup-form {
+    padding: 44px 55px 33px 55px;
     width: 100%;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
 }
-.header {
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
+    visibility: collapse !important;
+  }
+
+/* .header {
     font-family: Poppins-Bold;
     font-size: 40px;
     color: black;
     text-align: center;
     margin-top: 16px;
     padding-bottom: 10px;
+} */
+.header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: lightgrey;
+}
+/* .header-text {
+    color: lightgrey;
+} */
+.header-img {
+    width: 16%;
+}
+.footer-container {
+    color: lightgrey;
+    text-align: center;
+}
+/* .footer-text {
+    color: lightgrey;
+    text-align: center;
+} */
+
+.link {
+    text-decoration: underline;
+    color: lightgrey;
+}
+
+
+input {
+    color: white;
+    
 }
 .login-form-title {
     display: block;
@@ -47,16 +95,6 @@ body {
     line-height: 1.2;
     text-align: center;
     padding-bottom: 48px;
-}
-p {
-    color: lightgrey;
-    margin-top: 16px;
-    font-size: 20px;
-}
-
-input {
-    color: white;
-    
 }
 
 .input100 {
@@ -100,7 +138,21 @@ input {
     overflow: hidden;
    
 }
-.login-signup-button {
+/* .header{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 120px;
+}
+.footer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    margin-bottom: -700px;
+} */
+.login-button, .signup-button {
     color: white;
     text-decoration: double;
     
@@ -111,21 +163,17 @@ input {
     border-radius: 30px;
     border: none;
     width: 100%;
-    height: 60px;
+    height: 50px;
 }
 
-.underline {
-    text-decoration: underline;
-    font-size: 20px;
-    color: lightgrey;
-    text-align: center;
-}
+
 .link-wrap {
-    position: relative;
-    display: block;
-    padding-top: 50px;
+    margin-top: 36px;
+    width: 100%;
     text-align: center;
 }
 .button-wrap {
-    padding-top: 40px;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
 }
