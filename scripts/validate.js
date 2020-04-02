@@ -12,9 +12,9 @@ function validate(email,password){
         signupEmail.setCustomValidity("Please enter an email address.");
 
     }else{
-        var re = new RegExp("[^@\s]+@[^@\s]+\.[^@\s]+");
+        var re = new RegExp("[^@\s]+@raven.com");
         if (!re.test(emailValue)){
-            signupEmail.setCustomValidity("Please match the requested format: a@b.c");
+            signupEmail.setCustomValidity("Please match the requested format: a@raven.com");
          
         }
         else{
@@ -30,9 +30,10 @@ function validate(email,password){
         signupPassword.setCustomValidity("Please enter a password.");
     }else{
         var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
+        //var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
         if (!re.test(passwordValue)){
             signupPassword
-            .setCustomValidity("Your password must be between 8 to 15 characters and contains at least one numeric digit, one uppercase and one lowercase letter.");
+            .setCustomValidity("Your password must be between 8 to 15 characters and contains at least one numeric digit, one uppercase, one lowercase letter and one symbol.");
         }
         else{
             signupPassword.setCustomValidity("");
