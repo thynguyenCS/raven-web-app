@@ -26,22 +26,25 @@
         </header>
         <div class="login-wrap">
           <form id="login-form" class="login-form" autocomplete="off">
-            <!-- email field -->
+            <!-- email field (with a fake input field to prevent browser'sautofill) -->
             <secion class="input-field ">
-              <input class="form-control" type="text" id="login-email">
+              <input style="display:none;" id="fake-login-email">
+              <input class="form-control" type="text" id="login-email" autocomplete="false" required>
               <label for="login-email">Email</label>  
             </secion>
-            <!-- password field -->
+            <!-- password field (with a fake input field to prevent browser'sautofill)-->
             <secion class="input-field">
-              <input class="form-control" type="password" id="login-password"> 
+              <input style="display:none;" id="fake-login-password">
+              <input class="form-control" type="password" id="login-password" autocomplete="new-password"  required> 
               <label for="login-password">Password</label> 
             </secion>
+            <!-- forgot your password? -->
             <section class="link-wrap">
               <a href="#" class="link">Forgot your password?</a>
             </section>
             <!-- login-button field -->
             <section class="button-wrap">
-              <input type="submit" value="Login" class="login-button" onclick="validate('login-email','login-password')">
+              <button class="login-button" id="login-button">Login</button>
               <!-- <button class="signup-button">Sign up</button> -->
               <p class="error pink-text center-align"></p>
             </section>
@@ -238,8 +241,11 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="scripts/auth.js"></script>
-  <script src="scripts/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <!-- <script src="scripts/auth.js"></script> -->
+  <!-- <script src="scripts/index.js"></script> -->
   <script src="scripts/validate.js"></script>
+  <script src="scripts/login.js"></script>
+  <script src="scripts/alert.js"></script>
 </body>
 </html>

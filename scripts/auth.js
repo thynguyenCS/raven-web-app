@@ -1,18 +1,18 @@
 //listen for auth status changes
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log('user logged in: ', user);
-    // //need to change guides to vendors
-    // db.collection('guides').onSnapshot(snapshot => {
-    //   setupVendors(snapshot.docs);
-    //   setupUI(user);
-    // }, err => console.log(err.message));
-  } else {
-    console.log('user logged out');
-    //setupUI();
-    //setupVendors([]);
-  }
-})
+// auth.onAuthStateChanged(user => {
+//   if (user) {
+//     console.log('user logged in: ', user);
+//     // //need to change guides to vendors
+//     // db.collection('guides').onSnapshot(snapshot => {
+//     //   setupVendors(snapshot.docs);
+//     //   setupUI(user);
+//     // }, err => console.log(err.message));
+//   } else {
+//     console.log('user logged out');
+//     //setupUI();
+//     //setupVendors([]);
+//   }
+// })
 
 // create new vendor
 // const createForm = document.querySelector('#create-form');
@@ -40,18 +40,18 @@ auth.onAuthStateChanged(user => {
   });
   
   /**********LOG IN**************/
-  const loginForm = document.querySelector('#login-form');
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();    
-    const email = loginForm['login-email'].value;
-    const password = loginForm['login-password'].value;  
-    // log the user in
-    auth.signInWithEmailAndPassword(email, password).then((cred) => {
-        //reset form
-        loginForm.reset();
-        loginForm.querySelector('.error').innerHTML = '';
-      }).catch(err => {
-        loginForm.querySelector('.error').innerHTML = err.message;
-  });
+  // const loginForm = document.querySelector('#login-form');
+  // loginForm.addEventListener('submit', (e) => {
+  //   e.preventDefault();    
+  //   const email = loginForm['login-email'].value;
+  //   const password = loginForm['login-password'].value;  
+  //   // log the user in
+  //   auth.signInWithEmailAndPassword(email, password).then((cred) => {
+  //       //reset form
+  //       loginForm.reset();
+  //       loginForm.querySelector('.error').innerHTML = '';
+  //     }).catch(err => {
+  //       loginForm.querySelector('.error').innerHTML = err.message;
+  // });
   
-  });
+  // });
