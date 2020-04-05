@@ -21,6 +21,7 @@
           <div class="vendorSearchHeader">
             <div class="vendorSearchHeader__content">
               <div class="vendorSearchHeader__search">
+                
                 <!-- <form class="searchBar" action="" method="get"> -->
                   <div class="searchBar__search">
                     <input type="text" name="search" class="searchTerm" placeholder="Search a vendor">
@@ -30,11 +31,15 @@
                   <div class="searchBar__buttons"></div>
                 <!-- </form> -->
               </div>
+              
               <div class="vendorSearchHeader__img">
                 <a href="vendor.html"><img src="img/ravenCircle.png"></a>
+                <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+
               </div>
               <div class="vendorSearchHeader_logout">
-                <button>Logout</button>
+                <button class="signup-button" id="logout-button">Logout</button>
+                <!-- <button>Logout</button> -->
               </div>
               <!-- <div class="vendorSearchHeader__title">
                 <p>Raven</p>
@@ -88,5 +93,7 @@
   <script src="scripts/validate.js"></script>
   <script src="scripts/login.js"></script>
   <script src="scripts/alert.js"></script>
+  <script src="scripts/logout.js"></script>
+
 </body>
 </html>
