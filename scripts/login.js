@@ -1,3 +1,5 @@
+
+/**********SIGNIN **************/
 const loginForm = document.querySelector('#login-form');
 const loginButton = document.getElementById('login-button');
 var isLoginOk = false;
@@ -18,6 +20,10 @@ loginForm.addEventListener('submit', (e) => {
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
             // display connfirm msg
             success("Signed in successfully");
+            window.setTimeout(function(){
+                // Move to html.index after 2 seconds
+                window.location.href = "vendor.html";
+              }, 2000);
             //reset form
             loginForm.reset();
             // loginForm.querySelector('.error').innerHTML = '';

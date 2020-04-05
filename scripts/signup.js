@@ -29,7 +29,7 @@ signupForm.addEventListener('submit', (e)=>{
             success("Signed up successfully.");
             window.setTimeout(function(){
               // Move to html.index after 2 seconds
-              window.location.href = "index.html";
+              window.location.href = "vendor.html";
             }, 2000);       
             document.getElementById('signup-form').reset();
           });       
