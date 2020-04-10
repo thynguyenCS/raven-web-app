@@ -1,6 +1,78 @@
-.content {
-    max-width: 30em;
+body {
+    background-color: #484f5b;
+    
 }
+.content {
+    max-width: 26em;
+    margin: 4em auto 1.5em;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #363b45;
+    box-shadow: 0 .05rem .2rem rgba(69,77,93,.3);
+}
+
 .padded {
     padding: 36px;
+}
+h3 {
+    color:  lightgrey;
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
+    border-color:#768092;
+    background: transparent;
+    color:  darkgrey;
+}
+.icon {
+    color:  darkgrey;
+}
+.btn-info {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    background-color: #5e5cc7 ;
+    /* background-color:  #5756bb; */
+    border:#4c4aa3;
+}
+.btn-info:hover {
+    background-color: #4c4aa3;
+ 
+    /* border: #5756bb; */
+}
+.info {
+    display: flex;
+    /* flex-direction: column; */
+}
+/* a {
+    color:lightgrey;
+} */
+.link {
+    color: lightgrey;
+}
+.link:hover{
+    color: darkgrey;
+}
+
+img {
+    width: 4em;
+}
+.header {
+    background-color: #24292e;
+}
+.header a{
+    color: white;
+}
+.header a:hover{
+    color: white;
+}
+.title {
+    color: white;
+}
+.nav-item .dropdown-menu {
+    background-color: #363b45;
+    border-color:#363b45;
+}
+.icon {
+    color: white;
+}
+.form-group {
+    margin: 1rem 0;
 }

@@ -273,8 +273,9 @@ input {
     /* outline: 0; */
     /* border-bottom: none; */
     outline: 0;
-    border: 0;
+    border: 1px lightgrey;
     background-color: transparent;
+
     /* border: 2px solid; */
     /* height: 5px; */
     /* border-width: 0 0 0px; */

@@ -1,0 +1,248 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <link href="../../res/cirrus.min.css" type="text/css" rel="stylesheet" />
+        <link href="../../res/app.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.5.4/dist/cirrus.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/a696b91557.css" media="all">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    
+    <!-- Custom stylesheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/vendor2.css">
+    <!-- icon -->
+    <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
+    <title>Raven</title>
+</head>
+<body>
+    <div class="header header-fixed unselectable header-animated">
+        <!-- The web app's logo, this part will always be visibe -->
+        <div class="header-brand">
+            <div class="nav-item no-hover">
+                <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
+                <!-- <h6 class="title">Raven</h6> -->
+            </div>
+            <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
+            <!-- but we don't need to deal with it yet -->
+            <div class="nav-item nav-btn" id="header-btn">
+                <span>First Item</span>
+                <span>Second Item</span>
+                <span>Third Item</span>
+            </div>
+        </div>
+    
+        <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
+        <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
+        <div class="header-nav" id="header-menu">
+            <!-- left container, always appear to left of the navigation bar -->
+            <div class="nav-left">
+                <!-- search box -->
+                <div class="nav-item no-hover">
+                    <div class="form-group">
+                        
+                        <input class="form-group-input" type="search" placeholder="Search a vendor...">
+                        
+                    </div>
+                </div>
+            
+            </div>
+            <!-- right container, always appear to the right of the navigation bar -->
+            <div class="nav-right">
+                <div class="nav-item text-center">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-wrapper fa-bell" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="nav-item has-sub toggle-hover" id="dropdown">
+                    <a class="nav-dropdown-link">Me</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="menu-item"><a href="#" class="link">Profile</a></li>
+                        <li class="dropdown-menu-divider"></li>
+                        <li role="menu-item"><a href="#" class="link">Log out</a></li>
+                    </ul>
+                </div>     
+            </div>
+        </div>
+        
+    </div>
+    <div class="hero fullscreen">
+        <div class="hero-body u-center">
+                <space class="x-large"></space>
+                <div class="w-90" style="position:relative">
+                    <div class="row level fill-height">
+                        <!-- search vendors-->
+                        <div class="col-3">
+                            <div class="frame">
+                                <div class="frame__body searchFrame">
+                                    <div class="tag-container">
+                                        <div class="tag">Windows</div>
+                                        <div class="tag">Fences</div>
+                                        <div class="tag">Walls</div>
+                                        <div class="tag">Tag4</div>
+                                        <div class="tag">Tag5</div>
+                                        <div class="tag">Tag6</div>
+                                        <div class="tag">Tag7</div>
+                                        <div class="tag">Tag8</div>
+                                        <div class="tag">Tag9</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- display vendors -->
+                        <div class="col-9">
+                            <!-- example: vendor A -->
+                            <div class="tile">
+                                <div class="row">
+                                    <!-- vendor pic -->
+                                    <div class="tile__icon">
+                                        <figure class="avatar">
+                                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                                        </figure>
+                                    </div>
+                                    <!-- vendor data -->
+                                    <div class="tile__container"> 
+                                            <p class="tile__title u-no-margin">Vendor A</b></p>
+                                        
+                                            <!-- <span class="info">Rating: 3.6</span> -->
+                                            <!-- rating stars -->
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="far fa-star"></span>
+                                            <p class="tile__subtitle">Italian Furniture</p>
+                                    </div>
+                                    <div class="tile__container u-text-right">
+                                        <p class="tile__subtitle u-no-margin small">italianfurniture.com</p>
+                                        <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
+                                        <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="info">"We specialize in..."</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="tag-container pull-left">
+                                    <div class="tag">Windows</div>
+                                    <div class="tag">Fences</div>
+                                    <div class="tag">Walls</div>
+                                </div>
+                            </div>
+                            <!-- space between vendor cards -->
+                            <space class="large"></space>
+                            <div class="tile">
+                                <div class="row">
+                                    <!-- vendor pic -->
+                                    <div class="tile__icon">
+                                        <figure class="avatar">
+                                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                                        </figure>
+                                    </div>
+                                <!-- vendor data -->
+                                    <div class="tile__container"> 
+                                            <p class="tile__title u-no-margin">Vendor B</b></p>
+                                        
+                                            <!-- <span class="info">Rating: 3.6</span> -->
+                                            <!-- rating stars -->
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="far fa-star"></span>
+                                            <p class="tile__subtitle">Cuba Furniture</p>
+                                    </div>
+                                    <div class="tile__container u-text-right">
+                                        <p class="tile__subtitle u-no-margin small">cubafurniture.com</p>
+                                        <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
+                                        <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="info">"We specialize in..."</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="tag-container pull-left">
+                                    <div class="tag">Chairs</div>
+                                    <div class="tag">Tables</div>
+                                    <div class="tag">Shelves</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+                    <!-- and do the same for other vendors using javascript -->
+                </div>
+            <!-- </div> -->
+            <space class="x-large"></space>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8edToE3CAv33r6qTD7Lp-A62HWq7P-Sk",
+    authDomain: "raven-c24a9.firebaseapp.com",
+    databaseURL: "https://raven-c24a9.firebaseio.com",
+    projectId: "raven-c24a9",
+    storageBucket: "raven-c24a9.appspot.com",
+    messagingSenderId: "943246302988",
+    appId: "1:943246302988:web:a9f8a382e223fc71b23329",
+    measurementId: "G-051571D12T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  //make auth and firestore reference
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+</script>
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
+  <script src="https://use.fontawesome.com/a696b91557.js"></script>
+  <!-- <script src="scripts/auth.js"></script> -->
+  <!-- <script src="scripts/index.js"></script> -->
+  <script src="scripts/validate.js"></script>
+  <script src="scripts/login.js"></script>
+  <script src="scripts/alert.js"></script>
+</body>
+</html>

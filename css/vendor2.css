@@ -1,0 +1,129 @@
+body {
+    background-color: #363b45;
+}
+.header {
+    background-color: #24292e;
+}
+.header a{
+    color: white;
+}
+.header a:hover{
+    color: white;
+}
+.title {
+    color: white;
+}
+.nav-item .dropdown-menu {
+    background-color: #363b45;
+    border-color:#363b45;
+}
+.icon {
+    color: white;
+}
+.form-group {
+    margin: 1rem 0;
+}
+
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
+    background-color: #484f5b;
+    background-repeat: no-repeat;
+    background-position: left .6rem center;
+    /* font-size: 16px; */
+    background-image: url('http://getdrawings.com/free-icon-bw/search-icon-white-png-10.png');
+    background-size: 16px;
+    /* padding-left: 2rem !important; */
+    border: none;
+    color: white;
+    padding: 0.63rem 1.1rem;
+} 
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
+    background-image: url('https://cdn0.iconfinder.com/data/icons/bold-icons/32/search-2-512.png');
+    /* border:none; */
+    /* outline:none; */
+    box-shadow: none;
+    background-color: white;
+    color: black;
+  }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus::placeholder{
+    color: transparent;
+  }
+  .w-90{
+      
+      width: 90%;
+  }
+  .tile {
+      background-color: #484f5b;
+      padding: 26px;
+      border-radius: 10px;
+      box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
+      0 0  0 1px rgba(0,0,0,0.1),
+      0.1em 0.1em 0.5em rgba(0,0,0,0.1);
+  }
+  .view-button {
+      background-color:  #5e5cc7 ;
+      color: white;
+  }
+  .btn-primary {
+    background-color:  #5e5cc7 ;
+    color: white;
+    border-color: #5e5cc7 ;
+
+  }
+  .btn-primary:hover {
+      background-color: #4c4aa3;
+      border-color: #5e5cc7 ;
+  }
+  .tile__container{
+    color: white;
+  }
+  .avatar {
+      border-radius: 0%;
+      width: 5.2rem;
+      height: 5.2rem;
+  }
+.tile {
+    flex-direction: column;
+    overflow: hidden;
+}
+  .tile:hover {
+    transition: 0.3s ease;
+    box-shadow:inset 0 -2em 2em rgba(0,0,0,0.1), 
+      0 0  0 2px rgba(0,0,0,0.1),
+      0.2em 0.2em 1em rgba(0,0,0,0.3);
+    /* opacity: 0.8;       */
+  }
+  .divider {
+      opacity: 0.5;
+    background-color: rgb(131, 130, 130);
+  }
+.tag {
+    background-color: #5e5cc7;
+    color: white;
+}
+.tag:hover {
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+.tile__container {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.row {
+    width: 100%;
+}
+.tile .small {
+    font-size: 13px;
+}
+.content{
+    max-width: 1000em;
+    /* margin: 1em; */
+    /* max-width: 100%; */
+    width: 100%;
+    margin: 3em auto 1.5em;
+}
+.frame .searchFrame {
+    background-color: #484f5b;
+    border-radius: 10px;
+}

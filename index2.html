@@ -26,24 +26,41 @@
 </head>
 <body>
   <div class="hero fullscreen">
-    <div class="hero body">
+    <div class="hero-body">
       <div class="content">
-          <form class="frame u-no-padding" method="post">
+          <form class="frame u-no-padding u-text-center" method="post" autocomplete="off">
               <div class="frame__body u-no-padding">
                   <div class="row u-no-padding level fill-height">
-                      <div class="col-8">
+                      <div class="col-12">
                         <space class="x-large"></space>
                         <div class="padded">
-                            <h3>Sign Up</h3>
+                            <a href="index2.html"><img src=img/ravenCircle.png alt="raven" class="u-text-center"></a>
+                            <space class="medium"></space>
+                            <h3>Login</h3>
                             <div class="form-section">
-                                <label>Email</label>
                                 <div class="input-control">
                                     <input id="login-email" class="input-contains-icon" placeholder="Email"
-                                    type="text" value="">
-                                    <span class="icon"><i class="far far-wrapper fa-envelope"></i></span>
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fa fa-envelope-open small"></i></span>
                                 </div>
+                                <div class="input-control">
+                                  <input id="login-password" class="input-contains-icon" placeholder="Password"
+                                  type="password" value="" autocomplete="new-password" required>
+                                  <span class="icon"><i class="fa fa-lock small"></i></span>
+                              </div>
                             </div>
-                        </div>
+                            <button class="btn-info u-pull-right" id="login-button" type="submit">
+                              Login
+                            </button>
+                            <span class="fg-danger info"></span>
+                            <span class="info"><a href="#" class="link">Forgot your password?</a>
+                            </span>
+                            <span class="info"><a href="#" class="link">Sign up</a>
+                            </span>
+                            
+                            
+                          </div>
+                        <space class="x-large"></space>
                       </div>
                       <!-- <div class="col-6 u-no-padding bg"></div> -->
                       
