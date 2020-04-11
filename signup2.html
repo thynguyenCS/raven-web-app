@@ -28,7 +28,7 @@
   <div class="hero fullscreen">
     <div class="hero-body">
       <div class="content">
-          <form id="login-form" class="frame u-no-padding u-text-center" method="post" autocomplete="off">
+          <form id="signup-form" class="frame u-no-padding u-text-center" method="post" autocomplete="off">
               <div class="frame__body u-no-padding">
                   <div class="row u-no-padding level fill-height">
                       <div class="col-12">
@@ -36,30 +36,35 @@
                         <div class="padded">
                             <a href="index2.html"><img src=img/ravenCircle.png alt="raven" class="u-text-center hover-grow"></a>
                             <space class="medium"></space>
-                            <h3>Login</h3>
+                            <h3>Sign up</h3>
                             <div class="form-section">
                                 <div class="input-control">
-                                    <input id="login-email" class="input-contains-icon" placeholder="Email"
+                                    <input id="signup-name" class="input-contains-icon" placeholder="Your full name"
                                     type="text" value="" autocomplete="false" required>
-                                    <span class="icon"><i class="fa fa-envelope-open small"></i></span>
+                                    <span class="icon"><i class="fa fa-user small"></i></span>
                                 </div>
                                 <div class="input-control">
-                                  <input id="login-password" class="input-contains-icon" placeholder="Password"
+                                    <input id="signup-email" class="input-contains-icon" placeholder="Email"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fa fa-envelope small"></i></span>
+                                </div>
+                                <div class="input-control">
+                                  <input id="signup-password" class="input-contains-icon" placeholder="Password"
                                   type="password" value="" autocomplete="new-password" required>
                                   <span class="icon"><i class="fa fa-lock small"></i></span>
                                 </div>
                             </div>
                             <!-- error msg -->
                             <div id="error" class="toast toast--error" style="display:none;">
-                              <!-- <button class="btn-close"></button> -->
                             </div>
-                            <button id="login-button" class="btn-info u-pull-right" type="submit">
-                              Login
+                            <div id="success" class="toast toast--success" style="display:none;">
+                              </div>
+                            <button id="signup-button" class="btn-info u-pull-right" type="submit">
+                              Sign up
                             </button>
                             <span class="fg-danger info"></span>
-                            <span class="info"><a href="#" class="link">Forgot your password?</a>
-                            </span>
-                            <span class="info"><a href="signup2.html" class="link">Sign up</a>
+                            <span class="info">Already have an account?</span>
+                            <span class="info"><a href="index2.html" class="link">Login</a>
                             </span>     
                           </div>
                         <space class="x-large"></space>
@@ -283,7 +288,7 @@
   <!-- <script src="scripts/auth.js"></script> -->
   <!-- <script src="scripts/index.js"></script> -->
   <script src="scripts/validate.js"></script>
-  <script src="scripts/login.js"></script>
+  <script src="scripts/signup.js"></script>
   <script src="scripts/alert.js"></script>
 </body>
 </html>

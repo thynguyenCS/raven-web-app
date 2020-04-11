@@ -1,69 +1,54 @@
 function isNameValid(name){
     var nameField = document.getElementById(name);
     var nameValue= nameField.value.trim();
+    // toggleOffToast('error');
     if (nameValue==""){
-        nameField.setCustomValidity("Please enter your full name.");
-    }else {
-        nameField.setCustomValidity("");
-        return true;
+        toast('error',"Please enter your full name.");
+        return false;
+        // nameField.setCustomValidity("Please enter your full name.");
     }
-    return false;
+    // nameField.setCustomValidity("");
+    return true;
+    
 }
 function isEmailValid(email){
     var emailField = document.getElementById(email);
     var emailValue = emailField.value.trim();
+    // toggleOffToast('error');
     if (emailValue ==""){
-        emailField.setCustomValidity("Please enter an email address.");
-    }else{
-        var re = new RegExp("[^@\s]+@raven.com");
-        if (!re.test(emailValue)){
-            emailField.setCustomValidity("Please match the requested format: a@raven.com");
-        }
-        else{
-            emailField.setCustomValidity("");
-            return true;
-        }
+        toast('error',"Please enter an email address.");
+        return false;
     }
+    var re = new RegExp("[^@\s]+@raven.com");
+    if (re.test(emailValue)){
+        return true;
+    }
+    toast('error',"Email address must match the requested format: a@raven.com.");
     return false;
 }
 function isPasswordValid(password){
     var passwordField = document.getElementById(password);
     var passwordValue = passwordField.value;
+    // toggleOffToast('error');
     if (passwordValue ==""){
-        passwordField.setCustomValidity("Please enter a password.");
-    }else{
-        var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
-        if (!re.test(passwordValue)){
-            passwordField
-            .setCustomValidity("Your password must be between 8 to 15 characters and contains at least one numeric digit, one uppercase, one lowercase letter and one symbol.");
-        }
-        else{
-            passwordField.setCustomValidity("");
-            return true;
-        }
+        toast('error',"Please enter a password.");
+        return false;
     }
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
+    if (re.test(passwordValue)){
+        return true;
+    }
+    toast('error',"Your password must be between 8 to 15 characters and contains at least one numeric digit, one uppercase, one lowercase letter and one symbol.");
     return false;
-
 }
 function isLoginPasswordValid(password){
     var passwordField = document.getElementById(password);
     var passwordValue = passwordField.value;
+    // toggleOffToast('error');
     if (passwordValue ==""){
-        passwordField.setCustomValidity("Please enter a password.");
-    }else{
-        passwordField.setCustomValidity("");
-        return true;
-        // var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
-        // if (!re.test(passwordValue)){
-        //     passwordField
-        //     .setCustomValidity("Your password must be between 8 to 15 characters and contains at least one numeric digit, one uppercase, one lowercase letter and one symbol.");
-        // }
-        // else{
-        //     passwordField.setCustomValidity("");
-        //     return true;
-        // }
+        toast('error',"Please enter a password.");
+        return false;
     }
-    return false;
+    // toggleOffToast('error');
+    return true;
 }
-isEmailValid('login-email');
-isLoginPasswordValid('login-password');

@@ -1,13 +1,14 @@
 body {
-    background-color: #484f5b;
-    
+    /* background-color: #484f5b; */
+    background-color: #363b45;
 }
 .content {
     max-width: 26em;
-    margin: 4em auto 1.5em;
+    margin: 1em auto 1.5em;
     width: 80%;
     border-radius: 10px;
-    background-color: #363b45;
+    /* background-color: #363b45; */
+    background-color:#24292e;
     box-shadow: 0 .05rem .2rem rgba(69,77,93,.3);
 }
 
@@ -15,15 +16,16 @@ body {
     padding: 36px;
 }
 h3 {
-    color:  lightgrey;
+    color:  white;
 }
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
-    border-color:#768092;
+    /* border-color:#768092; */
+    border-color:  #363b45;
     background: transparent;
-    color:  darkgrey;
+    color:  white;
 }
 .icon {
-    color:  darkgrey;
+    color:  white;
 }
 .btn-info {
     margin-top: 0.5rem;
@@ -75,4 +77,12 @@ img {
 }
 .form-group {
     margin: 1rem 0;
+}
+.toast {
+    border-radius: 4px;
+    margin-left: 0;
+}
+.toast.toast--error {
+    background-color: #cc4642;
+    border: none;
 }

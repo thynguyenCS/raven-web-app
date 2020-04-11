@@ -1,6 +1,6 @@
 
 /**********SIGN UP **************/
-const signupForm = document.querySelector('#signup-form');
+const signupForm = document.getElementById('signup-form');
 const signupButton = document.getElementById('signup-button');
 var isSignupOk = false;
 
@@ -8,9 +8,12 @@ var isSignupOk = false;
 // "click" event triggers validation immediately, while "submit" does not
 // therefore we need to handle each event differently
 signupButton.addEventListener('click', (e) => {
+  
   if (isNameValid('signup-name') && isEmailValid('signup-email') 
     && isPasswordValid('signup-password')){
      isSignupOk = true;
+  }else {
+    isSignupOk = false;
   }
 }); 
 
@@ -26,15 +29,11 @@ signupForm.addEventListener('submit', (e)=>{
             displayName: signupForm['signup-name'].value
           }).then(()=>{ 
             // display confirm message
-            success("Signed up successfully.");
-            window.setTimeout(function(){
-              // Move to html.index after 2 seconds
-              window.location.href = "vendor.html";
-            }, 2000);       
+            toast('success', "Signed up successfully. Please check your email for verification.");     
             document.getElementById('signup-form').reset();
           });       
         }).catch(err => {
-          error("This user already exists.");
+          toast('error',"This user already exists.");
         })
   }
 });

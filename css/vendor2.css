@@ -14,7 +14,7 @@ body {
     color: white;
 }
 .nav-item .dropdown-menu {
-    background-color: #363b45;
+    background-color: #24292e;
     border-color:#363b45;
 }
 .icon {
@@ -95,7 +95,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
   }
   .divider {
       opacity: 0.5;
-    background-color: rgb(131, 130, 130);
+    background-color: rgb(78, 78, 78);
   }
 .tag {
     background-color: #5e5cc7;
@@ -126,4 +126,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
 .frame .searchFrame {
     background-color: #484f5b;
     border-radius: 10px;
+}
+.frame {
+    
 }
