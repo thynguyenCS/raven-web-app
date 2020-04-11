@@ -4,7 +4,7 @@ body {
 }
 .content {
     max-width: 26em;
-    margin: 1em auto 1.5em;
+    /* margin: 1em auto 1.5em; */
     width: 80%;
     border-radius: 10px;
     /* background-color: #363b45; */
@@ -85,4 +85,7 @@ img {
 .toast.toast--error {
     background-color: #cc4642;
     border: none;
+}
+h7 {
+    color: white;
 }
