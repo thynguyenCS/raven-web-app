@@ -33,15 +33,15 @@
         <div class="header-brand">
             <div class="nav-item no-hover">
                 <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
-                <!-- <h6 class="title">Raven</h6> -->
+                <h6 class="title">Raven</h6>
             </div>
             <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
             <!-- but we don't need to deal with it yet -->
-            <div class="nav-item nav-btn" id="header-btn">
+            <!-- <div class="nav-item nav-btn" id="header-btn">
                 <span>First Item</span>
                 <span>Second Item</span>
                 <span>Third Item</span>
-            </div>
+            </div> -->
         </div>
     
         <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
@@ -49,14 +49,14 @@
         <div class="header-nav" id="header-menu">
             <!-- left container, always appear to left of the navigation bar -->
             <div class="nav-left">
-                <!-- search box -->
-                <div class="nav-item no-hover">
+                
+                <!-- <div class="nav-item no-hover">
                     <div class="form-group">
                         
                         <input class="form-group-input" type="search" placeholder="Search a vendor...">
                         
                     </div>
-                </div>
+                </div> -->
             
             </div>
             <!-- right container, always appear to the right of the navigation bar -->
@@ -86,7 +86,7 @@
                 <space class="x-large"></space>
                 <div class="w-90" style="position:relative">
                     <div class="row level fill-height">
-                        <!-- search vendors-->
+                        <!-- left frame -->
                         <div class="col-3">
                             <div class="frame">
                                 <div class="frame__body searchFrame">
@@ -107,84 +107,111 @@
                             
                         </div>
                         <!-- display vendors -->
-                        <div class="col-9">
+                        <div class="col-8 fill-height">
+                            <!-- search bar -->
+                            <div class="row level u-no-padding">
+                                <div class="col-6 no-left-padding">
+                                    <div class="form-group">
+                                        <input class="form-group-input" type="search" placeholder="Search a vendor...">
+                                    </div>
+                                </div>
+                                <div class="col-4 no-left-padding">
+                                    <div class="form-group">
+                                        <input class="form-group-input" type="search" placeholder="Search a location...">
+                                    </div>
+                                </div>
+                                <div class="col-2 u-no-padding">
+                                    <button id="search-button" class="btn-primary btn-animated btn-search" type="submit">Search</button>
+                                </div>
+                            </div>
+                            <!-- end of search bar -->
+                            <space class="large"></space>
+                            <div class ="row result">
+                                <p>2 results for furniture found.</p>
+                            </div>
+
                             <!-- example: vendor A -->
-                            <div class="tile">
+                            <div class="tile hover-grow">
                                 <div class="row">
                                     <!-- vendor pic -->
                                     <div class="tile__icon">
                                         <figure class="avatar">
-                                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                                            <img src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
                                         </figure>
                                     </div>
                                     <!-- vendor data -->
                                     <div class="tile__container"> 
                                             <p class="tile__title u-no-margin">Vendor A</b></p>
-                                        
                                             <!-- <span class="info">Rating: 3.6</span> -->
+                                            <p class="tile__subtitle">Furniture store in San Jose, CA</p>
                                             <!-- rating stars -->
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="far fa-star"></span>
-                                            <p class="tile__subtitle">Italian Furniture</p>
+                                            <span class="tile__subtitle">(4)</span>
+                                            <div class="tag-container">
+                                                <div class="tag">Windows</div>
+                                                <div class="tag">Fences</div>
+                                                <div class="tag">Walls</div>
+                                            </div>
                                     </div>
-                                    <div class="tile__container u-text-right">
+                                    <!-- <div class="tile__container u-text-right">
                                         <p class="tile__subtitle u-no-margin small">italianfurniture.com</p>
                                         <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
                                         <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
-                                    </div>
+                                    </div> -->
+                                    <p class="tile__buttons u-no-margin">
+                                        <button id="view-button" class="btn-primary uppercase">View</button>
+                                    </p>
                                 </div>
                                 <div class="row">
-                                    <span class="info">"We specialize in..."</span>
+                                    <div class="tile__container" style="display:none;">
+                                        <p class="info">"We specialize in..."</p>
+                                    </div>
                                 </div>
-                                <div class="divider"></div>
-                                <div class="tag-container pull-left">
-                                    <div class="tag">Windows</div>
-                                    <div class="tag">Fences</div>
-                                    <div class="tag">Walls</div>
-                                </div>
+                                <!-- <div class="divider"></div> -->
                             </div>
                             <!-- space between vendor cards -->
                             <space class="large"></space>
                             <!-- vendor B -->
-                            <div class="tile">
+                            <div class="tile hover-grow">
                                 <div class="row">
                                     <!-- vendor pic -->
                                     <div class="tile__icon">
                                         <figure class="avatar">
-                                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                                            <img src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
                                         </figure>
                                     </div>
-                                <!-- vendor data -->
+                                    <!-- vendor data -->
                                     <div class="tile__container"> 
                                             <p class="tile__title u-no-margin">Vendor B</b></p>
-                                        
                                             <!-- <span class="info">Rating: 3.6</span> -->
+                                            <p class="tile__subtitle">Furniture store in San Jose, CA</p>
                                             <!-- rating stars -->
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                             <span class="far fa-star"></span>
-                                            <p class="tile__subtitle">Cuba Furniture</p>
+                                            <span class="tile__subtitle">(4)</span>
+                                            <div class="tag-container">
+                                                <div class="tag">Windows</div>
+                                                <div class="tag">Fences</div>
+                                                <div class="tag">Walls</div>
+                                            </div>
                                     </div>
-                                    <div class="tile__container u-text-right">
-                                        <p class="tile__subtitle u-no-margin small">cubafurniture.com</p>
+                                    <!-- <div class="tile__container u-text-right">
+                                        <p class="tile__subtitle u-no-margin small">italianfurniture.com</p>
                                         <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
                                         <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
-                                    </div>
+                                    </div> -->
+                                    <p class="tile__buttons u-no-margin">
+                                        <button id="view-button" class="btn-primary uppercase">View</button>
+                                    </p>
                                 </div>
-                                <div class="row">
-                                    <span class="info">"We specialize in..."</span>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="tag-container pull-left">
-                                    <div class="tag">Chairs</div>
-                                    <div class="tag">Tables</div>
-                                    <div class="tag">Shelves</div>
-                                </div>
+                                <!-- <div class="divider"></div> -->
                             </div>
                         </div>
                     </div>
@@ -240,8 +267,9 @@
   <script src="https://use.fontawesome.com/a696b91557.js"></script>
   <!-- <script src="scripts/auth.js"></script> -->
   <!-- <script src="scripts/index.js"></script> -->
-  <script src="scripts/validate.js"></script>
-  <script src="scripts/login.js"></script>
+  <!-- <script src="scripts/validate.js"></script> -->
+  <!-- <script src="scripts/login.js"></script> -->
+  <script src="scripts/vendor.js"></script>
   <script src="scripts/alert.js"></script>
 </body>
 </html>

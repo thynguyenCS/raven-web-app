@@ -1,5 +1,6 @@
 body {
-    background-color: #363b45;
+    /* background-color: #363b45; */
+    background-color: #414750;
 }
 .header {
     background-color: #24292e;
@@ -21,11 +22,12 @@ body {
     color: white;
 }
 .form-group {
-    margin: 1rem 0;
+    margin: 0 0rem;
 }
 
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
+    border-radius: 5px;
     background-color: #484f5b;
     background-repeat: no-repeat;
     background-position: left .6rem center;
@@ -49,16 +51,15 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
     color: transparent;
   }
   .w-90{
-      
       width: 90%;
   }
   .tile {
       background-color: #484f5b;
       padding: 26px;
-      border-radius: 10px;
-      box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
+      border-radius: 5px;
+      /* box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
       0 0  0 1px rgba(0,0,0,0.1),
-      0.1em 0.1em 0.5em rgba(0,0,0,0.1);
+      0.1em 0.1em 0.5em rgba(0,0,0,0.1); */
   }
   .view-button {
       background-color:  #5e5cc7 ;
@@ -77,27 +78,30 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
   .tile__container{
     color: white;
   }
-  .avatar {
-      border-radius: 0%;
-      width: 5.2rem;
-      height: 5.2rem;
+.avatar {
+    border-radius: 0%;
+    width: 11.2rem;
+    height: 7.2rem;
   }
 .tile {
     flex-direction: column;
     overflow: hidden;
+    box-shadow: 0 5px 12px 0 rgba(42,51,83,.12),0 0 5px rgba(0,0,0,.06);
+    transition: height 0.4s linear;
 }
-  .tile:hover {
+.expanded {
+    transition: 0.3s ease-out;
+}
+  /* .tile:hover {
     transition: 0.3s ease;
     box-shadow:inset 0 -2em 2em rgba(0,0,0,0.1), 
       0 0  0 2px rgba(0,0,0,0.1),
       0.2em 0.2em 1em rgba(0,0,0,0.3);
     /* opacity: 0.8;       */
-  }
-  .divider {
-      opacity: 0.5;
-    background-color: rgb(78, 78, 78);
-  }
+   
+
 .tag {
+    max-height: 60%;
     background-color: #5e5cc7;
     color: white;
 }
@@ -108,6 +112,11 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
 .tile__container {
     display: table-cell;
     vertical-align: top;
+}
+.tile:hover {
+    background-color: #4b535e;
+    transition: .3s;
+    box-shadow: 0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
 }
 
 .row {
@@ -127,6 +136,27 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus{
     background-color: #484f5b;
     border-radius: 10px;
 }
-.frame {
-    
+.hover-grow:hover {
+    transform: scale(1.01);
+}
+.h-40 {
+    height: 40%;
+}
+.row .no-left-padding {
+    padding-left: 0;
+}
+.btn, [type="submit"], button .btn-search{
+    line-height: 1.2rem;
+    margin-bottom: 0;
+    padding: .5rem 0;
+    width: 100%;
+    background-color: #5e5cc7;
+    border-color: #5e5cc7;
+}
+.result {
+    color: white;
+}
+.tile-description {
+    /* display: inline; */
+    float: left;
 }
