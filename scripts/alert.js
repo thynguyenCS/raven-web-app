@@ -1,14 +1,14 @@
 //  this function should not be used right now
-// function success(msg){
-//     Swal.fire({
-//         icon:'success',
-//         title:'<p style="color:white">' + msg + '</p>',
-//         width: 420,
-//         showConfirmButton: false,
-//         background:'#755ee8'
-//       })
+function success(msg){
+    Swal.fire({
+        icon:'success',
+        title:'<p style="color:white">' + msg + '</p>',
+        width: 420,
+        showConfirmButton: false,
+        background:'#755ee8'
+      })
 
-// }
+}
 
 // display alert
 function toast(type, msg){

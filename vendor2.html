@@ -112,12 +112,12 @@
                             <div class="row level u-no-padding">
                                 <div class="col-6 no-left-padding">
                                     <div class="form-group">
-                                        <input class="form-group-input" type="search" placeholder="Search a vendor...">
+                                        <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
                                     </div>
                                 </div>
                                 <div class="col-4 no-left-padding">
                                     <div class="form-group">
-                                        <input class="form-group-input" type="search" placeholder="Search a location...">
+                                        <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
                                     </div>
                                 </div>
                                 <div class="col-2 u-no-padding">
@@ -130,7 +130,7 @@
                                 <p>2 results for furniture found.</p>
                             </div>
 
-                            <!-- example: vendor A -->
+                            example: vendor A
                             <div class="tile hover-grow">
                                 <div class="row">
                                     <!-- vendor pic -->
@@ -213,10 +213,16 @@
                                 </div>
                                 <!-- <div class="divider"></div> -->
                             </div>
+                            <!-- and do the same for other vendors using javascript -->
+                            <div class ="row result">
+                                <p> results for vendors found.</p>
+                            </div>
+                            <!-- DISPLAY VENDOR ONLY BEFORE CSS ANS STYLING _ THY -->
+                            <div id='vendor-list'>
+                                <!-- <ul id='vendor-list'></ul> -->
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- and do the same for other vendors using javascript -->
+                    </div>                    
                 </div>
             <!-- </div> -->
             <space class="x-large"></space>
