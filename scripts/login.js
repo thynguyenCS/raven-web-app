@@ -4,8 +4,6 @@ const loginForm = document.getElementById('login-form');
 const loginButton = document.getElementById('login-button');
 var isLoginOk = false;
 
-
-
 loginButton.addEventListener('click', (e) => {
     if (isEmailValid('login-email') && isLoginPasswordValid('login-password')){
         isLoginOk = true;
@@ -21,7 +19,7 @@ loginForm.addEventListener('submit', (e) => {
         const password = loginForm['login-password'].value;  
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            window.location.href = "vendor2.html";
+            window.location.href = "vendor3.html";
             // window.setTimeout(function(){
             //     // Move to html.index after 2 seconds
             //     window.location.href = "vendor2.html";

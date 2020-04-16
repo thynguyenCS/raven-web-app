@@ -11,26 +11,26 @@
 //     }
     
 // })
+
+const defaultList = document.getElementById('default-list')
+const searchList = document.getElementById('search-list')
 /******SEARCH VENDOR BY NAME*************/
 const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
-const searchFields = document.getElementsByClassName("form-group");
-var foundVendors = [];  
-function findVendor(name, loc){      
+var foundVendorsHtml = '';  
+
+function findVendor(name, loc, changes){ 
+    var foundVendors = [] 
+    let html = ''
+    console.log(isSearch)
+    var i, j=0;
+    for(i = 0; i < changes.length; i++){
     if (name && !loc){
-        console.log('name only');
-        db.collection("vendors").orderBy("name").get().then(snap=>{
-            snap.docs.forEach(doc=>{
-                data = doc.data();
-                if(name === data.name){
-                    //displayVendor(doc)
-                    //console.log(doc)
-                    foundVendors.push(doc);
-                    //console.log("found.length " + foundVendors.length)
-                }
-            })
-        })
+        //console.log('name only')
+        if(changes[i].doc.data().name == name){
+            html += createVendorCard(changes[i], j)
+        }
     }
     else if (name && loc){
         console.log('name and loc');
@@ -39,88 +39,92 @@ function findVendor(name, loc){
     else if (!name && loc){
         console.log('location only');
    } 
-  // console.log("found.length " + foundVendors.length)
-//   setTimeout(function(){
-//     console.log(foundVendors.length);
-//     }, 1000)
-   return foundVendors;
+}
+    if(j%2==1){
+        console.log('j is 1')
+        html += `</div><space class="large"></space>`
+}
+   return html
+}
 
- }
- 
 searchButton.addEventListener('click', (e)=>{
     e.preventDefault();
     name = inputName.value;
     loc = inputLoc.value;
-    //find the documents of vendors that meet the requirements
-   const foundVendors = findVendor(name,loc);
-//    console.log(foundVendors.length);
-//    console.log(foundVendors);
-   displayVendor(foundVendors);
-   // reset the search bars
-   document.getElementById("search-vendor").value =""
-   document.getElementById("search-loc").value = ""   
- })
+    isSearch = true;
+    let html = ''
+    db.collection('vendors').orderBy('name').get().then(snap=>{
+        let changes = snap.docChanges()
+        html += findVendor(name, loc, changes)        
+        defaultList.innerHTML = ''
+        searchList.innerHTML = html
+
+    })  
+    document.getElementById("search-vendor").value =""
+    document.getElementById("search-loc").value = "" 
+    })
  
 /******DISPLAY VENDOR *******/
-//const vendorList = document.getElementById('vendor-list')
-const vendorList = document.getElementById('vendor-list')
-function displayVendor(docs){
-    let li = '';
-    var i;
-    for(i = 0; i <docs.length; i++){
-        const vendor = docs[i].data()
-        li += ` <div class="tile hover-grow">
-        <div class="row">
-            <!-- vendor pic -->
-            <div class="tile__icon">
-                <figure class="avatar">
-                    <img src=${vendor.logo}>
-                </figure>
-            </div>
-            <!-- vendor data -->
-            <div class="tile__container"> 
-                    <p class="tile__title u-no-margin">${vendor.name}</b></p>
-                    <!-- <span class="info">Rating: ${vendor.rating}</span> -->
-                    <p class="tile__subtitle">Furniture store in San Jose, CA</p>
-                    <!-- rating stars -->
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="far fa-star"></span>
-                    <span class="tile__subtitle">(4)</span>
-                    <div class="tag-container">
-                        <div class="tag">Windows</div>
-                        <div class="tag">Fences</div>
-                        <div class="tag">Walls</div>
-                    </div>
-            </div>
-            <!-- <div class="tile__container u-text-right">
-                <p class="tile__subtitle u-no-margin small">italianfurniture.com</p>
-                <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
-                <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
-            </div> -->
-            <p class="tile__buttons u-no-margin">
-                <button id="view-button" class="btn-primary uppercase">View</button>
-            </p>
-        </div>
-        <div class="row">
-            <div class="tile__container" style="display:none;">
-                <p class="info">"We specialize in..."</p>
-            </div>
-        </div>
-        <!-- <div class="divider"></div> -->
-        </div>
+function createVendorCard(change, i){
+    let html = '';  
+        const vendor = change.doc.data()
+        let startRow = `<div class="row">` 
+        let endRow = `</div>
         <space class="large"></space>`
-    }
-    vendorList.innerHTML = li
-}
-//displayVendor(foundVendors)
+        let content = ` <div class="col-5">
+        <div class="tile u-no-padding">
+            <div class="row u-no-padding">
+                <!-- vendor pic -->
+                <div class="tile__icon">
+                    <figure class="avatar">
+                        <img src=${vendor.logo}>
+                    </figure>
+                </div>
+                <!-- Vendor's name, location, industry -->
+                <div class="tile__container tile-padded"> 
+                        <h6 class="tile__title u-no-margin">${vendor.name}</b></h6>
 
-// db.collection('vendors').orderBy('name').get().then(snap=>{
-//     console.log(snap.docs)
-//     displayVendor(snap.docs)
-// })
+                        <p class="tile__subtitle">${vendor.location}</p>
+                       
+                        <span class="info">Category: ${vendor.category}</span> 
+                </div>
+                <!-- Vendor's rating stars -->
+                <div class="tile__container u-text-right tile-padded">
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="far fa-star yellow"></span>
+                    <span class="info light-blue">5 reviews</span>
+                </div>
+            </div>            
+        </div>
+    </div>`
+        //if changes.length == 1
+        // if (size == 0){
+        //     console.log('Not found')
+        // }
+        // if(i%2==0 && i == size - 1)
+        //     html += startRow + content + endRow;
+        if(i%2==0)
+            html += startRow + content;
+        else if (i%2 ==1)
+            html += content + endRow;
+        //i++;
+    return html
+}
+
+db.collection('vendors').orderBy('name').get().then(snap=>{
+    let html = ''
+    let defaultData = snap.docChanges();
+    var i = 0       
+    defaultData.forEach(change=>{
+        html += createVendorCard(change,i)
+        i++
+    })
+    defaultList.innerHTML = html
+})
+
 
 /******LOG OUT ********/
 const logoutButton = document.getElementById('logout-button');
