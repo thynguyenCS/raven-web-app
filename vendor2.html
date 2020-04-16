@@ -30,107 +30,156 @@
 <body>
     <div class="header header-fixed unselectable header-animated">
         <!-- The web app's logo, this part will always be visibe -->
-        <div class="header-brand">
-            <div class="nav-item no-hover">
-                <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
-                <h6 class="title">Raven</h6>
-            </div>
-            <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
-            <!-- but we don't need to deal with it yet -->
-            <!-- <div class="nav-item nav-btn" id="header-btn">
-                <span>First Item</span>
-                <span>Second Item</span>
-                <span>Third Item</span>
-            </div> -->
-        </div>
-    
-        <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
-        <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
-        <div class="header-nav" id="header-menu">
-            <!-- left container, always appear to left of the navigation bar -->
-            <div class="nav-left">
-                
-                <!-- <div class="nav-item no-hover">
-                    <div class="form-group">
-                        
-                        <input class="form-group-input" type="search" placeholder="Search a vendor...">
-                        
-                    </div>
-                </div> -->
-            
-            </div>
-            <!-- right container, always appear to the right of the navigation bar -->
-            <div class="nav-right">
-                <div class="nav-item text-center">
-                    <a href="#">
-                        <span class="icon">
-                            <i class="far fa-wrapper fa-bell" aria-hidden="true"></i>
-                        </span>
-                    </a>
+        <div class="row">
+            <div class="header-brand col-2 u-no-padding">
+                <div class="nav-item no-hover">
+                    <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
+                    <h6 class="title">Raven</h6>
                 </div>
-                
-                <div class="nav-item has-sub toggle-hover" id="dropdown">
-                    <a class="nav-dropdown-link">Me</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="menu-item"><a href="#" class="link">Profile</a></li>
-                        <!-- Logout NOT WORKING YET -->
-                        <li role="menu-item"><a href="#" class="link" id="logout-button">Log out</a></li>
-                    </ul>
-                </div>     
+                <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
+                <!-- but we don't need to deal with it yet -->
+                <!-- <div class="nav-item nav-btn" id="header-btn">
+                    <span>First Item</span>
+                    <span>Second Item</span>
+                    <span>Third Item</span>
+                </div> -->
+            </div>
+        
+            <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
+            <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
+            <div class="header-nav col-10 u-no-padding" id="header-menu">
+                <!-- left container, always appear to left of the navigation bar -->
+                <div class="nav-left">
+                    <div class="nav-item no-hover">
+                        <div class="form-group">
+                            <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
+                        </div>
+                    </div>
+                    <div class="nav-item no-hover">
+                        <div class="form-group">
+                            <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <button id="search-button" class="btn-primary btn-animated btn-small btn-search" type="submit">Search</button>
+                    </div>
+                </div>
+                <!-- right container, always appear to the right of the navigation bar -->
+                <div class="nav-right">
+                    <div class="nav-item text-center">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="far fa-wrapper fa-bell" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                        <a class="nav-dropdown-link">Me</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="menu-item"><a href="#" class="link">Profile</a></li>
+                            <!-- Logout NOT WORKING YET -->
+                            <li role="menu-item"><a href="#" class="link" id="logout-button">Log out</a></li>
+                        </ul>
+                    </div>     
+                </div>
             </div>
         </div>
+        
         
     </div>
     <div class="hero fullscreen">
         <div class="hero-body u-center">
-                <space class="x-large"></space>
-                <div class="w-90" style="position:relative">
-                    <div class="row level fill-height">
-                        <!-- left frame -->
-                        <div class="col-3">
+                <!-- <space class="x-large"></space> -->
+                
+                <div class="w-100" style="position:relative">
+                    <div class="row level u-no-padding fill-height">
+                        <!-- side-bar -->
+                        <div class="col-2 side-bar">
                             <div class="frame">
-                                <div class="frame__body searchFrame">
-                                    <div class="tag-container">
-                                        <div class="tag">Windows</div>
-                                        <div class="tag">Fences</div>
-                                        <div class="tag">Walls</div>
-                                        <div class="tag">Tag4</div>
-                                        <div class="tag">Tag5</div>
-                                        <div class="tag">Tag6</div>
-                                        <div class="tag">Tag7</div>
-                                        <div class="tag">Tag8</div>
-                                        <div class="tag">Tag9</div>
-                                        
-                                    </div>
+                                <!-- search result -->
+                                <div class="frame-header">
+                                    <ul class="menu">
+                                        <p class="menu-title uppercase result"><b>2 RESULTS</b></p>
+                                    </ul>
                                 </div>
+                                <!-- featured -->
+                                <div class="frame__body">
+                                    <ul class="menu">
+                                        <h6 class="menu-title uppercase blue"><b>Featured</b></h6>
+                                        <li class="menu-item">
+                                            <a href="#">Virtual Consultations</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">Offering a Deal</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- categories -->
+                               <div class="frame__body">
+                                     <div class="tree">
+                                        <div class="tree-item">
+                                            <input type="checkbox" id="category" class="u-hide" name="categoryTree">
+                                            <label class="tree-item-header" for="category">
+                                                <div class="row level u-no-padding">
+                                                    <div class="col-11 u-no-padding">
+                                                        
+                                                        <h6 class="menu-title uppercase purple"><b>Categories</b></h6>
+                                                    </div>
+                                                    <div class="col-1 u-no-padding">
+                                                        <span class="icon">
+                                                            <i class="fa fa-chevron-right small category" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- <span class="menu-title uppercase category"><b>Categories</b></span>
+                                                <span class="icon">
+                                                    <i class="fa fa-chevron-right small category" aria-hidden="true"></i>
+                                                </span> -->
+                                            </label>
+                                            <div class="tree-item-body">
+                                                <ul class="menu">
+                                                    <li class="menu-item"><a>Category 1</a></li>
+                                                    <li class="menu-item"><a>Category 2</a></li>
+                                                    <li class="menu-item"><a>Category 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                 </div> 
+                                <space class="small"></space>
+                                
                             </div>
                             
+
+                     
                         </div>
                         <!-- display vendors -->
-                        <div class="col-8 fill-height">
-                            <!-- search bar -->
-                            <div class="row level u-no-padding">
-                                <div class="col-6 no-left-padding">
-                                    <div class="form-group">
-                                        <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
+                        <div class="col-10 vendor">
+                            <space class="medium"></space>
+                            
+                            <!-- <div class="row level"> -->
+                                <div class="offset-right">
+                                    <div class="list-dropdown w-100">
+                                        <button class="btn-transparent btn-dropdown w-100">
+                                            filtered by </span class="icon"><i class="fa fa-wrapper fa-caret-down"></i><span>
+                                        </button>
+                                        <ul class="menu">
+                                            <li class="menu-item">
+                                                <a href="#">Recommended</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#">Best Rated</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#">Most Reviewed</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-4 no-left-padding">
-                                    <div class="form-group">
-                                        <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
-                                    </div>
-                                </div>
-                                <div class="col-2 u-no-padding">
-                                    <button id="search-button" class="btn-primary btn-animated btn-search" type="submit">Search</button>
-                                </div>
+                                <!-- </div> -->
                             </div>
-                            <!-- end of search bar -->
-                            <space class="large"></space>
-                            <div class ="row result">
-                                <p>2 results for furniture found.</p>
-                            </div>
-
-                            example: vendor A
+                            <div class="w-90 u-left">
+                                <!-- example: vendor A -->
                             <div class="tile hover-grow">
                                 <div class="row">
                                     <!-- vendor pic -->
@@ -157,13 +206,8 @@
                                                 <div class="tag">Walls</div>
                                             </div>
                                     </div>
-                                    <!-- <div class="tile__container u-text-right">
-                                        <p class="tile__subtitle u-no-margin small">italianfurniture.com</p>
-                                        <p class="tile__subtitle u-no-margin small">(408) 416-1640</p>
-                                        <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
-                                    </div> -->
                                     <p class="tile__buttons u-no-margin">
-                                        <button id="view-button" class="btn-primary uppercase">View</button>
+                                        <button id="view-button" class="btn-info btn-animated uppercase">View</button>
                                     </p>
                                 </div>
                                 <div class="row">
@@ -208,15 +252,15 @@
                                         <p class="tile__subtitle u-no-margin small">San Mateo, CA</p>
                                     </div> -->
                                     <p class="tile__buttons u-no-margin">
-                                        <button id="view-button" class="btn-primary uppercase">View</button>
+                                        <button id="view-button" class="btn-info btn-animated uppercase">View</button>
                                     </p>
                                 </div>
                                 <!-- <div class="divider"></div> -->
+                            </div>    
                             </div>
+                            
                             <!-- and do the same for other vendors using javascript -->
-                            <div class ="row result">
-                                <p> results for vendors found.</p>
-                            </div>
+                            
                             <!-- DISPLAY VENDOR ONLY BEFORE CSS ANS STYLING _ THY -->
                             <div id='vendor-list'>
                                 <!-- <ul id='vendor-list'></ul> -->
