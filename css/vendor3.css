@@ -389,12 +389,16 @@ html {
     padding: 26px;
 }
 .tag .tag--delete {
-    margin-left: 0.25rem;
-    margin-right: 0.05rem;
+    margin-left: 0.5rem;
+    margin-right: 0;
+    /* margin-right: 0.05rem; */
     margin-bottom: 0;
 }
 .divider {
     opacity: 0.2;
     margin-top: 0.5rem;
     /* margin-bottom: 1rem; */
+}
+.avatar .img {
+    height: 100%;
 }
