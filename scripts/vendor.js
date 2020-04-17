@@ -71,13 +71,13 @@ function createVendorCard(change, i){
         let startRow = `<div class="row">` 
         let endRow = `</div>
         <space class="large"></space>`
-        let content = ` <div class="col-5">
+        let content = ` <div class="col-6">
         <div class="tile u-no-padding">
-            <div class="row u-no-padding">
+            <div class="row w-100 u-no-padding">
                 <!-- vendor pic -->
                 <div class="tile__icon">
                     <figure class="avatar">
-                        <img src=${vendor.logo}>
+                        <img class="h-100" src=${vendor.logo}>
                     </figure>
                 </div>
                 <!-- Vendor's name, location, industry -->
