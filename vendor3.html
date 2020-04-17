@@ -132,6 +132,19 @@
                                 <div class="tag tag--link">Category 5</div>
                             </div>
                         </div>
+                        <!-- REQUEST VENDOR -->
+                        <space class="x-large"></space>
+                        <div class="divider"></div>
+                        <div class="tree-item">
+                            <dt style="color:white;">Couldn't find a vendor?</dt>
+                            <span class="info">If the vendor you are looking for isn't here, add it!</span>
+                            <div class="btn-container" style="margin-left: 0;">
+                                <button id="add-button" class="btn-primary btn-animated btn-small btn-add" type="submit">Add a Vendor</button>
+                            </div>
+                                
+                            
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,24 +159,39 @@
                     </div>   
                 </div>
                 <div class="divider"></div>
+                <space class="medium"></space>
+                
+                <!-- This shows a message if there's no result found. -->
+                <!-- toggle using javascript -->
+                <div id="result-not-found" class="row" style="display: none;">
+                    <div class="col-12">
+                        <div class="tile u-no-padding">
+                            <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                <h6 class="tile__title u-no-margin">We cannot find what you were looking for.</b></h6>
+                                <span class="tile__subtitle">Please try a different keyword or submit a request.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VENDORS HERE -->
                 <div class="row">
                     <!-- 1 row has 2 columns, each of which contains 1 vendor -->
                       <!-- vendor A in first column-->
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="tile u-no-padding">
-                            <div class="row u-no-padding">
+                            <div class="row w-100 u-no-padding">
                                 <!-- vendor pic -->
                                 <div class="tile__icon">
                                     <figure class="avatar">
-                                        <img src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
+                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
                                     </figure>
                                 </div>
                                 <!-- Vendor's name, location, industry -->
                                 <div class="tile__container tile-padded"> 
                                         <h6 class="tile__title u-no-margin">Vendor A</b></h6>
-                
                                         <p class="tile__subtitle">San Jose, CA</p>
-                                       
                                         <span class="info">Furniture</span> 
                                 </div>
                                 <!-- Vendor's rating stars -->
@@ -183,13 +211,13 @@
                         </div>
                     </div>
                      <!-- vendor B in second column -->
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="tile u-no-padding">
-                            <div class="row u-no-padding">
+                            <div class="row w-100 u-no-padding">
                                 <!-- vendor pic -->
                                 <div class="tile__icon">
                                     <figure class="avatar">
-                                        <img src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
+                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
                                     </figure>
                                 </div>
                                   <!-- Vendor's name, location, industry -->
@@ -224,10 +252,97 @@
                 <div id='search-list'></div>                 
                 <!-- </div> -->
                 <!-- more rows here and so on.... -->
+                <space class="large"></space>
+                <!-- PAGINATION -->
+                <div class="pagination">
+                    <div class="pagination-item short">
+                        <a href="#" class="">Prev</a>
+                    </div>
+                    <div class="pagination-item short selected">
+                        <a href="#" class="">1</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#">2</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#" class="">3</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#" class="">4</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#" class="">...</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#" class="">23</a>
+                    </div>
+                    <div class="pagination-item short">
+                        <a href="#" class="">Next</a>
+                    </div>
+                </div>
+                <space class="large"></space>
             </div>
+            
         </div>
     </div>
-
+    <footer>
+        <div class="row level">
+            <div class="col-4">
+                <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
+            </div>
+            <div class="col-4">
+                <figure class="fig">
+                    <img src="img/ravenCircle.png" width="15%">
+                </figure>
+                <div class="row center">
+                    <div class="col-3 offset-left">
+                        <a href="#">
+                            EN
+                        </a>
+                    </div>
+                    <div class="col-3 offset-right">
+                        <a href="#">
+                            FR
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row fluid-container center">
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-facebook large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-twitter large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-instagram large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-vimeo large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <space class="x-large"></space> -->
+    </footer>
 
 
 

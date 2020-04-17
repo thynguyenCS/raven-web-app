@@ -8,49 +8,47 @@
 //     }else {
 //         tileExpand.style.display="none";
 //         tileExpand.classList.toggle("expanded");
-//     }
-    
+//     }    
 // })
 
 const defaultList = document.getElementById('default-list')
 const searchList = document.getElementById('search-list')
-/******SEARCH VENDOR BY NAME*************/
 const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
-var foundVendorsHtml = '';  
 
+/******Functions to help SEARCH VENDOR *************/
 function findVendor(name, loc, changes){ 
-    var foundVendors = [] 
     let html = ''
-    console.log(isSearch)
     var i, j=0;
     for(i = 0; i < changes.length; i++){
         if (name && !loc){
-            //console.log('name only')
             if(changes[i].doc.data().name == name){
                 html += createVendorCard(changes[i], j)
+                j++
             }
         }
         else if (name && loc){
-            console.log('name and loc');
-            
+            if(changes[i].doc.data().name == name && changes[i].doc.data().location == loc){
+                html += createVendorCard(changes[i], j)
+                j++         
+            }
         } 
         else if (!name && loc){
-            //console.log('loc only')
-            //.toLowerCase
+            console.log('location only');
             if(changes[i].doc.data().location == loc){
                 html += createVendorCard(changes[i], j)
+                j++
             }
         } 
     }
     if(j%2==1){
-        console.log('j is 1')
+        console.log('There are odd number of founds')
         html += `</div><space class="large"></space>`
+    }
+    return html
 }
-   return html
-}
-
+// Listener for Search Button
 searchButton.addEventListener('click', (e)=>{
     e.preventDefault();
     name = inputName.value;
@@ -142,4 +140,3 @@ logoutButton.addEventListener('click', (e) => {
     // }, 2000);
     window.location.href = "index2.html";
 });
-

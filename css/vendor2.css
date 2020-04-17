@@ -336,3 +336,6 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .tree-nav {
     color: white;
 }
+.clear-opacity{
+    opacity: 1;
+}
