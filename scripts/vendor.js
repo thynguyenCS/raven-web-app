@@ -37,7 +37,11 @@ function findVendor(name, loc, changes){
         
     } 
     else if (!name && loc){
-        console.log('location only');
+        //console.log('loc only')
+        //.toLowerCase
+        if(changes[i].doc.data().location == loc){
+            html += createVendorCard(changes[i], j)
+        }
    } 
 }
     if(j%2==1){
