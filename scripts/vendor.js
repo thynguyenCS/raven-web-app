@@ -26,24 +26,24 @@ function findVendor(name, loc, changes){
     console.log(isSearch)
     var i, j=0;
     for(i = 0; i < changes.length; i++){
-    if (name && !loc){
-        //console.log('name only')
-        if(changes[i].doc.data().name == name){
-            html += createVendorCard(changes[i], j)
+        if (name && !loc){
+            //console.log('name only')
+            if(changes[i].doc.data().name == name){
+                html += createVendorCard(changes[i], j)
+            }
         }
+        else if (name && loc){
+            console.log('name and loc');
+            
+        } 
+        else if (!name && loc){
+            //console.log('loc only')
+            //.toLowerCase
+            if(changes[i].doc.data().location == loc){
+                html += createVendorCard(changes[i], j)
+            }
+        } 
     }
-    else if (name && loc){
-        console.log('name and loc');
-        
-    } 
-    else if (!name && loc){
-        //console.log('loc only')
-        //.toLowerCase
-        if(changes[i].doc.data().location == loc){
-            html += createVendorCard(changes[i], j)
-        }
-   } 
-}
     if(j%2==1){
         console.log('j is 1')
         html += `</div><space class="large"></space>`
