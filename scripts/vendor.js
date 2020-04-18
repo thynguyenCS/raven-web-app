@@ -73,7 +73,7 @@ function createVendorCard(change, i){
         let startRow = `<div class="row">` 
         let endRow = `</div>
         <space class="large"></space>`
-        let content = ` <div class="col-5">
+        let content = ` <div class="col-6">
         <div class="tile u-no-padding">
             <div class="row u-no-padding">
                 <!-- vendor pic -->
