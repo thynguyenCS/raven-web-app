@@ -176,25 +176,23 @@
                 </div>
                 
                 <!-- VENDORS HERE -->
-                <div class="row">
-                    <!-- 1 row has 2 columns, each of which contains 1 vendor -->
-                      <!-- vendor A in first column-->
+                <!--- <div class="row">
+                   
                     <div class="col-6">
                         <div class="tile u-no-padding">
                             <div class="row w-100 u-no-padding">
-                                <!-- vendor pic -->
                                 <div class="tile__icon">
                                     <figure class="avatar">
                                         <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
                                     </figure>
                                 </div>
-                                <!-- Vendor's name, location, industry -->
+                             
                                 <div class="tile__container tile-padded"> 
                                         <h6 class="tile__title u-no-margin">Vendor A</b></h6>
                                         <p class="tile__subtitle">San Jose, CA</p>
                                         <span class="info">Furniture</span> 
                                 </div>
-                                <!-- Vendor's rating stars -->
+                               
                                 <div class="tile__container u-text-right tile-padded">
                                     <span class="fa fa-star checked yellow"></span>
                                     <span class="fa fa-star checked yellow"></span>
@@ -203,60 +201,21 @@
                                     <span class="far fa-star yellow"></span>
                                     <span class="info light-blue">5 reviews</span>
                                 </div>
-                                <!-- <p class="tile__buttons u-no-margin">
-                                    <button id="view-button" class="btn-info btn-animated uppercase">View</button>
-                                </p> -->
+                               
                             </div>
                             
                         </div>
-                    </div>
-                     <!-- vendor B in second column -->
-                    <div class="col-6">
-                        <div class="tile u-no-padding">
-                            <div class="row w-100 u-no-padding">
-                                <!-- vendor pic -->
-                                <div class="tile__icon">
-                                    <figure class="avatar">
-                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
-                                    </figure>
-                                </div>
-                                  <!-- Vendor's name, location, industry -->
-                                <div class="tile__container tile-padded"> 
-                                        <h6 class="tile__title u-no-margin">Vendor B</b></h6>
-                
-                                        <p class="tile__subtitle">San Jose, CA</p>
-                                       
-                                        <span class="info">Furniture</span> 
-                                </div>
-                                <!-- Vendor's rating stars -->
-                                <div class="tile__container u-text-right tile-padded">
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="far fa-star yellow"></span>
-                                    <span class="info light-blue">5 reviews</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>                
-                </div>
-                <!-- a space between rows of vendors -->
-                <space class="large"></space> 
-                <!-- <div class="row"> -->
-                    <!-- another 2 vendors in this row -->            
-                <!-- </div> -->
-                <!--  -->
+                    </div> 
+                    
+                </div> -->
                 <div id='default-list'></div>  
                 <div id='search-list'></div>                 
-                <!-- </div> -->
-                <!-- more rows here and so on.... -->
-                <space class="large"></space>
+                
+                <!-- <space class="large"></space> -->
                 <!-- PAGINATION -->
                 <div class="pagination">
                     <div class="pagination-item short">
-                        <a href="#" class="">Prev</a>
+                        <a id="prev-button" href="javascript:prevPage()" class="">Prev</a>
                     </div>
                     <div class="pagination-item short selected">
                         <a href="#" class="">1</a>
@@ -277,7 +236,7 @@
                         <a href="#" class="">23</a>
                     </div>
                     <div class="pagination-item short">
-                        <a href="#" class="">Next</a>
+                        <a id="next-button" href="javascript:nextPage()" class="">Next</a>
                     </div>
                 </div>
                 <space class="large"></space>
@@ -391,5 +350,6 @@
   <!-- <script src="scripts/login.js"></script> -->
   <script src="scripts/vendor.js"></script>
   <script src="scripts/alert.js"></script>
+  <script src="scripts/pagination.js"></script>
 </body>
 </html>
