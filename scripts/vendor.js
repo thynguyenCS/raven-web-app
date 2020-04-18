@@ -169,4 +169,3 @@ logoutButton.addEventListener('click', (e) => {
     // }, 2000);
     window.location.href = "index2.html";
 });
-
