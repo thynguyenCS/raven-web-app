@@ -67,7 +67,6 @@ searchButton.addEventListener('click', (e)=>{
     })
  
 /******DISPLAY VENDOR *******/
-<<<<<<< HEAD
 function createVendorCard(change, i){
     let html = '';  
         const vendor = change.doc.data()
@@ -86,7 +85,6 @@ function createVendorCard(change, i){
                 <!-- Vendor's name, location, industry -->
                 <div class="tile__container tile-padded"> 
                         <h6 class="tile__title u-no-margin">${vendor.name}</b></h6>
-=======
 // THIS PART IS MOVED TO PAGINATION.JS
 // function createVendorCard(change, i){
 //     let html = '';  
@@ -106,7 +104,6 @@ function createVendorCard(change, i){
 //                 <!-- Vendor's name, location, industry -->
 //                 <div class="tile__container tile-padded"> 
 //                         <h6 class="tile__title u-no-margin">${vendor.name}</b></h6>
->>>>>>> 1ef1ef4c74d581a8b2bbfb02b7156f2a93aaade5
 
 //                         <p class="tile__subtitle">${vendor.location}</p>
                        
