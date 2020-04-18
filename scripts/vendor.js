@@ -67,24 +67,6 @@ searchButton.addEventListener('click', (e)=>{
     })
  
 /******DISPLAY VENDOR *******/
-function createVendorCard(change, i){
-    let html = '';  
-        const vendor = change.doc.data()
-        let startRow = `<div class="row">` 
-        let endRow = `</div>
-        <space class="large"></space>`
-        let content = ` <div class="col-6">
-        <div class="tile u-no-padding">
-            <div class="row u-no-padding">
-                <!-- vendor pic -->
-                <div class="tile__icon">
-                    <figure class="avatar">
-                        <img src=${vendor.logo}>
-                    </figure>
-                </div>
-                <!-- Vendor's name, location, industry -->
-                <div class="tile__container tile-padded"> 
-                        <h6 class="tile__title u-no-margin">${vendor.name}</b></h6>
 // THIS PART IS MOVED TO PAGINATION.JS
 // function createVendorCard(change, i){
 //     let html = '';  
