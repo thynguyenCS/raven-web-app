@@ -17,6 +17,31 @@ const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
 
+function addTag(tag, color){
+    var tagContainer = document.getElementById("tag-filter");
+    sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();
+
+    var allTags = tagContainer.getElementsByClassName("tag");
+    for(var i = 0; i < allTags.length; i++){
+        if (allTags[i].classList.contains('animated','bounce')){
+        allTags[i].classList.remove('animated','bounce');}
+    }
+
+    let tagType = "";
+    if (!tagContainer.contains(document.getElementById(sanitizedTag))){
+        if (color =="blue") tagType = 'class="tag tag--info animated fadeIn"';
+        else if(color =="purple") tagType = 'class="tag tag--link animated fadeIn"';
+        else if(color == "yellow") tagType = 'class="tag tag--warning animated fadeIn"';
+        else if(color =="red") tagType = 'class="tag tag--primary animated fadeIn"';
+        tagContainer.innerHTML += `<div id="${sanitizedTag}"` + tagType +`>${tag}
+                        <a class="tag tag--delete animated" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
+    }
+}
+function deleteTag(tag){
+    var tag = document.getElementById(tag);
+    tag.parentNode.removeChild(tag);
+}
+
 /******Functions to help SEARCH VENDOR *************/
 function findVendor(name, loc, changes){ 
     let html = ''
@@ -53,6 +78,8 @@ searchButton.addEventListener('click', (e)=>{
     e.preventDefault();
     name = inputName.value;
     loc = inputLoc.value;
+    if (name.length > 0) addTag(name,'red');
+    if (loc.length < 0) addTag(loc,'red');
     isSearch = true;
     let html = ''
     db.collection('vendors').orderBy('name').get().then(snap=>{
@@ -68,6 +95,7 @@ searchButton.addEventListener('click', (e)=>{
  
 /******DISPLAY VENDOR *******/
 // THIS PART IS MOVED TO PAGINATION.JS
+
 // function createVendorCard(change, i){
 //     let html = '';  
 //         const vendor = change.doc.data()

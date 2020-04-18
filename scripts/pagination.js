@@ -1,6 +1,8 @@
 var current_page = 1;
 var records_per_page = 10;
 var records_per_row = 2;
+var vendors = [];
+
 class Vendor {
     constructor(name, location, category, logo, rating){
         this.name = name;
@@ -27,52 +29,26 @@ vendorConverter = {
         return new Vendor(data.name, data.location, data.category, data.logo, data.rating);
     }
 }
-
+// this function is triggered in vendor3.html
 function prevPage(){
-    if (vendors.length > 0) {
-        if (current_page > 1){
-            current_page--;
-            changePage(current_page);
-        }
-    } else {
-        setTimeout(arguments.callee, 50);
+    if (current_page > 1){
+        current_page--;
+        changePage(current_page);
     }
-    
 }
+// this function is triggered in vendor3.html
 function nextPage(){
-    console.log(vendors);
-    if (vendors.length ==0 ){
-        window.setTimeout(nextPage,100);
-    }
-    else{
-        if (current_page < numPages()){
-            current_page++;
-            changePage(current_page);
-        }
+    if (current_page < numPages()){
+        current_page++;
+        changePage(current_page);
     }
 
 }
-var vendors = [];
 function numPages(){
     return Math.ceil(vendors.length / records_per_page);
 }
 
-
-db.collection("vendors")
-    .withConverter(vendorConverter)
-    .orderBy('name').get().then(function(querySnapshot) {
-        
-        querySnapshot.forEach(function(doc){
-            vendor = doc.data();
-            // console.log(doc.data());
-            vendors.push(vendor);
-            // vendors.push(new Vendor(doc.name, doc.location, doc.category, doc.logo, doc.rating));
-        });
-        console.log(vendors.length);
-    }).catch(function(error){
-        console.log("Error getting documents: ", error);
-    });
-
+// retrieve vendors from firebase and push them into an array
 function getVendors() {
     const fbVendors = [];
     return new Promise((resolve, reject) => {
@@ -109,7 +85,7 @@ function changePage(page){
         let vendorCard =""; 
         if (vendors[i]){
             vendorCard = 
-                        `<div class="col-6">
+                        `<div class="col-6" style="padding:16px;">
                             <div class="tile u-no-padding">
                                 <div class="row w-100 u-no-padding">
                                     <div class="tile__icon">
@@ -131,26 +107,20 @@ function changePage(page){
                                         <span class="far fa-star yellow"></span>
                                         <span class="info light-blue">5 reviews</span>
                                     </div>
-                                    
-                                </div>
-                                
+                                </div>                                
                             </div>
                         </div>`;
-        }
-        
+        }       
         if ((i % 2) == 0){
-            html += '<div class="row">' + vendorCard;
-           
+            html += '<div class="row u-no-padding">' + vendorCard;       
         }
         if( (i % 2) > 0){
-            html += vendorCard +'</div><space class="large"></space>';
+            html += vendorCard +'</div>';
         }
-
     }
     listing_table.innerHTML += html;
-    
 }
-
+// display vendors as soon as page loads
 window.onload = function() {
     getVendors()
     .then( fbVendors => { 

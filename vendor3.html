@@ -61,7 +61,7 @@
                             <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
                         </div>
                     </div>
-                    <div class="nav-item">
+                    <div class="nav-item no-hover">
                         <button id="search-button" class="btn-primary btn-animated btn-small btn-search" type="submit">Search</button>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     </div>
                     
                     <div class="nav-item has-sub toggle-hover" id="dropdown">
-                        <a class="nav-dropdown-link">Me</a>
+                        <a class="nav-dropdown-link"><span class="icon"><i class="far fa-user"></i></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="menu-item"><a href="#" class="link">Profile</a></li>
                             <!-- Logout NOT WORKING YET -->
@@ -102,9 +102,15 @@
              <!-- MAIN SIDEBAR -->
             <div class="tree-nav" id="sidebar" style="background: #1e1f26;">
                 <!-- Display number of results -->
-                <div class="content">
-                    <dt class="yellow">2 Results.</dt>
+                <div class="content no-bottom-margin">
+                    <dt class="yellow">Explore</dt>
+                    <div class="tag-container">
+                        <a class="tag tag--warning" href="javascript:addTag('Recommended','yellow')">Recommended</a>
+                        <a class="tag tag--warning" href="javascript:addTag('Best Rated','yellow')">Best Rated</a>
+                        <a class="tag tag--warning" href="javascript:addTag('Most Reviewed','yellow')">Most Reviewed</a>
+                    </div>
                 </div>
+                <space class="small"></space>
                 <!-- MAIN CONTENT OF SIDEBAR -->
                 <div class="tree-nav-container">
                     <div class="tree">
@@ -113,27 +119,25 @@
                             <dt class="blue">Featured</dt>
                                 <!-- TAGS -->
                                 <div class="tag-container">
-                                    <div class="tag tag--info">Virtual Consultation
-                                    </div>
-                                    <div class="tag tag--info">Offering a Deal</div>
-                                    
+                                    <a class="tag tag--info" href="javascript:addTag('Virtual Consultation','blue')">Virtual Consultation</a>
+                                    <a class="tag tag--info" href="javascript:addTag('Offering a Deal','blue')">Offering a Deal</a>
                                 </div>
                             </ul>
                         </div>
+                        <space class="small"></space>
                         <!-- CATEGORIES -->
                         <div class="tree-item" >
                             <dt class="purple">Categories</dt>
                             <div class="tag-container">
-                                <div class="tag tag--link">Category 1
-                                </div>
-                                <div class="tag tag--link">Category 2</div>
-                                <div class="tag tag--link">Category 3</div>
-                                <div class="tag tag--link">Category 4</div>
-                                <div class="tag tag--link">Category 5</div>
+                                <a class="tag tag--link" href="javascript:addTag('Category 1','purple')">Category 1</a>
+                                <a class="tag tag--link" href="javascript:addTag('Category 2','purple')">Category 2</a>
+                                <a class="tag tag--link" href="javascript:addTag('Category 3','purple')">Category 3</a>
+                                <a class="tag tag--link" href="javascript:addTag('Category 4','purple')">Category 4</a>
+                                <a class="tag tag--link" href="javascript:addTag('Category 5','purple')">Category 5</a>
                             </div>
                         </div>
                         <!-- REQUEST VENDOR -->
-                        <space class="x-large"></space>
+                        <!-- <space class="large"></space> -->
                         <div class="divider"></div>
                         <div class="tree-item">
                             <dt style="color:white;">Couldn't find a vendor?</dt>
@@ -151,14 +155,9 @@
             <!-- MAIN CONTENT (VENDORS) -->
             <div class="tree-nav-content">
                 <space class="x-large"></space>
-                <!-- TAGS -->
-                <div class="tag-container u-no-margin">
-                    <div class="tag tag--link">
-                        Category 1
-                        <div class="tag tag--delete"></div>
-                    </div>   
-                </div>
-                <div class="divider"></div>
+                <h6 class="yellow padded-16" >2 results.</h6>
+                <space class="medium"></space>
+                <div id="tag-filter" class="tag-container u-no-margin padded-16"> </div>
                 <space class="medium"></space>
                 
                 <!-- This shows a message if there's no result found. -->
@@ -250,8 +249,8 @@
                 <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
             </div>
             <div class="col-4">
-                <figure class="fig">
-                    <img src="img/ravenCircle.png" width="15%">
+                <figure class="fig ">
+                    <img class="hover-grow" src="img/ravenCircle.png" width="15%">
                 </figure>
                 <div class="row center">
                     <div class="col-3 offset-left">
