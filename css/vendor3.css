@@ -2,7 +2,9 @@ body {
     /* background-color: #363b45; */
     /* background-color:#363b45; */
     /* background-color: #1e1f26; */
+    height: 100%;
     background-color: #000;
+    overflow-y: visible;
     /* overflow-y: scroll; */
 }
 .header {
@@ -119,7 +121,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
       /* background-color: #3e434e; */
       /* background-color: #484f5b; */
       padding: 26px;
-      border-radius: 5px;
+      border-radius: 10px;
       /* box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
       0 0  0 1px rgba(0,0,0,0.1),
       0.1em 0.1em 0.5em rgba(0,0,0,0.1); */
@@ -197,13 +199,14 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     vertical-align: top;
 }
 .tile:hover {
+    cursor: pointer;
     background-color: #4b535e83;
-    transition: .3s;
+    transition: .3s ease-in;
     box-shadow: 0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
 }
 
 .row {
-    overflow:hidden;
+    /* overflow:hidden; */
     max-width: 100%;
 }
 .tile .small {
@@ -436,6 +439,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 
 .tree-nav +.tree-nav-content{
     overflow-x: hidden;
+    overflow-y: visible;
     /* overflow: hidden; */
     width: 80%;
     /* width: auto; */
@@ -468,6 +472,49 @@ a.tag:hover{
 .animated {
     animation-duration: 0.5s;
 }
-.between {
-    width: 15;
+.card {
+    /* position: absolute; */
+    border-radius: 10px;
+    background-color:  #1e1f26;
+    width: 100%;
+    /* height: 69%; */
+    transition: all 0.5s;
+    /* top: 0; */
+    /* height: 39%; */
+}
+.h-699 {
+    height: 699px;
+}
+.card-container {
+    min-height: 129px;
+    height: 147px;
+    box-shadow:0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
+}
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 21;
+}
+/* .card-height {
+    height: 39%;
+    max-height: 39%;
+} */
+.card-image {
+    /* background-color: #2f353b; */
+    background-image: url('https://www.jakpost.travel/wimages/large/84-847133_wide-dark-background-hd.jpg');
+}
+.btn-save, .btn-learn {
+    background-color: #2f353b;
+    color: white;
+}
+.card .action-bar {
+    border-top: none;
+}
+.action-bar {
+    height: 99px;
+}
+.card.close {
+    top: 100%;
+    /* height: 0; */
+    /* display: block; */
 }

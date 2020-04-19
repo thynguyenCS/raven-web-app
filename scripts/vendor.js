@@ -17,6 +17,8 @@ const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
 
+
+
 function addTag(tag, color){
     var tagContainer = document.getElementById("tag-filter");
     sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();

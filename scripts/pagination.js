@@ -1,6 +1,6 @@
 var current_page = 1;
 var records_per_page = 10;
-var records_per_row = 2;
+// var records_per_row = 2;
 var vendors = [];
 
 class Vendor {
@@ -80,45 +80,46 @@ function changePage(page){
     if (page > numPages()) page = numPages();
     console.log(current_page);
     listing_table.innerHTML = "";
-    let html ="";
+    let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
-        let vendorCard =""; 
+        console.log(i);
+        // let vendorCard =""; 
         if (vendors[i]){
-            vendorCard = 
-                        `<div class="col-6" style="padding:16px;">
-                            <div class="tile u-no-padding">
-                                <div class="row w-100 u-no-padding">
-                                    <div class="tile__icon">
-                                        <figure class="avatar">
-                                            <img class="h-100" src=${vendors[i].logo}>
-                                        </figure>
-                                    </div>
-                                    <div class="tile__container tile-padded"> 
-                                            <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
-                                            <p class="tile__subtitle">${vendors[i].location}</p>
-                                            <span class="info">${vendors[i].category}</span> 
-                                    </div>
-                                    
-                                    <div class="tile__container u-text-right tile-padded">
-                                        <span class="fa fa-star checked yellow"></span>
-                                        <span class="fa fa-star checked yellow"></span>
-                                        <span class="fa fa-star checked yellow"></span>
-                                        <span class="fa fa-star checked yellow"></span>
-                                        <span class="far fa-star yellow"></span>
-                                        <span class="info light-blue">5 reviews</span>
-                                    </div>
-                                </div>                                
+            html =  `
+                    <div class="tile u-no-padding">
+                        <div class="row w-100 u-no-padding">
+                            <div class="tile__icon">
+                                <figure class="avatar">
+                                    <img class="h-100" src=${vendors[i].logo}>
+                                </figure>
                             </div>
-                        </div>`;
+                            <div class="tile__container tile-padded"> 
+                                    <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
+                                    <p class="tile__subtitle">${vendors[i].location}</p>
+                                    <span class="info">${vendors[i].category}</span> 
+                            </div>
+                            
+                            <div class="tile__container u-text-right tile-padded">
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="far fa-star yellow"></span>
+                                <span class="info light-blue">5 reviews</span>
+                            </div>
+                        </div>                                
+                    </div>
+                    <space class="large"></space>`;
         }       
-        if ((i % 2) == 0){
-            html += '<div class="row u-no-padding">' + vendorCard;       
-        }
-        if( (i % 2) > 0){
-            html += vendorCard +'</div>';
-        }
+        // if ((i % 2) == 0){
+        //     html += '<div class="row u-no-padding">' + vendorCard;       
+        // }
+        // if( (i % 2) > 0){
+        //     html += vendorCard +'</div>';
+        // }
+        listing_table.innerHTML += html;
     }
-    listing_table.innerHTML += html;
+    
 }
 // display vendors as soon as page loads
 window.onload = function() {
@@ -126,5 +127,15 @@ window.onload = function() {
     .then( fbVendors => { 
        vendors = fbVendors;
        changePage(1);
-    })
+       let tiles = document.querySelectorAll('.tile');
+
+    // doesnt work
+        for (var k = 0; k < tiles.length; k++){
+            tiles[k].addEventListener('click', function() {
+                console.log('click');
+                var card = document.querySelector('.card');
+                card.classList.toggle('close');
+            });    
+        }
+        })
 };
