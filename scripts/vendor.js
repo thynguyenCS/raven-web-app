@@ -77,22 +77,32 @@ function findVendor(name, loc, changes){
 }
 // Listener for Search Button
 searchButton.addEventListener('click', (e)=>{
-    e.preventDefault();
-    name = inputName.value;
-    loc = inputLoc.value;
-    if (name.length > 0) addTag(name,'red');
-    if (loc.length < 0) addTag(loc,'red');
-    isSearch = true;
-    let html = ''
-    db.collection('vendors').orderBy('name').get().then(snap=>{
-        let changes = snap.docChanges()
-        html += findVendor(name, loc, changes)        
-        defaultList.innerHTML = ''
-        searchList.innerHTML = html
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+            e.preventDefault();
+            name = inputName.value;
+            loc = inputLoc.value;
+            if (name.length > 0) addTag(name,'red');
+            if (loc.length < 0) addTag(loc,'red');
+            isSearch = true;
+            let html = ''
+            db.collection('vendors').orderBy('name').get().then(snap=>{
+                let changes = snap.docChanges()
+                html += findVendor(name, loc, changes)        
+                defaultList.innerHTML = ''
+                searchList.innerHTML = html
 
-    })  
-    document.getElementById("search-vendor").value =""
-    document.getElementById("search-loc").value = "" 
+            })  
+            document.getElementById("search-vendor").value =""
+            document.getElementById("search-loc").value = "" 
+        } else {
+          // No user is signed in.
+          e.preventDefault();
+          window.location.href = "index2.html";
+        }
+      });
+    
     })
  
 /******DISPLAY VENDOR *******/
