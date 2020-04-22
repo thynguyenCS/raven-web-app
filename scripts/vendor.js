@@ -187,4 +187,3 @@ addVendor.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = "addVendor.html";
 });
-// add-button
