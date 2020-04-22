@@ -181,3 +181,10 @@ logoutButton.addEventListener('click', (e) => {
     // }, 2000);
     window.location.href = "index2.html";
 });
+/******ADD VENDOR ********/
+const addVendor = document.getElementById('add-button');
+addVendor.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "index2.html";
+});
+// add-button
