@@ -198,13 +198,13 @@ const profileButton = document.getElementById("profile");
 const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-// profileButton.onclick = function() {
-//     modal.style.display = "block";
-// }
-profileButton.addEventListener('click', (e) => {
-    e.preventDefault();
+profileButton.onclick = function() {
     modal.style.display = "block";
-});
+}
+// profileButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     modal.style.display = "block";
+// });
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
