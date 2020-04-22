@@ -185,6 +185,6 @@ logoutButton.addEventListener('click', (e) => {
 const addVendor = document.getElementById('add-button');
 addVendor.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = "index2.html";
+    window.location.href = "addVendor.html";
 });
 // add-button
