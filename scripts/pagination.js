@@ -1,8 +1,8 @@
 var current_page = 1;
 var records_per_page = 10;
-// var records_per_row = 2;
 var vendors = [];
-
+//var tiles = []
+var pagingItems = document.getElementsByClassName('paging-items')
 class Vendor {
     constructor(name, location, category, logo, rating){
         this.name = name;
@@ -44,9 +44,26 @@ function nextPage(){
     }
 
 }
+function currentPage(){
+    return current_page;
+}
 function numPages(){
     return Math.ceil(vendors.length / records_per_page);
 }
+
+// display all the pages number - does not work
+function displayPages(){    
+    //console.log(pagingItems)
+    let pagesHTML = ''
+    for(var counter = 1; counter <= numPages(); counter++){
+        pagesHTML += `<div class="pagination-item short">
+            <a href="#">${counter}</a></div>`
+    }    
+    console.log(pagesHTML)
+    pagingItems.innerHTML += pagesHTML
+    
+}
+
 
 // retrieve vendors from firebase and push them into an array
 function getVendors() {
@@ -60,8 +77,7 @@ function getVendors() {
             querySnapshot.forEach(function (doc) {
             vendor = doc.data();
             fbVendors.push(vendor);
-            });
-    
+            });    
             resolve(fbVendors);
         })
         .catch(function (error) {
@@ -74,19 +90,18 @@ function changePage(page){
     var btn_next = document.getElementById('next-button');
     var btn_prev = document.getElementById('prev-button');
     var listing_table = document.getElementById('default-list');
+    //displayPages()
    
     //validate page
     if (page < 1) page=1;
     if (page > numPages()) page = numPages();
-    console.log(current_page);
+    //console.log('current page ' + current_page);
     listing_table.innerHTML = "";
     let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
-        console.log(i);
-        // let vendorCard =""; 
+        //console.log(i)
         if (vendors[i]){
-            html =  `
-                    <div class="tile u-no-padding">
+            html =  `<div class="tile u-no-padding">
                         <div class="row w-100 u-no-padding">
                             <div class="tile__icon">
                                 <figure class="avatar">
@@ -109,33 +124,70 @@ function changePage(page){
                             </div>
                         </div>                                
                     </div>
-                    <space class="large"></space>`;
-        }       
-        // if ((i % 2) == 0){
-        //     html += '<div class="row u-no-padding">' + vendorCard;       
-        // }
-        // if( (i % 2) > 0){
-        //     html += vendorCard +'</div>';
-        // }
+                    <space class="large"></space>`;        
+        }
         listing_table.innerHTML += html;
+
+        if(page == numPages() && (i+1 == vendors.length))
+        {
+            break;
+        }
+        //add the event listener for each tiles in the page
+        // let tiles = document.querySelectorAll('.tile');
+        // // console.log(tiles)
+        // tiles[i].addEventListener('click', function() {
+        //     console.log('click');
+        //     var card = document.querySelector('.card');
+        //     card.style.visibility = 'visible'
+        //     card.innerHTML = displayVendorCard(vendors[i])
+        //     card.classList.toggle('close');
+        // });    
+
     }
     
 }
+function displayVendorCard(vendor){
+    return `<div class="card-container h-20">
+                <div class="card-image"></div>
+                <div class="title-container">        
+                <p class="title">${vendor.name}</p>
+                <span class="subtitle">San Jose, CA</span>
+            </div>
+            </div>
+            <div class="content" style="margin-left: 3rem;">
+                 <p>${vendor.name}</p>
+                 <p>${vendor.location}</p>
+                 <p>${vendor.rating}</p>
+            </div>
+            <div class="action-bar u-center">
+            <button class="btn btn-save">SAVE</button>
+            <button class="btn btn-learn">LEARN MORE</button>
+</div>`
+}
+          
 // display vendors as soon as page loads
 window.onload = function() {
+    
     getVendors()
-    .then( fbVendors => { 
-       vendors = fbVendors;
+    .then( fbVendors => {
+        if(!isSearch){
+            vendors = fbVendors;
+        }
+
        changePage(1);
        let tiles = document.querySelectorAll('.tile');
+       console.log(tiles)
+       //displayPages()
 
     // doesnt work
         for (var k = 0; k < tiles.length; k++){
             tiles[k].addEventListener('click', function() {
                 console.log('click');
                 var card = document.querySelector('.card');
+                card.innerHTML = displayVendorCard(vendors[k])
                 card.classList.toggle('close');
             });    
         }
-        })
+         })
 };
+ 

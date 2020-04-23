@@ -481,6 +481,7 @@ a.tag:hover{
     transition: all 0.5s;
     /* top: 0; */
     /* height: 39%; */
+    /* visibility: hidden; */
 }
 .h-699 {
     height: 699px;

@@ -4,10 +4,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <!-- <meta charset="UTF-8"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
-    <!-- <link href="../../res/cirrus.min.css" type="text/css" rel="stylesheet" />
-    <link href="../../res/app.css" type="text/css" rel="stylesheet" /> -->
     <link href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.5.4/dist/cirrus.min.css" rel="stylesheet">
     <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
@@ -180,7 +177,7 @@
             <!-- MAIN CONTENT (VENDORS) -->
             <div class="tree-nav-content">
                 <space class="x-large"></space>
-                <h6 class="yellow padded-16" >2 results.</h6>
+                <h6 class="yellow padded-16" id='num_founds'></h6>
                 <space class="medium"></space>
                 <div id="tag-filter" class="tag-container u-no-margin padded-16"> </div>
                 <space class="medium"></space>
@@ -198,70 +195,15 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- VENDORS HERE -->
-                 <div class="row u-no-padding">
-                   
-                    <div id="default-list" class="col-6" style="padding: 16px;">
-
-                        <!-- <div id="tile-test" class="tile u-no-padding">
-                            <div class="row w-100 u-no-padding">
-                                <div class="tile__icon">
-                                    <figure class="avatar">
-                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
-                                    </figure>
-                                </div>
-                             
-                                <div class="tile__container tile-padded"> 
-                                        <h6 class="tile__title u-no-margin">Vendor A</b></h6>
-                                        <p class="tile__subtitle">San Jose, CA</p>
-                                        <span class="info">Furniture</span> 
-                                </div>
-                               
-                                <div class="tile__container u-text-right tile-padded">
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="far fa-star yellow"></span>
-                                    <span class="info light-blue">5 reviews</span>
-                                </div>
-                               
-                            </div>
-                            
-                        </div>
-                        <space class="large"></space>
-                        <div class="tile u-no-padding">
-                            <div class="row w-100 u-no-padding">
-                                <div class="tile__icon">
-                                    <figure class="avatar">
-                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
-                                    </figure>
-                                </div>
-                             
-                                <div class="tile__container tile-padded"> 
-                                        <h6 class="tile__title u-no-margin">Vendor A</b></h6>
-                                        <p class="tile__subtitle">San Jose, CA</p>
-                                        <span class="info">Furniture</span> 
-                                </div>
-                               
-                                <div class="tile__container u-text-right tile-padded">
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="far fa-star yellow"></span>
-                                    <span class="info light-blue">5 reviews</span>
-                                </div>
-                               
-                            </div>
-                            
-                        </div>
-                         -->
+                <div class="row u-no-padding">      
+                    <div id="default-list" class="col-6" style="padding: 16px;">   
+                       <!-- List of vendors is displayed here, even default or found  -->
                     </div>
+                    <!-- View of one vendor when click on it -->
                     <div class="col-6" style="padding: 16 16 48 16px;">
                         <div class="card close u-flex u-flex-column h-699 u-no-margin sticky">
-                            <div class="card-container h-20">
+                            <!-- <div class="card-container h-20">
                                 <div class="card-image"></div>
                                 <div class="title-container">
                                     
@@ -275,25 +217,20 @@
                             <div class="action-bar u-center">
                                 <button class="btn btn-save">SAVE</button>
                                 <button class="btn btn-learn">LEARN MORE</button>
-                            </div>
-                            
+                            </div>                             -->
                         </div>
                         <space class="medium"></space>
     
                     </div> 
                 </div>
                 
-                <!-- <div id='default-list'></div>   -->
-                <div id='search-list'></div>                 
-                
-                <!-- <space class="large"></space> -->
                 <!-- PAGINATION -->
                 <div class="pagination">
                     <div class="pagination-item short">
                         <a id="prev-button" href="javascript:prevPage()" class="">Prev</a>
                     </div>
-                    <div class="pagination-item short selected">
-                        <a href="#" class="">1</a>
+                    <div class="pagination-item short">
+                        <a href="#"class="">1</a>
                     </div>
                     <div class="pagination-item short">
                         <a href="#">2</a>
@@ -310,7 +247,7 @@
                     <div class="pagination-item short">
                         <a href="#" class="">23</a>
                     </div>
-                    <div class="pagination-item short">
+                    <div class="pagination-item short next">
                         <a id="next-button" href="javascript:nextPage()" class="">Next</a>
                     </div>
                 </div>
@@ -373,13 +310,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- <space class="x-large"></space> -->
+        </div>        
     </footer>
-
-
-
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
@@ -419,12 +351,8 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
   <script src="https://use.fontawesome.com/a696b91557.js"></script>
-  <!-- <script src="scripts/auth.js"></script> -->
-  <!-- <script src="scripts/index.js"></script> -->
-  <!-- <script src="scripts/validate.js"></script> -->
-  <!-- <script src="scripts/login.js"></script> -->
-  <script src="scripts/vendor.js"></script>
   <script src="scripts/alert.js"></script>
   <script src="scripts/pagination.js"></script>
+  <script src="scripts/vendor.js"></script>
 </body>
 </html>
