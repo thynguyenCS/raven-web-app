@@ -154,19 +154,16 @@ function display3Categories(categories){
 }
 // display vendor's name, location, ratings, reviews, hours, and tags on vendor card
 function displayVendorCard(vendor){
+    var ratings = displayRatings(vendor.rating);
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
                 <div class="title-container">        
                     <span class="title white">${vendor.name}</span>
                     <span class="info dark-grey">・</span>
                     <span class="subtitle dark-grey">${vendor.location}</span></br>
-                    <span class="fa fa-star checked yellow"></span>
-                    <span class="fa fa-star checked yellow"></span>
-                    <span class="fa fa-star checked yellow"></span>
-                    <span class="fa fa-star checked yellow"></span>
-                    <span class="far fa-star yellow"></span>
+                    ${ratings}
                     <span class="info dark-grey">・</span>
-                    <span class="info dark-grey">${vendor.rating} reviews</span>
+                    <span class="info dark-grey">10 reviews</span>
                     <span class="info dark-grey">・</span>
                     <span class="info dark-grey">1.4 miles</span>
                 </div>
@@ -210,6 +207,18 @@ function displayVendorCard(vendor){
             </div>`
 }
 
+//display rating stars 
+function displayRatings(rating){
+    var html="";
+    for (var i = 0; i < rating; i++){
+        html += `<span class="fa fa-star checked yellow"></span>`;
+    }
+    for (var j = 0; j < (5 - rating); j++){
+        html += `<span class="far fa-star yellow"></span>`;
+    }
+    return html;
+}
+
 // display categories on vendor card
 function displayCategoryTags(categories){
     let html= ""
@@ -218,7 +227,7 @@ function displayCategoryTags(categories){
     }
     return html;
 }
-// Select a vendor tile and change its background color
+// when a vendor tile is clicked, change its background color and populate vendor card
 function selectVendor(selectIndex){
     var vendorCard = document.getElementById('toggle-vendor-card');
     vendorTiles[selectIndex].classList.add('selected');
@@ -236,21 +245,21 @@ function selectVendor(selectIndex){
     }
 }
 
-// Refresh fade-in affect of vendor card whenever clicking on a vendor tile
+// add click event to each vendor tile 
 function toggleVendorCard(){
     var toggleVendor = document.getElementById('toggle-vendor-card');
 
     for (var i = 0; i < vendorTiles.length; i++){
         (function (index) {
             vendorTiles[index].addEventListener('click', function() {
-                if (toggleVendor.classList.contains('animated', 'fadeIn')){
+                // if (toggleVendor.classList.contains('animated', 'fadeIn')){
     
-                    toggleVendor.classList.remove('animated','fadeIn');
-                } 
-                setTimeout(() => {
-                    toggleVendor.classList.add('animated','fadeIn');
-                    toggleVendor.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + index]);
-                },100);
+                //     toggleVendor.classList.remove('animated','fadeIn');
+                // } 
+                // setTimeout(() => {
+                //     toggleVendor.classList.add('animated','fadeIn');
+                //     // toggleVendor.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + index]);
+                // },100);
             
                 selectVendor(index);
             });    
