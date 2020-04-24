@@ -212,17 +212,17 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 }
 
 
-.tile.vendor-tile.unselected:hover {
+.unselected:hover {
     cursor: pointer;
     background-color: #282c33;
     /* background-color: #4b535e83; */
     transition: .2s ease-in;
     box-shadow: 0 8px 10px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
 }
-.tile.vendor-tile.selected {
+.selected {
     background-color: black;
     border: 1px solid #5e5cc7;
-    box-shadow: 0 8px 10px 0  #5e5cc796, 0 5px 5px rgba(0,0,0,.06);
+    box-shadow: 0 8px 10px 0  #5e5cc796,0 5px 5px rgba(0,0,0,.06);
 }
 .selected:hover {
     cursor:pointer;
