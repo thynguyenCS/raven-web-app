@@ -1,3 +1,5 @@
+
+//  add filter tags to the top
 function addTag(tag, color){
     var tagContainer = document.getElementById("tag-filter");
     sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();
@@ -18,6 +20,7 @@ function addTag(tag, color){
                         <a class="tag tag--delete animated" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
     }
 }
+// delete filter tags from the top
 function deleteTag(tag){
     var tag = document.getElementById(tag);
     tag.parentNode.removeChild(tag);

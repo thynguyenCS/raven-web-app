@@ -2,7 +2,7 @@ var current_page = 1;
 var records_per_page = 10;
 var vendors = [];
 var vendorTiles = [];
-
+var max_tags = 3;
 var pagingItems = document.getElementsByClassName('paging-items')
 class Vendor {
     constructor(name, location, category, logo, rating){
@@ -99,30 +99,30 @@ function changePage(page){
     let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
         if (vendors[i]){
-            html =  `<div class="tile vendor-tile unselected u-no-padding">
-                        <div class="row w-100 u-no-padding">
-                            <div class="tile__icon">
-                                <figure class="avatar">
-                                    <img class="h-100" src=${vendors[i].logo}>
+            let categories = display3Categories(vendors[i].category);
+            html =  `<div class="tile vendor-tile unselected">
+                        <div class="row tile-content w-100">
+                            <div class="col-3 tile__icon fill-height center">
+                                <figure class="avatar vendor-avatar">
+                                    <img class="w-100 h-100" src=${vendors[i].logo}>
                                 </figure>
                             </div>
-                            <div class="tile__container tile-padded"> 
+                            <div class="col-7 tile__container"> 
                                     <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
-                                    <p class="tile__subtitle">${vendors[i].location}</p>
-                                    <span class="info">${vendors[i].category}</span> 
+                                    <span class="info">${vendors[i].location}</span></br>
+                                    <span class="info">${categories}</span> 
                             </div>
                             
-                            <div class="tile__container u-text-right tile-padded">
-                                <span class="fa fa-star checked yellow"></span>
-                                <span class="fa fa-star checked yellow"></span>
-                                <span class="fa fa-star checked yellow"></span>
-                                <span class="fa fa-star checked yellow"></span>
-                                <span class="far fa-star yellow"></span>
-                                <span class="info light-blue">5 reviews</span>
+                            <div class="col-2 tile__container u-text-right">
+                                <span class="info dark-grey">${(Math.round(vendors[i].rating * 10) / 10).toFixed(1)}</span>
+                                <span class="fa fa-star small checked  yellow"></span></br>
+                                <span class="info dark-grey">10</span>
+                                <span class="fas fa-comment small dark-grey"></span>
+                                
                             </div>
                         </div>                                
                     </div>
-                    <space class="large"></space>`;        
+                    <space class="medium"></space>`;        
         }
         listing_table.innerHTML += html;
 
@@ -137,29 +137,93 @@ function changePage(page){
     toggleVendorCard(); // make all vendors in vendorTiles unselected at first
     selectVendor(0);  // then make the first vendor selected by default
 }
+// display categories on vendor tile (maxmium 3 tags)
+function display3Categories(categories){
+    var html = "";
+    var num = 0;
+    if (categories.length < max_tags) num = categories.length;
+    else num = max_tags;
+
+    for (var i = 0; i < num; i++){
+        html += categories[i];
+        if (i < num -1) {
+            html += ", ";
+        }
+    }
+    return html;
+}
+// display vendor's name, location, ratings, reviews, hours, and tags on vendor card
 function displayVendorCard(vendor){
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
                 <div class="title-container">        
-                <p class="title">${vendor.name}</p>
-                <span class="subtitle">San Jose, CA</span>
-            </div>
+                    <span class="title white">${vendor.name}</span>
+                    <span class="info dark-grey">・</span>
+                    <span class="subtitle dark-grey">${vendor.location}</span></br>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="fa fa-star checked yellow"></span>
+                    <span class="far fa-star yellow"></span>
+                    <span class="info dark-grey">・</span>
+                    <span class="info dark-grey">${vendor.rating} reviews</span>
+                    <span class="info dark-grey">・</span>
+                    <span class="info dark-grey">1.4 miles</span>
+                </div>
             </div>
             <div class="content" style="margin-left: 3rem;">
-                 <p>${vendor.name}</p>
-                 <p>${vendor.location}</p>
-                 <p>${vendor.rating}</p>
+                <span class="title white" style="line-height: 3;">Review Highlights</span>
+                <div class="tile">
+                    <div class="tile__icon">
+                        <figure class="avatar user-avatar">
+                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                        </figure>
+                    </div>
+                    <div class="tile__container">
+                        <p class="tile__subtitle u-no-margin">"Stark Industries is proud to announce its brand new suit."</p>
+                        <span class="info">23 minutes ago</span>
+                    </div>
+                </div>
+                <div class="tile">
+                <div class="tile__icon">
+                    <figure class="avatar user-avatar">
+                        <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                    </figure>
+                </div>
+                <div class="tile__container">
+                    <p class="tile__subtitle u-no-margin">"Stark Industries is proud to announce its brand new suit."</p>
+                    <span class="info">23 minutes ago</span>
+                </div>
+            </div>
+                <div class="divider"></div>
+                <span class="title white" style="line-height: 3;">Hours</span>
+                <div class="divider"></div>
+                <span class="title white" style="line-height: 3;">Categories</span>
+                <div class="tag-container">
+                    ${displayCategoryTags(vendor.category)}
+                </div>
+                    
             </div>
             <div class="action-bar u-center">
             <button class="btn btn-save">SAVE</button>
             <button class="btn btn-learn">LEARN MORE</button>
-</div>`
+            </div>`
 }
 
+// display categories on vendor card
+function displayCategoryTags(categories){
+    let html= ""
+    for(var i =0; i < categories.length; i++){
+        html += `<a class="tag tag--link" href="javascript:addTag('${categories[i]}','purple')">${categories[i]}</a>`;
+    }
+    return html;
+}
 // Select a vendor tile and change its background color
 function selectVendor(selectIndex){
+    var vendorCard = document.getElementById('toggle-vendor-card');
     vendorTiles[selectIndex].classList.add('selected');
     vendorTiles[selectIndex].classList.remove('unselected');
+    vendorCard.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + selectIndex])
     
     for (var i = 0; i < vendorTiles.length; i++) {
         (function (index){ 

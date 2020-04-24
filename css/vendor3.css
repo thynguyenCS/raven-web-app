@@ -121,7 +121,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
   .tile {
     /* background-color: #3e434e; */
     /* background-color: #484f5b; */
-    padding: 26px;
+    padding: 1.2rem;
     border-radius: 10px;
     box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
     0 0  0 1px rgba(0,0,0,0.1),
@@ -137,7 +137,9 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     border-color: #5e5cc7 ;
   }
 
-
+.info {
+    display: inline;
+}
 .btn-info:focus {
     /* border: none;
     outline: none; */
@@ -157,6 +159,11 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 }
   .tile__container{
     color: white;
+    overflow: hidden;
+  }
+
+  .dark-grey {
+      color: darkgrey;
   }
 /* .avatar {
     border-radius: 0%;
@@ -168,13 +175,15 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     object-fit: contain; */
 
   /*} */
-.tile {
+.tile.vendor-tile{
+    /* max-height: 9.2rem; */
     background-color: #1e1f26;
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 5px 12px 0 rgba(42,51,83,.12),0 0 5px rgba(0,0,0,.06);
     /* transition: height 0.4s linear; */
 }
+
 .expanded {
     transition: 0.3s ease-out;
 }
@@ -199,29 +208,27 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 }
 .tile__container {
     /* display: inline; */
-    vertical-align: top;
+    /* vertical-align: top; */
 }
+
 
 .unselected:hover {
     cursor: pointer;
     background-color: #282c33;
     /* background-color: #4b535e83; */
     transition: .2s ease-in;
-    box-shadow: 0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
+    box-shadow: 0 8px 10px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
 }
 .selected {
     background-color: black;
     border: 1px solid #5e5cc7;
-    box-shadow: 0 8px 20px 0  #5e5cc7,0 5px 5px rgba(0,0,0,.06);
+    box-shadow: 0 8px 10px 0  #5e5cc796,0 5px 5px rgba(0,0,0,.06);
 }
 .selected:hover {
     cursor:pointer;
 }
 
-.row {
-    /* overflow:hidden; */
-    max-width: 100%;
-}
+
 .tile .small {
     font-size: 13px;
 }
@@ -300,6 +307,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     /* display: inline; */
     float: left;
 }
+
 .btn-transparent {
     color: white;
 }
@@ -379,10 +387,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .search-bar {
     padding-left: 20px;
 }
-.row .vendor {
-    padding-left: 36px;
-    padding-right: 36px;
-}
+
 /* .tree-nav-header {
     background: #1e1f26;
 }
@@ -408,17 +413,25 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 /* html {
     overflow-x: hidden;
 } */
-.tile {
+.tile .vendor-tile {
     height: 9.2rem;
 }
-.avatar {
-    width:15rem;
-    border-radius: 0;
-    height: 100%;
-    /* object-fit: contain */
+.avatar.user-avatar{
+
 }
-.tile-padded {
-    padding: 26px;
+
+.avatar.vendor-avatar {
+    /* width:14rem; */
+    /* border-radius: 0; */
+    width: 5.2rem;
+    height: 5.2rem;
+    margin-left: 0.6rem;
+    /* margin: 0; */
+    /* margin: .5rem; */
+}
+
+.card .title-container .subtitle {
+    color: darkgrey;
 }
 .tag .tag--delete {
     margin-left: 0.5rem;
@@ -431,9 +444,6 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     margin-top: 1rem;
     margin-bottom: 1rem;
     /* margin-bottom: 1rem; */
-}
-.avatar .img {
-    height: 100%;
 }
 
 .tree-nav {
@@ -475,14 +485,26 @@ a.tag:hover{
 ::placeholder {
     font-weight: bold;
 }
+
+.avatar .user {
+    width:3.2rem;
+    height: 3.2rem;
+}
 .animated {
     animation-duration: 0.5s;
+}
+.card-container .title-container {
+    /* padding-left: 26px;
+    padding-right: 26px; */
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 .card {
     /* position: absolute; */
     border-radius: 10px;
     background-color:  #1e1f26;
     width: 100%;
+    /* padding: 10px; */
     /* height: 69%; */
     transition: all 0.3s;
     /* top: 0; */
@@ -507,9 +529,10 @@ div.sticky {
     max-height: 39%;
 } */
 .card-image {
-    /* background-color: #2f353b; */
-    background-image: url('https://www.jakpost.travel/wimages/large/84-847133_wide-dark-background-hd.jpg');
+    background-color: transparent;
+    /* background-image: url('https://www.jakpost.travel/wimages/large/84-847133_wide-dark-background-hd.jpg'); */
 }
+
 .btn-save, .btn-learn {
     background-color: #2f353b;
     color: white;
@@ -594,4 +617,8 @@ div.sticky {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+  }
+
+  .tile .tile-content {
+      overflow: hidden;
   }
