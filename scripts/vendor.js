@@ -123,9 +123,9 @@ const profileButton = document.getElementById("profile");
 const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-profileButton.onclick = function() {
-    modal.style.display = "block";
-}
+// profileButton.onclick = function() {
+//     modal.style.display = "block";
+// }
 // profileButton.addEventListener('click', (e) => {
 //     e.preventDefault();
 //     modal.style.display = "block";

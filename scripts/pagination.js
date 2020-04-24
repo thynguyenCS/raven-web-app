@@ -1,7 +1,8 @@
 var current_page = 1;
 var records_per_page = 10;
 var vendors = [];
-//var tiles = []
+var vendorTiles = [];
+
 var pagingItems = document.getElementsByClassName('paging-items')
 class Vendor {
     constructor(name, location, category, logo, rating){
@@ -44,9 +45,9 @@ function nextPage(){
     }
 
 }
-function currentPage(){
-    return current_page;
-}
+// function currentPage(){
+//     return current_page;
+// }
 function numPages(){
     return Math.ceil(vendors.length / records_per_page);
 }
@@ -90,18 +91,15 @@ function changePage(page){
     var btn_next = document.getElementById('next-button');
     var btn_prev = document.getElementById('prev-button');
     var listing_table = document.getElementById('default-list');
-    //displayPages()
    
     //validate page
     if (page < 1) page=1;
     if (page > numPages()) page = numPages();
-    //console.log('current page ' + current_page);
     listing_table.innerHTML = "";
     let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
-        //console.log(i)
         if (vendors[i]){
-            html =  `<div class="tile u-no-padding">
+            html =  `<div class="tile vendor-tile unselected u-no-padding">
                         <div class="row w-100 u-no-padding">
                             <div class="tile__icon">
                                 <figure class="avatar">
@@ -131,20 +129,13 @@ function changePage(page){
         if(page == numPages() && (i+1 == vendors.length))
         {
             break;
-        }
-        //add the event listener for each tiles in the page
-        // let tiles = document.querySelectorAll('.tile');
-        // // console.log(tiles)
-        // tiles[i].addEventListener('click', function() {
-        //     console.log('click');
-        //     var card = document.querySelector('.card');
-        //     card.style.visibility = 'visible'
-        //     card.innerHTML = displayVendorCard(vendors[i])
-        //     card.classList.toggle('close');
-        // });    
-
+        } 
     }
-    
+
+    // each time user changes page, populate vendorTiles again
+    vendorTiles = document.querySelectorAll('.vendor-tile');
+    toggleVendorCard(); // make all vendors in vendorTiles unselected at first
+    selectVendor(0);  // then make the first vendor selected by default
 }
 function displayVendorCard(vendor){
     return `<div class="card-container h-20">
@@ -164,7 +155,44 @@ function displayVendorCard(vendor){
             <button class="btn btn-learn">LEARN MORE</button>
 </div>`
 }
-          
+
+// Select a vendor tile and change its background color
+function selectVendor(selectIndex){
+    vendorTiles[selectIndex].classList.add('selected');
+    vendorTiles[selectIndex].classList.remove('unselected');
+    
+    for (var i = 0; i < vendorTiles.length; i++) {
+        (function (index){ 
+            // keep a lighter background for other tiles (only the selected tile has a darker background)
+            if (index != selectIndex && vendorTiles[index].classList.contains('selected')){
+                vendorTiles[index].classList.remove('selected');
+                vendorTiles[index].classList.add('unselected');
+            }
+        })(i);
+    }
+}
+
+// Refresh fade-in affect of vendor card whenever clicking on a vendor tile
+function toggleVendorCard(){
+    var toggleVendor = document.getElementById('toggle-vendor-card');
+
+    for (var i = 0; i < vendorTiles.length; i++){
+        (function (index) {
+            vendorTiles[index].addEventListener('click', function() {
+                if (toggleVendor.classList.contains('animated', 'fadeIn')){
+    
+                    toggleVendor.classList.remove('animated','fadeIn');
+                } 
+                setTimeout(() => {
+                    toggleVendor.classList.add('animated','fadeIn');
+                    toggleVendor.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + index]);
+                },100);
+            
+                selectVendor(index);
+            });    
+        })(i); 
+    }
+}      
 // display vendors as soon as page loads
 window.onload = function() {
     
@@ -173,21 +201,8 @@ window.onload = function() {
         if(!isSearch){
             vendors = fbVendors;
         }
-
-       changePage(1);
-       let tiles = document.querySelectorAll('.tile');
-       console.log(tiles)
-       //displayPages()
-
-    // doesnt work
-        for (var k = 0; k < tiles.length; k++){
-            tiles[k].addEventListener('click', function() {
-                console.log('click');
-                var card = document.querySelector('.card');
-                card.innerHTML = displayVendorCard(vendors[k])
-                card.classList.toggle('close');
-            });    
-        }
-         })
+        // display page 1 by default
+        changePage(1); 
+     })
 };
  
