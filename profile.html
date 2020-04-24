@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <!-- <link href="../../res/cirrus.min.css" type="text/css" rel="stylesheet" />
+    <link href="../../res/app.css" type="text/css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.5.4/dist/cirrus.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/a696b91557.css" media="all">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    
+    <!-- Custom stylesheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/vendor3.css">
+    <!-- icon -->
+    <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
+    <title>Raven</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header header-fixed unselectable header-animated">
+        <!-- The web app's logo, this part will always be visibe -->
+        <!-- <div class="row"> -->
+            <div class="header-brand">
+                <div class="nav-item no-hover">
+                    <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
+                    <h6 class="title"><a href="vendor3.html">Raven</a></h6>
+                </div>
+                <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
+                <!-- but we don't need to deal with it yet -->
+                <!-- <div class="nav-item nav-btn" id="header-btn">
+                    <span>First Item</span>
+                    <span>Second Item</span>
+                    <span>Third Item</span>
+                </div> -->
+            </div>
+        
+            <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
+            <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
+            <div class="header-nav" id="header-menu">
+                
+                <!-- right container, always appear to the right of the navigation bar -->
+                <div class="nav-right">
+                    <div class="nav-item text-center">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="far fa-wrapper fa-bell" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                        <a class="nav-dropdown-link"><span class="icon"><i class="far fa-user"></i></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="menu-item"><a href="#" class="link">Profile</a></li>
+                            <!-- Logout NOT WORKING YET -->
+                            <li role="menu-item"><a href="#" class="link" id="logout-button">Log out</a></li>
+                        </ul>
+                    </div>     
+                </div>
+            </div>
+    </div>
+    <!-- END OF HEADER  -->
+
+<!-- MAIN CONTENT (VENDORS) -->
+<div class="tree-nav-content">
+    <space class="x-large"></space>
+
+
+    <space class="large"></space>
+
+</div>
+
+
+<!-- FOOTER -->
+    <footer>
+        <div class="row level">
+            <div class="col-4">
+                <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
+            </div>
+            <div class="col-4">
+                <figure class="fig ">
+                    <img class="hover-grow" src="img/ravenCircle.png" width="15%">
+                </figure>
+                <div class="row center">
+                    <div class="col-3 offset-left">
+                        <a href="#">
+                            EN
+                        </a>
+                    </div>
+                    <div class="col-3 offset-right">
+                        <a href="#">
+                            FR
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row fluid-container center">
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-facebook large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-twitter large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-instagram large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-vimeo large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </footer>
+<!-- END OF FOOTER -->
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8edToE3CAv33r6qTD7Lp-A62HWq7P-Sk",
+    authDomain: "raven-c24a9.firebaseapp.com",
+    databaseURL: "https://raven-c24a9.firebaseio.com",
+    projectId: "raven-c24a9",
+    storageBucket: "raven-c24a9.appspot.com",
+    messagingSenderId: "943246302988",
+    appId: "1:943246302988:web:a9f8a382e223fc71b23329",
+    measurementId: "G-051571D12T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  //make auth and firestore reference
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+</script>
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
+  <script src="https://use.fontawesome.com/a696b91557.js"></script>
+  <!-- <script src="scripts/auth.js"></script> -->
+  <!-- <script src="scripts/index.js"></script> -->
+  <!-- <script src="scripts/validate.js"></script> -->
+  <!-- <script src="scripts/login.js"></script> -->
+  <script src="scripts/profile.js"></script>
+  <script src="scripts/alert.js"></script>
+  <script src="scripts/pagination.js"></script>
+</body>
+</html>
