@@ -13,6 +13,13 @@
     "source": "functions"
   },
   "hosting": {
+    "redirects":[
+      {
+        "source": "/toandao",
+        "destination": "https://spark.adobe.com/page/N8TVX2tbXfKJZ/?fbclid=IwAR0ZQAMJx8-5w1EyZo_uMXZV6hKPUIURm8cCHaPeuFrZqzIaQbvXcmV3BeE",
+        "type": 301
+      }
+    ],
     "public": "public",
     "ignore": [
       "firebase.json",
