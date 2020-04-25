@@ -118,15 +118,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
   .w-90{
       width: 90%;
   }
-  .tile {
-    /* background-color: #3e434e; */
-    /* background-color: #484f5b; */
-    padding: 1.2rem;
-    border-radius: 10px;
-    box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
-    0 0  0 1px rgba(0,0,0,0.1),
-    0.1em 0.1em 0.5em rgba(0,0,0,0.1);
-  }
+
   .view-button {
       background-color:  #5e5cc7 ;
       color: white;
@@ -137,7 +129,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     border-color: #5e5cc7 ;
   }
 
-.info {
+.info.vendor-info {
     display: inline;
 }
 .btn-info:focus {
@@ -176,18 +168,24 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 
   /*} */
 .tile.vendor-tile{
+    height: 11.2rem;
     /* max-height: 9.2rem; */
     background-color: #1e1f26;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 5px 12px 0 rgba(42,51,83,.12),0 0 5px rgba(0,0,0,.06);
-    /* transition: height 0.4s linear; */
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
+    0 0  0 1px rgba(0,0,0,0.1),
+    0.1em 0.1em 0.5em rgba(0,0,0,0.1);
 }
 
 .expanded {
     transition: 0.3s ease-out;
 }
-
+.card {
+    box-shadow:inset 0 -1em 1em rgba(0,0,0,0.1), 
+}
 
   /* .tile:hover {
     transition: 0.3s ease;
@@ -220,14 +218,14 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     box-shadow: 0 8px 10px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
 }
 .tile.vendor-tile.selected {
-    background-color: black;
-    border: 1px solid #5e5cc7;
-    box-shadow: 0 8px 10px 0  #5e5cc796, 0 5px 5px rgba(0,0,0,.06);
+    /* background-color: #14151a; */
+    border-left: 4px solid #5e5cc7;
+    /* box-shadow: 0 5px 10px 0 #5e5cc7, 0 5px 5px rgba(0,0,0,.06); */
+    /* box-shadow: 0 3px 0 0  #5e5cc7, 0 5px 5px rgba(0,0,0,.06); */
 }
 .selected:hover {
     cursor:pointer;
 }
-
 
 .tile .small {
     font-size: 13px;
@@ -235,14 +233,17 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .frame {
     box-shadow: none;
 }
-.content {
+.content.sideBar-content {
     max-width: 100%;
     /* margin: 1em; */
     /* max-width: 100%; */
     /* width: 100%; */
-    margin: 3em 0 1.5em;
+    margin: 3em 0 0em;
 }
-
+.content.card-content {
+    /* margin-left: 2rem; */
+    /* margin-right: 2rem; */
+}
 .frame .frame-header {
     /* border: 1px solid white; */
     padding: 0 16px;
@@ -287,6 +288,14 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 }
 .row .no-left-padding {
     padding-left: 0;
+}
+.no-side-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+.col-6.no-side-padding{
+    padding-left: 0;
+    padding-right: 0;
 }
 .btn-search {
     background-color: #5e5cc7;
@@ -350,7 +359,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     background-color: #000;
 }
 .small {
-    height: 0.5rem;
+    height: .5rem;
 }
 
 .tree .tree-item .tree-item-header {
@@ -413,23 +422,22 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 /* html {
     overflow-x: hidden;
 } */
-.tile .vendor-tile {
-    height: 9.2rem;
-}
-.avatar.user-avatar{
-
-}
 
 .avatar.vendor-avatar {
     /* width:14rem; */
-    /* border-radius: 0; */
+    border-radius: 3px;
     width: 5.2rem;
     height: 5.2rem;
     margin-left: 0.6rem;
     /* margin: 0; */
     /* margin: .5rem; */
 }
-
+.avatar.vendorCard-avatar {
+    border-radius: 3px;
+}
+.no-shadow {
+    box-shadow: none;
+}
 .card .title-container .subtitle {
     color: darkgrey;
 }
@@ -486,10 +494,32 @@ a.tag:hover{
     font-weight: bold;
 }
 
-.avatar .user {
-    width:3.2rem;
-    height: 3.2rem;
+.avatar.user-avatar {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 3px;
 }
+.tile__subtitle.review {
+    font-size: 13px;
+}
+.tile__container.review-container {
+    max-height: 43.8px;
+}
+.info.review {
+    font-size: 11px;
+}
+.title.no-top-bot-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.info.no-top-bot-margin{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.tag-container.no-top-bot-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}   
 .animated {
     animation-duration: 0.5s;
 }
@@ -529,10 +559,16 @@ div.sticky {
     max-height: 39%;
 } */
 .card-image {
-    background-color: transparent;
+    background-image: url('https://investorplace.com/wp-content/uploads/2019/09/bac1600f.jpg');
+    /* background-color: transparent; */
     /* background-image: url('https://www.jakpost.travel/wimages/large/84-847133_wide-dark-background-hd.jpg'); */
 }
-
+.h-84 {
+    height: 84px;
+}
+.save-button {
+    background-color: #1e1f26;
+}
 .btn-save, .btn-learn {
     background-color: #2f353b;
     color: white;

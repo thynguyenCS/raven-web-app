@@ -109,20 +109,20 @@ function changePage(page){
                             </div>
                             <div class="col-7 tile__container"> 
                                     <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
-                                    <span class="info">${vendors[i].location}</span></br>
-                                    <span class="info">${categories}</span> 
+                                    <span class="info vendor-info">${vendors[i].location}</span></br>
+                                    <span class="info vendor-info">${categories}</span> 
                             </div>
                             
                             <div class="col-2 tile__container u-text-right">
-                                <span class="info dark-grey">${(Math.round(vendors[i].rating * 10) / 10).toFixed(1)}</span>
-                                <span class="fa fa-star small checked  yellow"></span></br>
-                                <span class="info dark-grey">10</span>
+                                <span class="info vendor-info dark-grey">${(Math.round(vendors[i].rating * 10) / 10).toFixed(1)}</span>
+                                <span class="fa fa-star small checked dark-grey"></span></br>
+                                <span class="info vendor-info dark-grey">10</span>
                                 <span class="fas fa-comment small dark-grey"></span>
                                 
                             </div>
                         </div>                                
                     </div>
-                    <space class="medium"></space>`;        
+                    <space class="large"></space>`;        
         }
         listing_table.innerHTML += html;
 
@@ -157,54 +157,97 @@ function displayVendorCard(vendor){
     var ratings = displayRatings(vendor.rating);
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
-                <div class="title-container">        
-                    <span class="title white">${vendor.name}</span>
-                    <span class="info dark-grey">・</span>
-                    <span class="subtitle dark-grey">${vendor.location}</span></br>
-                    ${ratings}
-                    <span class="info dark-grey">・</span>
-                    <span class="info dark-grey">10 reviews</span>
-                    <span class="info dark-grey">・</span>
-                    <span class="info dark-grey">1.4 miles</span>
+                <div class="title-container u-text-right">
+                    <div class="btn-group">
+                        <button class="btn-dark tooltip" data-tooltip="Save"><i class="fas fa-bookmark white"></i></button>
+                        <button class="btn-dark tooltip"  data-tooltip="More"><i class="fas fa-ellipsis-h white"></i></button>
+                      
+                    </div>  
+                
                 </div>
+                
             </div>
-            <div class="content" style="margin-left: 3rem;">
-                <span class="title white" style="line-height: 3;">Review Highlights</span>
-                <div class="tile">
+            <space class="medium"></space>
+            
+            <div class="content card-content">
+                <dt class="tile tile--center no-shadow" >
+                    <div class="tile__icon">
+                        <figure class="avatar vendorCard-avatar">
+                            <img class="h-100" src="${vendor.logo}">
+                        </figure>
+                    </div>  
+                    <div class="tile__container">
+                        <a href=""><span class="tile__title">${vendor.name}</span></a>
+                        <span class="tile__subtitle">${ratings}</span>
+                        <span class="info vendor-info dark-grey">・</span>
+                        <span class="info vendor-info dark-grey">50 reviews</span>
+                        <span class="info vendor-info dark-grey">・</span>
+                        <span class="info vendor-info dark-grey">1.4 miles</span>
+                    
+                    </div>
+                </dt>
+                <space class="large"></space>
+                <dt class="title white no-top-bot-margin">Review Highlights</dt>
+                <space class="small"></space>
+                <dd class="tile tile--center no-shadow no-side-padding">
                     <div class="tile__icon">
                         <figure class="avatar user-avatar">
                             <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
                         </figure>
                     </div>
-                    <div class="tile__container">
-                        <p class="tile__subtitle u-no-margin">"Stark Industries is proud to announce its brand new suit."</p>
-                        <span class="info">23 minutes ago</span>
+                    <div class="tile__container review-container">
+                        <p class="tile__subtitle review u-no-margin">"The service was fast. I would come back again."</p>
+                        <span class="info user-review">23 minutes ago</span>
+                    </div>
+                </dd>
+                <space class="small"></space>
+                <dd class="tile tile--center no-shadow no-side-padding">
+                    <div class="tile__icon">
+                        <figure class="avatar user-avatar">
+                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                        </figure>
+                    </div>
+                    <div class="tile__container review-container">
+                        <p class="tile__subtitle review u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
+                        <span class="info user-review">23 minutes ago</span>
+                    </div>
+                </dd>
+                <space class="small"></space>
+                <dd class="tile tile--centerno-shadow no-side-padding">
+                    <div class="tile__icon">
+                        <figure class="avatar user-avatar">
+                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                        </figure>
+                    </div>
+                    <div class="tile__container review-container">
+                        <p class="tile__subtitle review u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
+                        <span class="info user-review">23 minutes ago</span>
+                    </div>
+                </dd>
+                
+                <dt class="title white no-top-bot-margin">Location and Hours</dt>
+                <space class="small"></space>
+                <div class="row u-no-padding">
+                    <div class="col-6 no-side-padding">
+                        <dd class="info no-top-bot-margin">1824 Redwood</dd>
+                        <dd class="info no-top-bot-margin"> NC, USA</dd>
+                    </div>
+                    <div class="col-6 no-side-padding u-text-left">
+                        <dd class="info no-top-bot-margin">Mon-Fri: 10:00 AM - 6:00 PM</dd>
+                        <dd class="info no-top-bot-margin">Sat: 11:00 AM - 5:00 PM</dd>
+                        <dd class="info no-top-bot-margin">Sun: closed</dd>
                     </div>
                 </div>
-                <div class="tile">
-                <div class="tile__icon">
-                    <figure class="avatar user-avatar">
-                        <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
-                    </figure>
-                </div>
-                <div class="tile__container">
-                    <p class="tile__subtitle u-no-margin">"Stark Industries is proud to announce its brand new suit."</p>
-                    <span class="info">23 minutes ago</span>
-                </div>
-            </div>
-                <div class="divider"></div>
-                <span class="title white" style="line-height: 3;">Hours</span>
-                <div class="divider"></div>
-                <span class="title white" style="line-height: 3;">Categories</span>
-                <div class="tag-container">
+                <space class="small"></space>
+               
+                <dt class="title white no-top-bot-margin">Categories</dt>
+                <space class="small"></space>
+                <dd class="tag-container">
                     ${displayCategoryTags(vendor.category)}
-                </div>
+                </dd>
                     
             </div>
-            <div class="action-bar u-center">
-            <button class="btn btn-save">SAVE</button>
-            <button class="btn btn-learn">LEARN MORE</button>
-            </div>`
+            `
 }
 
 //display rating stars 
@@ -232,7 +275,8 @@ function selectVendor(selectIndex){
     var vendorCard = document.getElementById('toggle-vendor-card');
     vendorTiles[selectIndex].classList.add('selected');
     vendorTiles[selectIndex].classList.remove('unselected');
-    vendorCard.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + selectIndex])
+    vendorCard.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + selectIndex]);
+    vendorCard.style.display ="block";
     
     for (var i = 0; i < vendorTiles.length; i++) {
         (function (index){ 
