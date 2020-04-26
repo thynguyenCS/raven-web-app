@@ -22,14 +22,14 @@
     
     <!-- Custom stylesheets -->
     <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/vendor3.css">
+    <link rel="stylesheet" type="text/css" href="css/addVendor.css">
     <!-- icon -->
     <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
     <title>Raven</title>
 </head>
 <body>
     <!-- HEADER -->
-    <div class="header header-fixed unselectable header-animated">
+    <div class="header unselectable header-animated">
         <!-- The web app's logo, this part will always be visibe -->
         <!-- <div class="row"> -->
             <div class="header-brand">
@@ -74,53 +74,93 @@
     <!-- END OF HEADER  -->
 
 <!-- MAIN CONTENT (VENDORS) -->
-<div class="tree-nav-content">
-    <space class="x-large"></space>
-    <!-- ACCOUNT MODAL -->
-    <!-- <div id="modal-account" class="modal">
-        <div class="modal-content center-align">
-        <h4>Account details</h4><br />
-        <div class="account-details"></div>
+    <div class="hero fullscreen">
+        <div class="hero-body">
+            <div class="content center add-vendor-content u-text-left fill-height">
+                <!-- <space class="large"></space> -->
+                <!-- ACCOUNT MODAL -->
+                <!-- <div id="modal-account" class="modal">
+                    <div class="modal-content center-align">
+                    <h4>Account details</h4><br />
+                    <div class="account-details"></div>
+                    </div>
+                </div> -->
+                <div class="row u-no-padding level">
+                    <div class="col-6">
+                        <h6 class="title white">Add a Vendor</h6>
+                        <form id="add-vendor-form" class="frame u-no-padding" method="post" autocomplete="off">
+                            <div class="form-section">
+                                <label class="white">Name</label>
+                                <div class="input-control">
+                                    <input id="name" class="input-contains-icon" placeholder="Offical Pal"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fas fa-user-tie small"></i></span>
+                                    
+                                </div>
+                                <label class="white" style="margin-left: 0;">Adresss</label>
+                                <div class="input-control">
+                                    <input id="loc" class="input-contains-icon" placeholder="123 Main St"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fas fa-location-arrow small"></i></span>
+                                </div>
+                                <div class="row u-no-padding fluid-container">
+                                    <div class="col-6" style="padding-left: 0;">
+                                        <div class="input-control">
+                                            <input id="loc" class="input-contains-icon" placeholder="City"
+                                            type="text" value="" autocomplete="false" required>
+                                            <span class="icon"><i class="fas fa-map-marker-alt small"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6" style="padding-right: 0;">
+                                        <div class="input-control">
+                                            <input id="loc" class="input-contains-icon" placeholder="Country"
+                                            type="text" value="" autocomplete="false" required>
+                                            <span class="icon"><i class="fas fa-globe-americas small"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <label class="white" style="margin-left: 0;">Categories</label> -->
+                                
+                                <div class="input-control">
+                                    <input id="loc" class="input-contains-icon" placeholder="Zip"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fas fa-map-marker-alt small"></i></span>
+                                </div>
+                                <label class="white" style="margin-left: 0;">Categories</label>
+                                <span class="info font-11">Select up to 3 categories.</span>
+                                <!-- <div class="input-control">
+                                    <input id="cat" class="input-contains-icon" placeholder="Category"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fas fa-tags small"></i></span>
+                                </div> -->
+                            
+                                <div id= "add-tag-button"class="tag tag--grey u-left white">
+                                    <i class="fas fa-plus small" style="padding-right: .5rem;"></i><i class="fas fa-tag small"></i>
+                                </div>
+                                
+                            </div>
+                            <!-- error msg -->
+                            <!-- <div id="error" class="toast toast--error" style="display:none;">
+                            </div>
+                            <div id="success" class="toast toast--success" style="display:none;">
+                            </div> -->
+                    
+                            <button id="add-vendor-button" class="btn-info u-pull-right btn-animated w-30" type="submit">
+                                Submit
+                            </button>
+                            
+                    
+                    
+                        </form>
+            
+                    </div>
+                    <div class="col-6"></div>
+                </div>
+            
         </div>
-    </div> -->
-    
-
-    <h2>Add Vendor</h2><br />
-    <form id="signup-form" class="frame u-no-padding u-text-center" method="post" autocomplete="off">
-        <div class="form-section">
-            <div class="input-control">
-                <input id="name" class="input-contains-icon" placeholder="Vendor name"
-                type="text" value="" autocomplete="false" required>
-                <span class="icon"><i class="fa fa-user small"></i></span>
-            </div>
-            <div class="input-control">
-                <input id="loc" class="input-contains-icon" placeholder="Location"
-                type="text" value="" autocomplete="false" required>
-                <span class="icon"><i class="fa fa-envelope small"></i></span>
-            </div>
-            <div class="input-control">
-                <input id="cat" class="input-contains-icon" placeholder="Category"
-                type="text" value="" autocomplete="false" required>
-                <span class="icon"><i class="fa fa-lock small"></i></span>
-            </div>
-        </div>
-        <!-- error msg -->
-        <div id="error" class="toast toast--error" style="display:none;">
-        </div>
-        <div id="success" class="toast toast--success" style="display:none;">
-        </div>
-        <button id="signup-button" class="btn-info u-pull-right btn-animated" type="submit">
-            Submmit
-        </button>
-        
+    </div>
 
 
-    </form>
-        <space class="x-large"></space>
-        <space class="x-large"></space>
-        <space class="x-large"></space>
-
-</div>
 
 
 <!-- FOOTER -->

@@ -47,8 +47,8 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
     /* padding-top: 0.65rem; */
     /* padding-bottom: 0.65rem; */
     border-radius: 5px;
-    padding-top: 0.65rem;
-    padding-bottom: 0.65rem;
+    /* padding-top: 0.65rem; */
+    /* padding-bottom: 0.65rem; */
     /* background-color:#1e1f26; */
     /* background-color: #2d343a; */
     /* background-color: #434955; */
@@ -234,9 +234,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     cursor:pointer;
 }
 
-.tile .small {
-    font-size: 13px;
-}
+
 .font-12 {
     font-size: 12px;
 }
@@ -370,7 +368,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .dropdown-menu a:hover{
     background-color: #000;
 }
-.small {
+space.small {
     height: .5rem;
 }
 
@@ -613,7 +611,8 @@ img {
 }
 .tag--grey{
     font-size: 12px;
-    line-height: 1.8rem;
+    color: white;
+    line-height: 15rem;
     border-radius: 20px;
     background-color: #434955;
     padding-left: 1rem;
@@ -622,6 +621,7 @@ img {
     border: 2px solid #434955;
     /* border: 2px solid darkgrey; */
 }
+
 .tag--grey:hover {
     border: 2px solid lightgrey;
     background-color: #000;
@@ -710,4 +710,9 @@ a.tag--grey:hover {
 
   .tile .tile-content {
       overflow: hidden;
+  }
+  .add-vendor-content {
+      /* padding: 3rem; */
+      margin-left: 3rem;
+      background-color: transparent;
   }
