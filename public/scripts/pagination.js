@@ -154,7 +154,7 @@ function display3Categories(categories){
 }
 // display vendor's name, location, ratings, reviews, hours, and tags on vendor card
 function displayVendorCard(vendor){
-    var ratings = getRatings(vendor.rating);
+    var ratings = displayRatings(vendor.rating);
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
                 <div class="title-container u-text-right">
@@ -238,12 +238,12 @@ function displayVendorCard(vendor){
             `
 }
 //display rating stars 
-function getRatings(rating){
+function displayRatings(ratings){
     var html="";
-    for (var i = 0; i < rating; i++){
+    for (var i = 0; i < ratings; i++){
         html += `<span class="fa fa-star checked yellow"></span>`;
     }
-    for (var j = 0; j < (5 - rating); j++){
+    for (var j = 0; j < (5 - ratings); j++){
         html += `<span class="far fa-star yellow"></span>`;
     }
     return html;
