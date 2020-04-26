@@ -230,6 +230,13 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .tile .small {
     font-size: 13px;
 }
+.font-12 {
+    font-size: 12px;
+}
+.font-11 {
+    font-size: 11px;
+}
+
 .frame {
     box-shadow: none;
 }
@@ -433,6 +440,8 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
     /* margin: .5rem; */
 }
 .avatar.vendorCard-avatar {
+    width: 4.2rem;
+    height: 4.2rem;
     border-radius: 3px;
 }
 .no-shadow {
@@ -499,15 +508,19 @@ a.tag:hover{
     width: 2.4rem;
     border-radius: 3px;
 }
-.tile__subtitle.review {
-    font-size: 13px;
+.tile__subtitle.font-12 {
+    font-size: 12px;
 }
 .tile__container.review-container {
     max-height: 43.8px;
 }
-.info.review {
-    font-size: 11px;
+.vendor-title {
+    color: white;
 }
+.vendor-title:hover {
+    color: #2972fa;
+}
+
 .title.no-top-bot-margin {
     margin-top: 0;
     margin-bottom: 0;
@@ -578,6 +591,9 @@ div.sticky {
 }
 .action-bar {
     height: 99px;
+}
+img {
+    cursor: pointer;
 }
 .card.close {
     top: 100%;
