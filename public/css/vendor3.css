@@ -711,8 +711,3 @@ a.tag--grey:hover {
   .tile .tile-content {
       overflow: hidden;
   }
-  .add-vendor-content {
-      /* padding: 3rem; */
-      margin-left: 3rem;
-      background-color: transparent;
-  }
