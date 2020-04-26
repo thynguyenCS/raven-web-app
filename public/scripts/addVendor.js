@@ -17,7 +17,9 @@ const signupButton = document.getElementById('signup-button');
         name: signupForm.name.value,
         location: signupForm.loc.value,
         category: signupForm.cat.value,
-        logo: "img/ravenCircle.png"
+        logo: "img/ravenCircle.png",
+        rating: 0,
+        comment: "New Vendor - Waiting for confirm"
 
       }).then(() => {
         //reset form
