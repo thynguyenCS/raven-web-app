@@ -49,22 +49,7 @@
             <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
             <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
             <div class="header-nav" id="header-menu">
-                <!-- left container, always appear to left of the navigation bar -->
-                <div class="nav-left">
-                    <div class="nav-item no-hover">
-                        <div class="form-group">
-                            <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
-                        </div>
-                    </div>
-                    <div class="nav-item no-hover">
-                        <div class="form-group">
-                            <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
-                        </div>
-                    </div>
-                    <div class="nav-item no-hover">
-                        <button id="search-button" class="btn-primary btn-animated btn-small btn-search" type="submit">Search</button>
-                    </div>
-                </div>
+                
                 <!-- right container, always appear to the right of the navigation bar -->
                 <div class="nav-right">
                     <div class="nav-item text-center">
@@ -88,212 +73,29 @@
     </div>
     <!-- END OF HEADER  -->
 
-    <div class="hero fullscreen">
-        <div class="tree-nav-body">
-            <!-- This part is hidden and only visible when screen size is small -->
-            <!-- don't bother this one yet -->
-            <div class="tree-nav-header">
-                <a href="#sidebar" class="u-hide-tablet">
-                    <span class="icon">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </span>
-                </a>
-            </div>
-             <!-- MAIN SIDEBAR -->
-            <div class="tree-nav" id="sidebar" style="background: #1e1f26;">
-                <!-- Display number of results -->
-                <div class="content no-bottom-margin">
-                    <dt class="yellow">Explore</dt>
-                    <div class="tag-container">
-                        <a class="tag tag--warning" href="javascript:addTag('Recommended','yellow')">Recommended</a>
-                        <a class="tag tag--warning" href="javascript:addTag('Best Rated','yellow')">Best Rated</a>
-                        <a class="tag tag--warning" href="javascript:addTag('Most Reviewed','yellow')">Most Reviewed</a>
-                    </div>
-                </div>
-                <space class="small"></space>
-                <!-- MAIN CONTENT OF SIDEBAR -->
-                <div class="tree-nav-container">
-                    <div class="tree">
-                        <!-- FEATURED -->
-                        <div class="tree-item">
-                            <dt class="blue">Featured</dt>
-                                <!-- TAGS -->
-                                <div class="tag-container">
-                                    <a class="tag tag--info" href="javascript:addTag('Virtual Consultation','blue')">Virtual Consultation</a>
-                                    <a class="tag tag--info" href="javascript:addTag('Offering a Deal','blue')">Offering a Deal</a>
-                                </div>
-                            </ul>
-                        </div>
-                        <space class="small"></space>
-                        <!-- CATEGORIES -->
-                        <div class="tree-item" >
-                            <dt class="purple">Categories</dt>
-                            <div class="tag-container">
-                                <a class="tag tag--link" href="javascript:addTag('Category 1','purple')">Category 1</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 2','purple')">Category 2</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 3','purple')">Category 3</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 4','purple')">Category 4</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 5','purple')">Category 5</a>
-                            </div>
-                        </div>
-                        <!-- REQUEST VENDOR -->
-                        <!-- <space class="large"></space> -->
-                        <div class="divider"></div>
-                        <div class="tree-item">
-                            <dt style="color:white;">Couldn't find a vendor?</dt>
-                            <span class="info">If the vendor you are looking for isn't here, add it!</span>
-                            <div class="btn-container" style="margin-left: 0;">
-                                <button id="add-button" class="btn-primary btn-animated btn-small btn-add" type="submit">Add a Vendor</button>
-                            </div>
-                                
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- MAIN CONTENT (VENDORS) -->
-            <div class="tree-nav-content">
-                <space class="x-large"></space>
-                <h6 class="yellow padded-16" >2 results.</h6>
-                <space class="medium"></space>
-                <div id="tag-filter" class="tag-container u-no-margin padded-16"> </div>
-                <space class="medium"></space>
-                
-                <!-- This shows a message if there's no result found. -->
-                <!-- toggle using javascript -->
-                <div id="result-not-found" class="row" style="display: none;">
-                    <div class="col-12">
-                        <div class="tile u-no-padding">
-                            <div class="tile__container w-100 u-text-center" style="padding: 20px;">
-                                <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
-                                <h6 class="tile__title u-no-margin">We cannot find what you were looking for.</b></h6>
-                                <span class="tile__subtitle">Please try a different keyword or submit a request.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- VENDORS HERE -->
-                 <div class="row u-no-padding">
-                   
-                    <div id="default-list" class="col-6" style="padding: 16px;">
-
-                        <!-- <div id="tile-test" class="tile u-no-padding">
-                            <div class="row w-100 u-no-padding">
-                                <div class="tile__icon">
-                                    <figure class="avatar">
-                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
-                                    </figure>
-                                </div>
-                             
-                                <div class="tile__container tile-padded"> 
-                                        <h6 class="tile__title u-no-margin">Vendor A</b></h6>
-                                        <p class="tile__subtitle">San Jose, CA</p>
-                                        <span class="info">Furniture</span> 
-                                </div>
-                               
-                                <div class="tile__container u-text-right tile-padded">
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="far fa-star yellow"></span>
-                                    <span class="info light-blue">5 reviews</span>
-                                </div>
-                               
-                            </div>
-                            
-                        </div>
-                        <space class="large"></space>
-                        <div class="tile u-no-padding">
-                            <div class="row w-100 u-no-padding">
-                                <div class="tile__icon">
-                                    <figure class="avatar">
-                                        <img class="h-100" src="https://exactviral.com/wp-content/uploads/2018/05/Italian-furniture.jpg">
-                                    </figure>
-                                </div>
-                             
-                                <div class="tile__container tile-padded"> 
-                                        <h6 class="tile__title u-no-margin">Vendor A</b></h6>
-                                        <p class="tile__subtitle">San Jose, CA</p>
-                                        <span class="info">Furniture</span> 
-                                </div>
-                               
-                                <div class="tile__container u-text-right tile-padded">
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="fa fa-star checked yellow"></span>
-                                    <span class="far fa-star yellow"></span>
-                                    <span class="info light-blue">5 reviews</span>
-                                </div>
-                               
-                            </div>
-                            
-                        </div>
-                         -->
-                    </div>
-                    <div class="col-6" style="padding: 16 16 48 16px;">
-                        <div class="card close u-flex u-flex-column h-699 u-no-margin sticky">
-                            <div class="card-container h-20">
-                                <div class="card-image"></div>
-                                <div class="title-container">
-                                    
-                                    <p class="title">Vendor A</p>
-                                    <span class="subtitle">San Jose, CA</span>
-                                </div>
-                            </div>
-                            <div class="content" style="margin-left: 3rem;">
-                                <p>This is vendor A.</p>
-                            </div>
-                            <div class="action-bar u-center">
-                                <button class="btn btn-save">SAVE</button>
-                                <button class="btn btn-learn">LEARN MORE</button>
-                            </div>
-                            
-                        </div>
-                        <space class="medium"></space>
-    
-                    </div> 
-                </div>
-                
-                <!-- <div id='default-list'></div>   -->
-                <div id='search-list'></div>                 
-                
-                <!-- <space class="large"></space> -->
-                <!-- PAGINATION -->
-                <div class="pagination">
-                    <div class="pagination-item short">
-                        <a id="prev-button" href="javascript:prevPage()" class="">Prev</a>
-                    </div>
-                    <div class="pagination-item short selected">
-                        <a href="#" class="">1</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a href="#">2</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a href="#" class="">3</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a href="#" class="">4</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a href="#" class="">...</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a href="#" class="">23</a>
-                    </div>
-                    <div class="pagination-item short">
-                        <a id="next-button" href="javascript:nextPage()" class="">Next</a>
-                    </div>
-                </div>
-                <space class="large"></space>
-            </div>
-            
+<!-- MAIN CONTENT (VENDORS) -->
+<div class="tree-nav-content">
+    <space class="x-large"></space>
+    <!-- ACCOUNT MODAL -->
+    <!-- <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+        <h4>Account details</h4><br />
+        <div class="account-details"></div>
         </div>
-    </div>
+    </div> -->
+    
+
+    <h2>Profile</h2><br />
+        <p id="userEmail"></p>
+        <p id="userName"></p>
+        <space class="x-large"></space>
+        <space class="x-large"></space>
+        <space class="x-large"></space>
+
+</div>
+
+
+<!-- FOOTER -->
     <footer>
         <div class="row level">
             <div class="col-4">
@@ -348,13 +150,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- <space class="x-large"></space> -->
+        </div>        
     </footer>
-
-
-
+<!-- END OF FOOTER -->
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
@@ -394,12 +192,9 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
   <script src="https://use.fontawesome.com/a696b91557.js"></script>
-  <!-- <script src="scripts/auth.js"></script> -->
-  <!-- <script src="scripts/index.js"></script> -->
-  <!-- <script src="scripts/validate.js"></script> -->
-  <!-- <script src="scripts/login.js"></script> -->
-  <script src="scripts/vendor.js"></script>
-  <script src="scripts/alert.js"></script>
-  <script src="scripts/pagination.js"></script>
+  
+  <script src="scripts/profile.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
 </body>
 </html>

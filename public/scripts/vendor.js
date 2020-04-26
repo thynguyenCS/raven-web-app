@@ -111,11 +111,21 @@ logoutButton.addEventListener('click', (e) => {
     window.location.href = "index2.html";
 });
 /******ADD VENDOR ********/
+
 const addVendor = document.getElementById('add-button');
-addVendor.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = "addVendor.html";
-});
+addVendor.addEventListener('click', (e)=>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            e.preventDefault();
+            window.location.href = "addVendor.html";
+        } else {
+          // No user is signed in.
+          e.preventDefault();
+          window.location.href = "index2.html";
+        }
+      });
+    
+    })
 
 /******VIEW PROFILE ********/
 const profileButton = document.getElementById('profile');

@@ -18,5 +18,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         });
     } else {
+        // Display some data from the object:
+        document.getElementById("userEmail").innerHTML = "Please login to view profile";
+
     }
 });
