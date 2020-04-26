@@ -7,3 +7,20 @@ logoutButton.addEventListener('click', (e) => {
 });
 
 /******ADD VENDOR ********/
+const signupForm = document.getElementById('signup-form');
+const signupButton = document.getElementById('signup-button');
+
+  // Once all inputs are valid, register user credential to firebase
+  signupForm.addEventListener('submit', (e)=>{
+    e.preventDefault(); // prevent form from submitting
+    db.collection('vendors').add({
+        name: signupForm.vendor-name.value
+      }).then(() => {
+        //reset form
+        signupForm.reset();
+        console.log("success");
+      }).catch(err => {
+        console.log(err.message);
+      });
+    });
+
