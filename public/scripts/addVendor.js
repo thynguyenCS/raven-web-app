@@ -16,7 +16,8 @@ const signupButton = document.getElementById('signup-button');
     db.collection('vendors').add({
         name: signupForm.name.value,
         location: signupForm.loc.value,
-        category: signupForm.cat.value
+        category: signupForm.cat.value,
+        logo: "img/ravenCircle.png"
 
       }).then(() => {
         //reset form
