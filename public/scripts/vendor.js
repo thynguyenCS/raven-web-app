@@ -1,23 +1,23 @@
 
 //  add filter tags to the top
-function addTag(tag, color){
+function addTag(tag){
     var tagContainer = document.getElementById("tag-filter");
     sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();
 
     var allTags = tagContainer.getElementsByClassName("tag");
     for(var i = 0; i < allTags.length; i++){
-        if (allTags[i].classList.contains('animated','bounce')){
-        allTags[i].classList.remove('animated','bounce');}
+        if (allTags[i].classList.contains('animated','fade-in')){
+        allTags[i].classList.remove('animated','fade-in');}
     }
 
-    let tagType = "";
+    let tagType = 'class="tag tag--grey animated fadeIn"';
     if (!tagContainer.contains(document.getElementById(sanitizedTag))){
-        if (color =="blue") tagType = 'class="tag tag--info animated fadeIn"';
-        else if(color =="purple") tagType = 'class="tag tag--link animated fadeIn"';
-        else if(color == "yellow") tagType = 'class="tag tag--warning animated fadeIn"';
-        else if(color =="red") tagType = 'class="tag tag--primary animated fadeIn"';
+        // if (color =="blue") tagType = 'class="tag tag--info animated fadeIn"';
+        // else if(color =="purple") tagType = 'class="tag tag--link animated fadeIn"';
+        // else if(color == "yellow") tagType = 'class="tag tag--warning animated fadeIn"';
+        // else if(color =="red") tagType = 'class="tag tag--primary animated fadeIn"';
         tagContainer.innerHTML += `<div id="${sanitizedTag}"` + tagType +`>${tag}
-                        <a class="tag tag--delete animated" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
+                        <a class="tag tag--delete" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
     }
 }
 // delete filter tags from the top

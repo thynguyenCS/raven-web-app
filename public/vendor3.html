@@ -121,37 +121,46 @@
                 <!-- Display number of results -->
                 <div class="content sideBar-content no-bottom-margin">
                     <dt class="yellow">Explore</dt>
+                    <space class="small"></space>
                     <div class="tag-container">
-                        <a class="tag tag--warning" href="javascript:addTag('Recommended','yellow')">Recommended</a>
-                        <a class="tag tag--warning" href="javascript:addTag('Best Rated','yellow')">Best Rated</a>
-                        <a class="tag tag--warning" href="javascript:addTag('Most Reviewed','yellow')">Most Reviewed</a>
+                        <a class="tag tag--grey" href="javascript:addTag('Recommended')"><i class="fas fa-plus tiny"></i>Recommended</a>
+                        <a class="tag tag--grey" href="javascript:addTag('Best Rated')"><i class="fas fa-plus tiny"></i>Best Rated</a>
+                        <a class="tag tag--grey" href="javascript:addTag('Most Reviewed')"><i class="fas fa-plus tiny"></i>Most Reviewed</a>
                     </div>
                 </div>
-                <space class="small"></space>
+                <!-- <space class="small"></space> -->
                 <!-- MAIN CONTENT OF SIDEBAR -->
                 <div class="tree-nav-container">
                     <div class="tree">
                         <!-- FEATURED -->
                         <div class="tree-item">
-                            <dt class="blue">Featured</dt>
+                            <dt class="green">Featured</dt>
+                            <space class="small"></space>
                                 <!-- TAGS -->
                                 <div class="tag-container">
-                                    <a class="tag tag--info" href="javascript:addTag('Virtual Consultation','blue')">Virtual Consultation</a>
-                                    <a class="tag tag--info" href="javascript:addTag('Offering a Deal','blue')">Offering a Deal</a>
+                                    <a class="tag tag--grey" href="javascript:addTag('Virtual Consultation')"><i class="fas fa-plus tiny"></i>Virtual Consultation</a>
+                                    <a class="tag tag--grey" href="javascript:addTag('Offering a Deal')"><i class="fas fa-plus tiny"></i>Offering a Deal</a>
                                 </div>
                             </ul>
                         </div>
-                        <space class="small"></space>
+                        <!-- <space class="small"></space> -->
                         <!-- CATEGORIES -->
                         <div class="tree-item" >
-                            <dt class="purple">Categories</dt>
-                            <div class="tag-container">
-                                <a class="tag tag--link" href="javascript:addTag('Category 1','purple')">Category 1</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 2','purple')">Category 2</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 3','purple')">Category 3</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 4','purple')">Category 4</a>
-                                <a class="tag tag--link" href="javascript:addTag('Category 5','purple')">Category 5</a>
-                            </div>
+                            <!-- <p class="menu-title uppercase blue">Categories</p> -->
+                            <dt class="blue">Categories</dt>
+                            
+                            <ul class="menu no-side-padding">
+                                <li class="menu-item">
+                                    <a href="#">Education</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Clothing</a>
+                                </li>
+                        
+                                <li class="menu-item">
+                                    <a href="#">Food</a>
+                                </li>
+                            </ul>
                         </div>
                         <!-- REQUEST VENDOR -->
                         <!-- <space class="large"></space> -->
@@ -162,9 +171,6 @@
                             <div class="btn-container" style="margin-left: 0;">
                                 <button id="add-button" class="btn-primary btn-animated btn-small btn-add" type="submit">Add a Vendor</button>
                             </div>
-                                
-                            
-                            
                         </div>
                     </div>
                 </div>

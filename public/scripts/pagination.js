@@ -154,18 +154,15 @@ function display3Categories(categories){
 }
 // display vendor's name, location, ratings, reviews, hours, and tags on vendor card
 function displayVendorCard(vendor){
-    var ratings = displayRatings(vendor.rating);
+    var ratings = getRatings(vendor.rating);
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
                 <div class="title-container u-text-right">
                     <div class="btn-group">
                         <button class="btn-dark tooltip" data-tooltip="Save"><i class="fas fa-bookmark white"></i></button>
                         <button class="btn-dark tooltip"  data-tooltip="More"><i class="fas fa-ellipsis-h white"></i></button>
-                      
                     </div>  
-                
-                </div>
-                
+                </div>         
             </div>
             <space class="medium"></space>
             
@@ -177,8 +174,7 @@ function displayVendorCard(vendor){
                         <span class="info vendor-info dark-grey">・</span>
                         <span class="info vendor-info dark-grey font-12">10 reviews</span>
                         <span class="info vendor-info dark-grey">・</span>
-                        <span class="info vendor-info dark-grey font-12">1.4 miles</span>
-                    
+                        <span class="info vendor-info dark-grey font-12">1.4 miles</span>              
                     </div>
                 </div>
                 <space class="large"></space>
@@ -220,7 +216,7 @@ function displayVendorCard(vendor){
                 </div>
                 <space class="medium"></space>
                 <span class="title white no-top-bot-margin">Location and Hours</span>
-                <space class="small"></space>
+                <space class="medium"></space>
                 <div class="row u-no-padding">
                     <div class="col-7 no-left-padding">
                         <span class="info no-top-bot-margin font-12">1824 Redwood</span>
@@ -232,19 +228,17 @@ function displayVendorCard(vendor){
                         <span class="info no-top-bot-margin font-12">Sun: closed</span>
                     </div>
                 </div>
-                <space class="small"></space>
+                <space class="medium"></space>
                 <span class="title white no-top-bot-margin">Service Highlights</span>
-                <space class="small"></space>
-                <dd class="tag-container">
+                <space class="medium"></space>
+                <div class="tag-container">
                     ${displayCategoryTags(vendor.category)}
-                </dd>
-                    
+                </div>
             </div>
             `
 }
-
 //display rating stars 
-function displayRatings(rating){
+function getRatings(rating){
     var html="";
     for (var i = 0; i < rating; i++){
         html += `<span class="fa fa-star checked yellow"></span>`;
@@ -259,7 +253,7 @@ function displayRatings(rating){
 function displayCategoryTags(categories){
     let html= ""
     for(var i =0; i < categories.length; i++){
-        html += `<a class="tag tag--link" href="javascript:addTag('${categories[i]}','purple')">${categories[i]}</a>`;
+        html += `<a class="tag tag--grey" href="javascript:addTag('${categories[i]}')">${categories[i]}</a>`;
     }
     return html;
 }
