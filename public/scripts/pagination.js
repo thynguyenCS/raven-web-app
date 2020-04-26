@@ -122,7 +122,7 @@ function changePage(page){
                             </div>
                         </div>                                
                     </div>
-                    <space class="large"></space>`;        
+                    <space class="medium"></space>`;        
         }
         listing_table.innerHTML += html;
 
