@@ -32,7 +32,7 @@ const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
 const num_founds = document.getElementById('num_founds')
 const not_found = document.getElementById('result-not-found');
-console.log(searchButton)
+//console.log(searchButton)
 
 isSearch = false;
 
@@ -54,6 +54,7 @@ searchButton.addEventListener('click', (e)=>{
             db.collection('vendors').orderBy('name').get().then(snap=>{
                 let changes = snap.docChanges()
                 findVendor(name,loc, changes)
+                not_found.style.display  = 'none';
                 //console.log(vendors)
                 if (vendors.length === 0){                   
                     not_found.style.display  = 'block';
