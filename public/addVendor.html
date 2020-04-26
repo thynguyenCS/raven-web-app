@@ -85,9 +85,36 @@
     </div> -->
     
 
-    <h2>Profile</h2><br />
-        <p id="userEmail"></p>
-        <p id="userName"></p>
+    <h2>Add Vendor</h2><br />
+        <div class="form-section">
+            <div class="input-control">
+                <input id="vendor-name" class="input-contains-icon" placeholder="Vendor name"
+                type="text" value="" autocomplete="false" required>
+                <span class="icon"><i class="fa fa-user small"></i></span>
+            </div>
+            <div class="input-control">
+                <input id="vendor-loc" class="input-contains-icon" placeholder="Location"
+                type="text" value="" autocomplete="false" required>
+                <span class="icon"><i class="fa fa-envelope small"></i></span>
+            </div>
+            <div class="input-control">
+                <input id="vendor-cat" class="input-contains-icon" placeholder="Category"
+                type="text" value="" autocomplete="false" required>
+                <span class="icon"><i class="fa fa-lock small"></i></span>
+            </div>
+        </div>
+        <!-- error msg -->
+        <div id="error" class="toast toast--error" style="display:none;">
+        </div>
+        <div id="success" class="toast toast--success" style="display:none;">
+        </div>
+        <button id="signup-button" class="btn-info u-pull-right btn-animated" type="submit">
+            Submmit
+        </button>
+
+
+
+
         <space class="x-large"></space>
         <space class="x-large"></space>
         <space class="x-large"></space>
@@ -193,7 +220,7 @@
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
   <script src="https://use.fontawesome.com/a696b91557.js"></script>
   
-  <script src="scripts/profile.js"></script>
+  <script src="scripts/addVendor.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
 </body>
