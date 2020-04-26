@@ -117,7 +117,7 @@ function changePage(page){
                                 <span class="info vendor-info dark-grey">${(Math.round(vendors[i].rating * 10) / 10).toFixed(1)}</span>
                                 <span class="fa fa-star small checked dark-grey"></span></br>
                                 <span class="info vendor-info dark-grey">10</span>
-                                <span class="fas fa-comment small dark-grey"></span>
+                                <span class="fas fa-comment-alt small dark-grey"></span>
                                 
                             </div>
                         </div>                                
@@ -154,104 +154,91 @@ function display3Categories(categories){
 }
 // display vendor's name, location, ratings, reviews, hours, and tags on vendor card
 function displayVendorCard(vendor){
-    var ratings = displayRatings(vendor.rating);
+    var ratings = getRatings(vendor.rating);
     return `<div class="card-container h-20">
                 <div class="card-image"></div>
                 <div class="title-container u-text-right">
                     <div class="btn-group">
                         <button class="btn-dark tooltip" data-tooltip="Save"><i class="fas fa-bookmark white"></i></button>
                         <button class="btn-dark tooltip"  data-tooltip="More"><i class="fas fa-ellipsis-h white"></i></button>
-                      
                     </div>  
-                
-                </div>
-                
+                </div>         
             </div>
             <space class="medium"></space>
             
             <div class="content card-content">
-                <dt class="tile tile--center no-shadow" >
-                    <div class="tile__icon">
-                        <figure class="avatar vendorCard-avatar">
-                            <img class="h-100" src="${vendor.logo}">
-                        </figure>
-                    </div>  
+                <div class="tile tile--center no-shadow" >
                     <div class="tile__container">
-                        <a href=""><span class="tile__title">${vendor.name}</span></a>
+                        <a href="" class="vendor-title"><h6 class="tile__title">${vendor.name}</h6></a>
                         <span class="tile__subtitle">${ratings}</span>
                         <span class="info vendor-info dark-grey">・</span>
-                        <span class="info vendor-info dark-grey">50 reviews</span>
+                        <span class="info vendor-info dark-grey font-12">10 reviews</span>
                         <span class="info vendor-info dark-grey">・</span>
-                        <span class="info vendor-info dark-grey">1.4 miles</span>
-                    
+                        <span class="info vendor-info dark-grey font-12">1.4 miles</span>              
                     </div>
-                </dt>
+                </div>
                 <space class="large"></space>
-                <dt class="title white no-top-bot-margin">Review Highlights</dt>
-                <space class="small"></space>
-                <dd class="tile tile--center no-shadow no-side-padding">
+                <span class="title white no-top-bot-margin">Recent Reviews</span>
+                <space class="medium"></space>
+                <div class="tile tile--center no-shadow no-side-padding">
                     <div class="tile__icon">
                         <figure class="avatar user-avatar">
                             <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
                         </figure>
                     </div>
                     <div class="tile__container review-container">
-                        <p class="tile__subtitle review u-no-margin">"The service was fast. I would come back again."</p>
-                        <span class="info user-review">23 minutes ago</span>
-                    </div>
-                </dd>
-                <space class="small"></space>
-                <dd class="tile tile--center no-shadow no-side-padding">
-                    <div class="tile__icon">
-                        <figure class="avatar user-avatar">
-                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
-                        </figure>
-                    </div>
-                    <div class="tile__container review-container">
-                        <p class="tile__subtitle review u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
-                        <span class="info user-review">23 minutes ago</span>
-                    </div>
-                </dd>
-                <space class="small"></space>
-                <dd class="tile tile--centerno-shadow no-side-padding">
-                    <div class="tile__icon">
-                        <figure class="avatar user-avatar">
-                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
-                        </figure>
-                    </div>
-                    <div class="tile__container review-container">
-                        <p class="tile__subtitle review u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
-                        <span class="info user-review">23 minutes ago</span>
-                    </div>
-                </dd>
-                
-                <dt class="title white no-top-bot-margin">Location and Hours</dt>
-                <space class="small"></space>
-                <div class="row u-no-padding">
-                    <div class="col-6 no-side-padding">
-                        <dd class="info no-top-bot-margin">1824 Redwood</dd>
-                        <dd class="info no-top-bot-margin"> NC, USA</dd>
-                    </div>
-                    <div class="col-6 no-side-padding u-text-left">
-                        <dd class="info no-top-bot-margin">Mon-Fri: 10:00 AM - 6:00 PM</dd>
-                        <dd class="info no-top-bot-margin">Sat: 11:00 AM - 5:00 PM</dd>
-                        <dd class="info no-top-bot-margin">Sun: closed</dd>
+                        <p class="tile__subtitle font-12 u-no-margin">"The service was fast. I would come back again."</p>
+                        
                     </div>
                 </div>
                 <space class="small"></space>
-               
-                <dt class="title white no-top-bot-margin">Categories</dt>
+                <div class="tile tile--center no-shadow no-side-padding">
+                    <div class="tile__icon">
+                        <figure class="avatar user-avatar">
+                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                        </figure>
+                    </div>
+                    <div class="tile__container review-container">
+                        <p class="tile__subtitle font-12 u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
+                    </div>
+                </div>
                 <space class="small"></space>
-                <dd class="tag-container">
+                <div class="tile tile--center no-shadow no-side-padding">
+                    <div class="tile__icon">
+                        <figure class="avatar user-avatar">
+                            <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
+                        </figure>
+                    </div>
+                    <div class="tile__container review-container">
+                        <p class="tile__subtitle font-12 u-no-margin">"This place is busy during Monday afternoon so avoid going during that time."</p>
+                        
+                    </div>
+                </div>
+                <space class="medium"></space>
+                <span class="title white no-top-bot-margin">Location and Hours</span>
+                <space class="medium"></space>
+                <div class="row u-no-padding">
+                    <div class="col-7 no-left-padding">
+                        <span class="info no-top-bot-margin font-12">1824 Redwood</span>
+                        <span class="info no-top-bot-margin font-12"> NC, USA</span>
+                    </div>
+                    <div class="col-5 no-side-padding u-text-left">
+                        <span class="info no-top-bot-margin font-12">Mon-Fri: 10:00 AM - 6:00 PM</span>
+                        <span class="info no-top-bot-margin font-12">Sat: 11:00 AM - 5:00 PM</span>
+                        <span class="info no-top-bot-margin font-12">Sun: closed</span>
+                    </div>
+                </div>
+                <space class="medium"></space>
+                <span class="title white no-top-bot-margin">Service Highlights</span>
+                <space class="medium"></space>
+                <div class="tag-container">
                     ${displayCategoryTags(vendor.category)}
-                </dd>
-                    
+                </div>
             </div>
             `
 }
-
 //display rating stars 
-function displayRatings(rating){
+function getRatings(rating){
     var html="";
     for (var i = 0; i < rating; i++){
         html += `<span class="fa fa-star checked yellow"></span>`;
@@ -266,7 +253,7 @@ function displayRatings(rating){
 function displayCategoryTags(categories){
     let html= ""
     for(var i =0; i < categories.length; i++){
-        html += `<a class="tag tag--link" href="javascript:addTag('${categories[i]}','purple')">${categories[i]}</a>`;
+        html += `<a class="tag tag--grey" href="javascript:addTag('${categories[i]}')">${categories[i]}</a>`;
     }
     return html;
 }
