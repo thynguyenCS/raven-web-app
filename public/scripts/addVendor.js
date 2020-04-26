@@ -14,7 +14,10 @@ const signupButton = document.getElementById('signup-button');
   signupForm.addEventListener('submit', (e)=>{
     e.preventDefault(); // prevent form from submitting
     db.collection('vendors').add({
-        name: signupForm.vendor-name.value
+        name: signupForm.name.value,
+        location: signupForm.loc.value,
+        category: signupForm.cat.value
+
       }).then(() => {
         //reset form
         signupForm.reset();
