@@ -26,12 +26,12 @@ function deleteTag(tag){
     tag.parentNode.removeChild(tag);
 }
 
-
 /**************SEARCH *************/
 const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
 const num_founds = document.getElementById('num_founds')
+const not_found = document.getElementById('result-not-found');
 console.log(searchButton)
 
 isSearch = false;
@@ -54,11 +54,18 @@ searchButton.addEventListener('click', (e)=>{
             db.collection('vendors').orderBy('name').get().then(snap=>{
                 let changes = snap.docChanges()
                 findVendor(name,loc, changes)
-                console.log(vendors)
-                changePage(1)
-                if(vendors.length < 2)
+                //console.log(vendors)
+                if (vendors.length === 0){                   
+                    not_found.style.display  = 'block';
+                    document.getElementById('default-list').innerHTML = "";
+                    document.getElementById('toggle-vendor-card').innerHTML = "";
+                }                
+                if(vendors.length === 1){
+                    changePage(1)
                     num_founds.innerHTML = vendors.length + " result found"
-                else{
+                }                    
+                else if (vendors.length > 1){
+                    changePage(1)
                     num_founds.innerHTML = vendors.length + " results found"
                 }
             })  
@@ -80,28 +87,34 @@ function foundVendor(data){
     return new Vendor(data.name, data.location, data.category, data.logo, data.rating)
 }
 function findVendor(name, loc, changes){ 
-    var i;
-    for(i = 0; i < changes.length; i++){
+    for(let i = 0; i < changes.length; i++){
+        let dataName = changes[i].doc.data().name;
+        let dataLoc = changes[i].doc.data().location;
         if (name && !loc){
-            if(changes[i].doc.data().name == name){
+            if(checkStrings(dataName, name)){              
                 vendors.push(foundVendor(changes[i].doc.data()))
             }
         }
         else if (name && loc){
-            if(changes[i].doc.data().name == name && changes[i].doc.data().location == loc){  
+            if(checkStrings(dataName, name) && checkStrings(dataLoc, loc)){
                 vendors.push(foundVendor(changes[i].doc.data()))
             }
         } 
         else if (!name && loc){
-            console.log('location only');
-            if(changes[i].doc.data().location == loc){
+            if(checkStrings(dataLoc, loc)){
                 vendors.push(foundVendor(changes[i].doc.data()))
             }
         } 
     }
 }
 
- 
+function checkStrings(str1, str2){
+    const regex = /\W*\s*/gi;
+    new_str1 = str1.replace(regex, "").toUpperCase();
+    new_str2 = str2.replace(regex, "").toUpperCase();
+    //return new_str1.toUpperCase() === new_str2.toUpperCase();
+    return new_str1.indexOf(new_str2) !== -1;
+}
 
 /******LOG OUT ********/
 const logoutButton = document.getElementById('logout-button');
