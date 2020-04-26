@@ -13,10 +13,12 @@ const signupButton = document.getElementById('signup-button');
   // Once all inputs are valid, register user credential to firebase
   signupForm.addEventListener('submit', (e)=>{
     e.preventDefault(); // prevent form from submitting
+    var string = signupForm.cat.value
+    var arr = string.split(', '); // split string on comma space
     db.collection('vendors').add({
         name: signupForm.name.value,
         location: signupForm.loc.value,
-        category: signupForm.cat.value,
+        category: arr, // signupForm.cat.value,
         logo: "img/ravenCircle.png",
         rating: 0,
         comment: "New Vendor - Waiting for confirm"
