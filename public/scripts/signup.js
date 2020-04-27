@@ -29,11 +29,18 @@ signupForm.addEventListener('submit', (e)=>{
             displayName: signupForm['signup-name'].value
           }).then(()=>{ 
             // display confirm message
-            toast('success', "Signed up successfully. Please check your email for verification.");     
+            document.getElementById('signup-body').style.display = 'none';
+            document.getElementById('signup-action').style.display = 'none';
+            displayToast(`Signed up successfully. Please check your email for verification <i class="fas fa-check-circle green"></i> `);     
             document.getElementById('signup-form').reset();
+            window.setTimeout(function(){
+              // Move to html.index after 2 seconds
+              window.location.href = "index2.html";
+            }, 3000);
+            // document.getElementById('signup-form').reset();
           });       
         }).catch(err => {
-          toast('error',"This user already exists.");
+          displayToast("This user already exists.");
         })
   }
 });

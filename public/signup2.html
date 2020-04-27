@@ -32,12 +32,12 @@
               <div class="frame__body u-no-padding">
                   <div class="row u-no-padding level fill-height">
                       <div class="col-12">
-                        <space class="x-large"></space>
+                        <!-- <space class="large"></space> -->
                         <div class="padded">
                             <a href="index2.html"><img src=img/ravenCircle.png alt="raven" class="u-text-center hover-grow"></a>
                             <space class="medium"></space>
                             <h3>Sign up</h3>
-                            <div class="form-section">
+                            <div id="signup-body" class="form-section">
                                 <div class="input-control">
                                     <input id="signup-name" class="input-contains-icon" placeholder="Your full name"
                                     type="text" value="" autocomplete="false" required>
@@ -55,19 +55,19 @@
                                 </div>
                             </div>
                             <!-- error msg -->
-                            <div id="error" class="toast toast--error" style="display:none;">
+                            <div id="error" class="toast toast--error" style="display:none;"></div>
+                            <div id="signup-action">
+                              <button id="signup-button" class="btn-info u-pull-right btn-animated" type="submit">
+                                Sign up
+                              </button>
+                              <span class="fg-danger info"></span>
+                              <span class="info">Already have an account?</span>
+                              <span class="info"><a href="index2.html" class="link">Login</a>
+                              </span> 
                             </div>
-                            <div id="success" class="toast toast--success" style="display:none;">
-                              </div>
-                            <button id="signup-button" class="btn-info u-pull-right btn-animated" type="submit">
-                              Sign up
-                            </button>
-                            <span class="fg-danger info"></span>
-                            <span class="info">Already have an account?</span>
-                            <span class="info"><a href="index2.html" class="link">Login</a>
-                            </span>     
+                                
                           </div>
-                        <space class="x-large"></space>
+                        <!-- <space class="large"></space> -->
                       </div>               
                     </div>
               </div>

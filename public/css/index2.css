@@ -1,18 +1,27 @@
 body {
     /* background-color: #484f5b; */
-    background-color: #363b45;
+    background-color: #1e1f26;
+    /* background-color: #363b45; */
 }
 .content {
     max-width: 26em;
     /* margin: 1em auto 1.5em; */
     width: 80%;
     border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: none;
     /* background-color: #363b45; */
-    background-color:#24292e;
-    box-shadow: 0 .05rem .2rem rgba(69,77,93,.3);
+    /* background-color:#24292e; */
+    background-color: #1e1f26;
+    /* box-shadow: 0 .05rem .2rem rgba(69,77,93,.3); */
 }
-
+.frame {
+    border: none;
+    box-shadow: none;
+}
 .padded {
+    border: none;
     padding: 36px;
 }
 
@@ -91,10 +100,13 @@ img {
     margin-left: 0;
 }
 .toast.toast--error {
-    background-color: #434955;
+    background-color:  #2c303a;
     border: none;
 
 }
 h7 {
     color: white;
+}
+.green {
+    color: #0dd157;
 }
