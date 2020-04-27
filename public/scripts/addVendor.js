@@ -3,7 +3,7 @@ const logoutButton = document.getElementById('logout-button');
 logoutButton.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    window.location.href = "index2.html";
+    window.location.href = "index.html";
 });
 
 /******ADD VENDOR ********/
