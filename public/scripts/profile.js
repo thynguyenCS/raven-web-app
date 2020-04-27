@@ -7,19 +7,23 @@ logoutButton.addEventListener('click', (e) => {
 });
 
 /******VIEW PROFILE ********/
+// Tuong: Does this function work????
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     //create another collection to store username with the same user.uid
     db.collection('users').doc(user.uid).get().then(doc => {
         
         // Display some data from the object:
-        document.getElementById("userEmail").innerHTML = "Logged in as " + user.email;
-        document.getElementById("userName").innerHTML = "User name: " + doc.data().displayName;
+        // document.getElementById("userEmail").innerHTML = "Logged in as " + user.email;
+        // document.getElementById("userName").innerHTML = "User name: " + doc.data().displayName;
 
         });
     } else {
         // Display some data from the object:
-        document.getElementById("userEmail").innerHTML = "Please login to view profile";
+        // document.getElementById("userEmail").innerHTML = "Please login to view profile";
+        document.getElementById('display-all').style.display="none";
+        document.getElementById('user-not-logged-in').style.display = "block";
+        console.log('not logged in');
 
     }
 });

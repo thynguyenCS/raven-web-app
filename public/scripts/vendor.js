@@ -132,12 +132,14 @@ function checkStrings(str1, str2){
 }
 
 /******LOG OUT ********/
-const logoutButton = document.getElementById('logout-button');
-logoutButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    auth.signOut();
-    window.location.href = "index.html";
-});
+// already done this in profile.js
+
+// const logoutButton = document.getElementById('logout-button');
+// logoutButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     auth.signOut();
+//     window.location.href = "index.html";
+// });
 /******ADD VENDOR ********/
 
 const addVendor = document.getElementById('add-button');

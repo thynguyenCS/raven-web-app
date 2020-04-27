@@ -32,7 +32,9 @@ vendorConverter = {
 }
 // this function is triggered in vendor3.html
 function prevPage(){
+    // console.log(current_page);
     if (current_page > 1){
+    
         current_page--;
         changePage(current_page);
     }
@@ -43,7 +45,6 @@ function nextPage(){
         current_page++;
         changePage(current_page);
     }
-
 }
 
 function numPages(){
@@ -78,27 +79,64 @@ const listing_table = document.getElementById('default-list');
 const pagingItems = document.getElementById('pagination');
 
 function createPagingItems(){
-    let prev = `<div class="pagination-item short child">
+    // let html ="";
+    var html = `<div class="pagination-item short selected">
+                <a id="page-1" href="javascript:changePage(1)" class="">1</a>
+                </div> `;
+    for (var i = 1; i < numPages(); i++){
+        html += `<div class="pagination-item short">
+            <a id="page-${i+1}" href="javascript:changePage(${i+1})" class="">${i+1}</a>
+            </div> `;
+    }
+    var prev = `<div class="pagination-item short">
                     <a id="prev-button" href="javascript:prevPage()" class="">Prev</a>
                 </div> `
-    let next = `<div class="pagination-item short next child" id="next">
+    var next = `<div class="pagination-item short" id="next">
                     <a id="next-button" href="javascript:nextPage()" class="">Next</a>
                 </div>`
-    let html=''
-    for(let i = 1; i <3; i++){
-        html += `<div class="pagination-item short child">
-        <a href="javascript:changePage(${i})" class="">${i}</a>
-    </div>`
-    }   
+    // for(let i = 1; i <3; i++){
+    //     html += `<div class="pagination-item short child">
+    //     <a href="javascript:changePage(${i})" class="">${i}</a>
+    // </div>`
+    // }   
     pagingItems.innerHTML = prev + html + next;
 }
-createPagingItems();
-
+// createPagingItems();
+function toggleSelectedPage(p){
+    var id = 'page-' + p;
+    var page = document.getElementById(id);
+    var pages = pagingItems.getElementsByClassName('pagination-item');
+    for (var i = 0; i < pages.length; i++){
+        if (pages[i].classList.contains('selected')){
+            pages[i].classList.remove('selected');
+        }
+    }
+    page.parentNode.classList.add('selected');
+}
 
 function changePage(page){
+    current_page = page;
+    var prev_button = document.getElementById('prev-button');
+    var next_button = document.getElementById('next-button');
+
+    toggleSelectedPage(page);
+
     //validate page
     if (page < 1) page=1;
     if (page > numPages()) page = numPages();
+    
+    if (page == 1){
+        prev_button.style.visibility = "hidden";
+    }else {
+        prev_button.style.visibility = "visible";
+    }
+
+    if (page == numPages()){
+        next_button.style.visibility = "hidden";
+    }else {
+        next_button.style.visibility = "visible";
+    }
+    // if (page > numPages()) page = numPages();
     listing_table.innerHTML = "";
     let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
@@ -309,6 +347,7 @@ window.onload = function() {
             vendors = fbVendors;
         }
         // display page 1 by default
+        createPagingItems();
         changePage(1); 
      })
 };

@@ -21,7 +21,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
     <link rel="stylesheet" type="text/css" href="css/vendor3.css">
     <!-- icon -->
-    <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
+    <link rel = "icon" href="img/ravenCircle.png" type = "image/x-icon"> 
     <title>Raven</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
         <!-- <div class="row"> -->
             <div class="header-brand">
                 <div class="nav-item no-hover">
-                    <a href="index2.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
+                    <a href="vendor3.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
                     <h6 class="title"><a href="vendor3.html">Raven</a></h6>
                 </div>
                 <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
@@ -276,6 +276,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- This shows a message if user is not logged in -->
+                <!-- toggle using javascript -->
+                <div id="user-not-logged-in" class="row" style="display: none;">
+                    <div class="col-12">
+                        <div class="tile u-no-padding">
+                            <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                <h6 class="tile__title u-no-margin">You are not logged in.</b></h6>
+                                <span class="tile__subtitle">Only user can see this page.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- VENDORS HERE -->
                 <div class="row u-no-padding" id="display-all" style="background-color: #1e1f26;">      
                     <div id="default-list" class="col-6" style="padding: 16px;">   
@@ -306,7 +319,8 @@
                 </div>
                 
                 <!-- PAGINATION -->
-                <div id="pagination" class="pagination parent">                    
+                <div id="pagination" class="pagination">   
+                                    
                 </div>
                 <space class="large"></space>
             </div>
@@ -411,5 +425,6 @@
   <script src="scripts/alert.js"></script>
   <script src="scripts/pagination.js"></script>
   <script src="scripts/vendor.js"></script>
+  <script src="scripts/profile.js"></script>
 </body>
 </html>
