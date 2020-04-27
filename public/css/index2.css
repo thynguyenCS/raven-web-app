@@ -15,6 +15,7 @@ body {
 .padded {
     padding: 36px;
 }
+
 h3 {
     color:  white;
 }
@@ -27,12 +28,19 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
 .icon {
     color:  white;
 }
+
 .btn-info {
     margin-top: 0.5rem;
     padding-left: 1rem;
     background-color: #5e5cc7 ;
     /* background-color:  #5756bb; */
-    border:#4c4aa3;
+    /* border:#4c4aa3; */
+    border: none;
+}
+
+.btn-info:focus {
+    border: none;
+    box-shadow: none;
 }
 .btn-info:hover {
     background-color: #4c4aa3;
@@ -83,8 +91,9 @@ img {
     margin-left: 0;
 }
 .toast.toast--error {
-    background-color: #cc4642;
+    background-color: #434955;
     border: none;
+
 }
 h7 {
     color: white;

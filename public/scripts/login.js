@@ -19,16 +19,15 @@ loginForm.addEventListener('submit', (e) => {
         const password = loginForm['login-password'].value;  
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            window.location.href = "vendor3.html";
-            // window.setTimeout(function(){
-            //     // Move to html.index after 2 seconds
-            //     window.location.href = "vendor2.html";
-            //   }, 2000);
-            //reset form
+            document.getElementById('error').style.display = 'none';
             loginForm.reset();
-            // loginForm.querySelector('.error').innerHTML = '';
+            window.setTimeout(function(){
+                // Move to html.index after 2 seconds
+                window.location.href = "vendor3.html";
+              }, 1000);
+            
         }).catch(err => {
-            toast('error',"Invalid email or password.");
+            displayToast("Invalid email or password.");
             // loginForm.querySelector('.error').innerHTML = err.message;
     });
     }    
