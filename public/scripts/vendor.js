@@ -90,7 +90,7 @@ searchButton.addEventListener('click', (e)=>{
         } else {
           // No user is signed in.
           e.preventDefault();
-          window.location.href = "index2.html";
+          window.location.href = "index.html";
         }
       });
     
@@ -135,7 +135,7 @@ const logoutButton = document.getElementById('logout-button');
 logoutButton.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    window.location.href = "index2.html";
+    window.location.href = "index.html";
 });
 /******ADD VENDOR ********/
 
@@ -148,7 +148,7 @@ addVendor.addEventListener('click', (e)=>{
         } else {
           // No user is signed in.
           e.preventDefault();
-          window.location.href = "index2.html";
+          window.location.href = "index.html";
         }
       });
     
