@@ -69,6 +69,7 @@ searchButton.addEventListener('click', (e)=>{
                     document.getElementById('display-all').style.display = 'none';
                     document.getElementById('pagination').style.display ='none';
                     document.getElementById('toggle-vendor-card').innerHTML = "";
+                    num_founds.innerHTML = '';
                 }                
                 if(vendors.length === 1){
                     document.getElementById('display-all').style.display = 'block';

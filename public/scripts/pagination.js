@@ -3,7 +3,7 @@ var records_per_page = 10;
 var vendors = [];
 var vendorTiles = [];
 var max_tags = 3;
-var pagingItems = document.getElementsByClassName('paging-items')
+
 class Vendor {
     constructor(name, location, category, logo, rating){
         this.name = name;
@@ -45,24 +45,9 @@ function nextPage(){
     }
 
 }
-// function currentPage(){
-//     return current_page;
-// }
+
 function numPages(){
     return Math.ceil(vendors.length / records_per_page);
-}
-
-// display all the pages number - does not work
-function displayPages(){    
-    //console.log(pagingItems)
-    let pagesHTML = ''
-    for(var counter = 1; counter <= numPages(); counter++){
-        pagesHTML += `<div class="pagination-item short">
-            <a href="#">${counter}</a></div>`
-    }    
-    console.log(pagesHTML)
-    pagingItems.innerHTML += pagesHTML
-    
 }
 
 
@@ -87,11 +72,30 @@ function getVendors() {
     });
     }
 
+const btn_next = document.getElementById('next-button');
+const btn_prev = document.getElementById('prev-button');
+const listing_table = document.getElementById('default-list');
+const pagingItems = document.getElementById('pagination');
+
+function createPagingItems(){
+    let prev = `<div class="pagination-item short child">
+                    <a id="prev-button" href="javascript:prevPage()" class="">Prev</a>
+                </div> `
+    let next = `<div class="pagination-item short next child" id="next">
+                    <a id="next-button" href="javascript:nextPage()" class="">Next</a>
+                </div>`
+    let html=''
+    for(let i = 1; i <3; i++){
+        html += `<div class="pagination-item short child">
+        <a href="javascript:changePage(${i})" class="">${i}</a>
+    </div>`
+    }   
+    pagingItems.innerHTML = prev + html + next;
+}
+createPagingItems();
+
+
 function changePage(page){
-    var btn_next = document.getElementById('next-button');
-    var btn_prev = document.getElementById('prev-button');
-    var listing_table = document.getElementById('default-list');
-   
     //validate page
     if (page < 1) page=1;
     if (page > numPages()) page = numPages();
@@ -298,8 +302,7 @@ function toggleVendorCard(){
     }
 }      
 // display vendors as soon as page loads
-window.onload = function() {
-    
+window.onload = function() {    
     getVendors()
     .then( fbVendors => {
         if(!isSearch){

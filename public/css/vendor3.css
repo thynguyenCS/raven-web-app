@@ -711,3 +711,13 @@ a.tag--grey:hover {
   .tile .tile-content {
       overflow: hidden;
   }
+
+  /* Thy testing */
+  .parent {
+    display: table;
+}
+.child {
+    display: table-cell;
+    float: left;
+    text-align: center;
+}
