@@ -37,6 +37,8 @@ const signupButton = document.getElementById('add-vendor-button');
         //reset form
         signupForm.reset();
         console.log("success");
+        e.preventDefault();
+        window.location.href = "vendor3.html";
       }).catch(err => {
         console.log(err.message);
       });
