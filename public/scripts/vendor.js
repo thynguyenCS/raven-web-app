@@ -36,6 +36,10 @@ const inputName = document.getElementById("search-vendor");
 const inputLoc = document.getElementById("search-loc");
 const num_founds = document.getElementById('num_founds')
 const not_found = document.getElementById('result-not-found');
+const default_list = document.getElementById('default-list');
+const display_all = document.getElementById('display-all');
+const pagination = document.getElementById('pagination');
+// var vendors = [];
 //console.log(searchButton)
 
 isSearch = false;
@@ -47,7 +51,6 @@ searchButton.addEventListener('click', (e)=>{
         if (user) {
             // fullList = vendors
             vendors = []
-
             // clear tags
             clearAllTags();
 
@@ -55,33 +58,41 @@ searchButton.addEventListener('click', (e)=>{
             e.preventDefault();
             name = inputName.value;
             loc = inputLoc.value;
-            if (name.length > 0) addTag(name,'red');
-            if (loc.length < 0) addTag(loc,'red');
+            if (name.length > 0) addTag(name);
+            if (loc.length < 0) addTag(loc);
             isSearch = true;
             db.collection('vendors').orderBy('name').get().then(snap=>{
                 let changes = snap.docChanges()
                 findVendor(name,loc, changes)
+                console.log(numPages());
                 not_found.style.display  = 'none';
                 //console.log(vendors)
                 if (vendors.length === 0){                   
                     not_found.style.display  = 'block';
-                    document.getElementById('default-list').innerHTML = "";
-                    document.getElementById('display-all').style.display = 'none';
-                    document.getElementById('pagination').style.display ='none';
-                    document.getElementById('toggle-vendor-card').innerHTML = "";
+                    display_all.innerHTML = "";
+                    display_all.style.display = 'none';
+                    pagination.style.visibility = 'hidden';
+                    // document.getElementById('default-list').innerHTML = "";
+                    // document.getElementById('display-all').style.display = 'none';
+                    // document.getElementById('pagination').style.visibility ='hidden';
+                    // document.getElementById('toggle-vendor-card').innerHTML = "";
                     num_founds.innerHTML = '';
                 }                
-                if(vendors.length === 1){
-                    document.getElementById('display-all').style.display = 'block';
-                    document.getElementById('pagination').style.display ='block';
+                else if(vendors.length === 1){
+                    createPagingItems();
+                    display_all.style.display = 'block';
+                    pagination.style.visibility = 'visible';
+                    // document.getElementById('display-all').style.display = 'block';
+                    // document.getElementById('pagination').style.visibility ='visible';
                     changePage(1);
-                    num_founds.innerHTML = vendors.length + " result found"
+                    num_founds.innerHTML = vendors.length + " result found";
                 }                    
                 else if (vendors.length > 1){
-                    document.getElementById('display-all').style.display = 'block';
-                    document.getElementById('pagination').style.display ='block';
-                    changePage(1)
-                    num_founds.innerHTML = vendors.length + " results found"
+                    createPagingItems();
+                    display_all.style.display = 'block';
+                    pagination.style.visibility = 'visible';
+                    changePage(1);
+                    num_founds.innerHTML = vendors.length + " results found";
                 }
             })  
             
@@ -91,7 +102,7 @@ searchButton.addEventListener('click', (e)=>{
         } else {
           // No user is signed in.
           e.preventDefault();
-          window.location.href = "index.html";
+          window.location.href = "index2.html";
         }
       });
     

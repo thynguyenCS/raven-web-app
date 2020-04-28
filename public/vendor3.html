@@ -265,30 +265,36 @@
                 
                 <!-- This shows a message if there's no result found. -->
                 <!-- toggle using javascript -->
-                <div id="result-not-found" class="row" style="display: none;">
-                    <div class="col-12">
-                        <div class="tile u-no-padding">
-                            <div class="tile__container w-100 u-text-center" style="padding: 20px;">
-                                <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
-                                <h6 class="tile__title u-no-margin">We cannot find what you were looking for.</b></h6>
-                                <span class="tile__subtitle">Please try a different keyword or submit a request.</span>
+                <div class="row u-no-padding">
+                    <div id="result-not-found" class="row" style="display: none;">
+                        <div class="col-12">
+                            <div class="tile u-no-padding">
+                                <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                    <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                    <h6 class="tile__title u-no-margin">We cannot find what you were looking for.</b></h6>
+                                    <span class="tile__subtitle">Please try a different keyword or submit a request.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+               
                 <!-- This shows a message if user is not logged in -->
                 <!-- toggle using javascript -->
-                <div id="user-not-logged-in" class="row" style="display: none;">
-                    <div class="col-12">
-                        <div class="tile u-no-padding">
-                            <div class="tile__container w-100 u-text-center" style="padding: 20px;">
-                                <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
-                                <h6 class="tile__title u-no-margin">You are not logged in.</b></h6>
-                                <span class="tile__subtitle">Only user can see this page.</span>
+                <div class="row u-no-padding">
+                    <div id="user-not-logged-in" class="row" style="display: none;">
+                        <div class="col-12">
+                            <div class="tile u-no-padding">
+                                <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                    <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                    <h6 class="tile__title u-no-margin">You are not logged in.</b></h6>
+                                    <span class="tile__subtitle">Only user can see this page.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <!-- VENDORS HERE -->
                 <div class="row u-no-padding" id="display-all" style="background-color: #1e1f26;">      
                     <div id="default-list" class="col-6" style="padding: 16px;">   
@@ -319,9 +325,15 @@
                 </div>
                 <space class="large"></space>
                 <!-- PAGINATION -->
-                <div id="pagination" class="pagination">   
+                <div class="row u-no-padding">
+                    
+                        <div id="pagination" class="pagination">   
                                     
+                        </div>
+                  
+                    
                 </div>
+                
                 <space class="large"></space>
             </div>
             
