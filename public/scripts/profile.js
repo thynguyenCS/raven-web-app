@@ -14,8 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     db.collection('users').doc(user.uid).get().then(doc => {
         
         // Display some data from the object:
-        // document.getElementById("userEmail").innerHTML = "Logged in as " + user.email;
-        // document.getElementById("userName").innerHTML = "User name: " + doc.data().displayName;
+        document.getElementById("userEmail").innerHTML = "Logged in as " + user.email;
+        document.getElementById("userName").innerHTML = "User name: " + doc.data().displayName;
 
         });
     } else {
