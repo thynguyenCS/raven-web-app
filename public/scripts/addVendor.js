@@ -36,9 +36,15 @@ const signupButton = document.getElementById('add-vendor-button');
       }).then(() => {
         //reset form
         signupForm.reset();
-        console.log("success");
+        // console.log("success");
         e.preventDefault();
-        window.location.href = "vendor3.html";
+        // window.location.href = "vendor3.html";
+        // display confirm message
+        success("Signed up successfully.");
+        window.setTimeout(function(){
+          // Move to html.index after 2 seconds
+          window.location.href = "vendor3.html";
+        }, 2000);
       }).catch(err => {
         console.log(err.message);
       });
