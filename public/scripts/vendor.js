@@ -102,7 +102,7 @@ searchButton.addEventListener('click', (e)=>{
         } else {
           // No user is signed in.
           e.preventDefault();
-          window.location.href = "index2.html";
+          window.location.href = "index.html";
         }
       });
     
