@@ -40,7 +40,7 @@ const signupButton = document.getElementById('add-vendor-button');
         e.preventDefault();
         // window.location.href = "vendor3.html";
         // display confirm message
-        success("Signed up successfully.");
+        success("Vendor added successfully!");
         window.setTimeout(function(){
           // Move to html.index after 2 seconds
           window.location.href = "vendor3.html";
@@ -49,4 +49,14 @@ const signupButton = document.getElementById('add-vendor-button');
         console.log(err.message);
       });
     });
+    function success(msg){
+      Swal.fire({
+          icon:'success',
+          title:'<p style="color:white">' + msg + '</p>',
+          width: 420,
+          showConfirmButton: false,
+          background:'#755ee8'
+        })
+  
+  }
 
