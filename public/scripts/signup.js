@@ -35,7 +35,7 @@ signupForm.addEventListener('submit', (e)=>{
             document.getElementById('signup-form').reset();
             window.setTimeout(function(){
               // Move to html.index after 2 seconds
-              window.location.href = "index2.html";
+              window.location.href = "index.html";
             }, 3000);
             // document.getElementById('signup-form').reset();
           });       
