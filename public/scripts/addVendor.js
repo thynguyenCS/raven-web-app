@@ -15,16 +15,23 @@ const signupButton = document.getElementById('add-vendor-button');
     e.preventDefault(); // prevent form from submitting
     // var string = signupForm.cat.value
     // var arr = string.split(', '); // split string on comma space
-    db.collection('vendors').add({
+    var street = signupForm.street.value
+    var city = signupForm.city.value
+    var state = signupForm.state.value
+    var zip = signupForm.zip.value
+    var loc = street + ', ' + city + ', ' + state + ', ' + zip
+    db.collection('newVendor').add({
         name: signupForm.name.value,
-        street: signupForm.street.value,
+        // street: signupForm.street.value,
         // category: arr, // signupForm.cat.value,
+        category: ["Unknown"],
         logo: "img/ravenCircle.png",
         rating: 0,
         comment: "New Vendor - Waiting for confirm",
-        city: signupForm.city.value,
-        country: signupForm.country.value,
-        zip: signupForm.zip.value
+        location: loc
+        // city: signupForm.city.value,
+        // country: signupForm.country.value,
+        // zip: signupForm.zip.value
 
       }).then(() => {
         //reset form
