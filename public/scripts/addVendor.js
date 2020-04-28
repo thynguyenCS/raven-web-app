@@ -7,21 +7,24 @@ logoutButton.addEventListener('click', (e) => {
 });
 
 /******ADD VENDOR ********/
-const signupForm = document.getElementById('signup-form');
-const signupButton = document.getElementById('signup-button');
+const signupForm = document.getElementById('add-vendor-form');
+const signupButton = document.getElementById('add-vendor-button');
 
   // Once all inputs are valid, register user credential to firebase
   signupForm.addEventListener('submit', (e)=>{
     e.preventDefault(); // prevent form from submitting
-    var string = signupForm.cat.value
-    var arr = string.split(', '); // split string on comma space
+    // var string = signupForm.cat.value
+    // var arr = string.split(', '); // split string on comma space
     db.collection('vendors').add({
         name: signupForm.name.value,
-        location: signupForm.loc.value,
-        category: arr, // signupForm.cat.value,
+        street: signupForm.street.value,
+        // category: arr, // signupForm.cat.value,
         logo: "img/ravenCircle.png",
         rating: 0,
-        comment: "New Vendor - Waiting for confirm"
+        comment: "New Vendor - Waiting for confirm",
+        city: signupForm.city.value,
+        country: signupForm.country.value,
+        zip: signupForm.zip.value
 
       }).then(() => {
         //reset form
