@@ -52,7 +52,11 @@ searchButton.addEventListener('click', (e)=>{
             // fullList = vendors
             vendors = []
             // clear tags
+<<<<<<< HEAD
+            clearAllTags('tag-filter', tags_to_display);
+=======
             clearAllTags();
+>>>>>>> parent of 2f91eb1... update tags
 
           // User is signed in.
             e.preventDefault();
@@ -107,7 +111,131 @@ searchButton.addEventListener('click', (e)=>{
       });
     
     })
-
+    document.getElementById("search-vendor").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // fullList = vendors
+                    vendors = []
+                    // clear tags
+                    clearAllTags();
+        
+                  // User is signed in.
+                    e.preventDefault();
+                    name = inputName.value;
+                    loc = inputLoc.value;
+                    if (name.length > 0) addTag(name);
+                    if (loc.length < 0) addTag(loc);
+                    isSearch = true;
+                    db.collection('vendors').orderBy('name').get().then(snap=>{
+                        let changes = snap.docChanges()
+                        findVendor(name,loc, changes)
+                        console.log(numPages());
+                        not_found.style.display  = 'none';
+                        //console.log(vendors)
+                        if (vendors.length === 0){                   
+                            not_found.style.display  = 'block';
+                            display_all.innerHTML = "";
+                            display_all.style.display = 'none';
+                            pagination.style.visibility = 'hidden';
+                            // document.getElementById('default-list').innerHTML = "";
+                            // document.getElementById('display-all').style.display = 'none';
+                            // document.getElementById('pagination').style.visibility ='hidden';
+                            // document.getElementById('toggle-vendor-card').innerHTML = "";
+                            num_founds.innerHTML = '';
+                        }                
+                        else if(vendors.length === 1){
+                            createPagingItems();
+                            display_all.style.display = 'block';
+                            pagination.style.visibility = 'visible';
+                            // document.getElementById('display-all').style.display = 'block';
+                            // document.getElementById('pagination').style.visibility ='visible';
+                            changePage(1);
+                            num_founds.innerHTML = vendors.length + " result found";
+                        }                    
+                        else if (vendors.length > 1){
+                            createPagingItems();
+                            display_all.style.display = 'block';
+                            pagination.style.visibility = 'visible';
+                            changePage(1);
+                            num_founds.innerHTML = vendors.length + " results found";
+                        }
+                    })  
+                    
+                    document.getElementById("search-vendor").value =""
+                    document.getElementById("search-loc").value = "" 
+        
+                } else {
+                  // No user is signed in.
+                  e.preventDefault();
+                  window.location.href = "index.html";
+                }
+              });
+        }
+    });
+    document.getElementById("search-loc").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // fullList = vendors
+                    vendors = []
+                    // clear tags
+                    clearAllTags();
+        
+                  // User is signed in.
+                    e.preventDefault();
+                    name = inputName.value;
+                    loc = inputLoc.value;
+                    if (name.length > 0) addTag(name);
+                    if (loc.length < 0) addTag(loc);
+                    isSearch = true;
+                    db.collection('vendors').orderBy('name').get().then(snap=>{
+                        let changes = snap.docChanges()
+                        findVendor(name,loc, changes)
+                        console.log(numPages());
+                        not_found.style.display  = 'none';
+                        //console.log(vendors)
+                        if (vendors.length === 0){                   
+                            not_found.style.display  = 'block';
+                            display_all.innerHTML = "";
+                            display_all.style.display = 'none';
+                            pagination.style.visibility = 'hidden';
+                            // document.getElementById('default-list').innerHTML = "";
+                            // document.getElementById('display-all').style.display = 'none';
+                            // document.getElementById('pagination').style.visibility ='hidden';
+                            // document.getElementById('toggle-vendor-card').innerHTML = "";
+                            num_founds.innerHTML = '';
+                        }                
+                        else if(vendors.length === 1){
+                            createPagingItems();
+                            display_all.style.display = 'block';
+                            pagination.style.visibility = 'visible';
+                            // document.getElementById('display-all').style.display = 'block';
+                            // document.getElementById('pagination').style.visibility ='visible';
+                            changePage(1);
+                            num_founds.innerHTML = vendors.length + " result found";
+                        }                    
+                        else if (vendors.length > 1){
+                            createPagingItems();
+                            display_all.style.display = 'block';
+                            pagination.style.visibility = 'visible';
+                            changePage(1);
+                            num_founds.innerHTML = vendors.length + " results found";
+                        }
+                    })  
+                    
+                    document.getElementById("search-vendor").value =""
+                    document.getElementById("search-loc").value = "" 
+        
+                } else {
+                  // No user is signed in.
+                  e.preventDefault();
+                  window.location.href = "index.html";
+                }
+              });
+        }
+    });
+    
 /******Functions to help SEARCH VENDOR *************/
 function foundVendor(data){
     return new Vendor(data.name, data.location, data.category, data.logo, data.rating)
