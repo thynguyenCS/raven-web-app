@@ -1,5 +1,5 @@
 let vendorTags = new Set(); 
-const allTags = ['Education','Banking','Grocery','A very long tag'];
+const allTags = ['Education','Banking','Grocery','Tech', 'Food', 'Service', 'A very long tag'];
 
 
 
