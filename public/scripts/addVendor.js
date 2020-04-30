@@ -59,4 +59,9 @@ const signupButton = document.getElementById('add-vendor-button');
         })
   
   }
-
+/******VIEW PROFILE ********/
+const profileButton = document.getElementById('profile');
+profileButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "profile.html";
+});
