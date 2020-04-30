@@ -297,6 +297,35 @@
                 
                 <!-- VENDORS HERE -->
                 <div class="row u-no-padding" id="display-all" style="background-color: #1e1f26; display:none;" >      
+                <div class="row u-no-padding" id="display-rate-vendor" style="background-color: #1e1f26;"> 
+                    <form id="rate-vendor-form" class="frame u-no-padding" method="post" autocomplete="off">
+                        <div class="form-section">
+                            <label class="white" id="rate-form-title"></label>
+                            <select name="rating-score" id="rating">
+                                <option value="none" selected disabled>Your rating</option>
+                                <option value="0.0">0.0</option>
+                                <option value="0.5">0.5</option>
+                                <option value="1.0">1.0</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2.0">2.0</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3.0">3.0</option>
+                                <option value="3.5">3.5</option>
+                                <option value="4.0">4.0</option>
+                                <option value="4.5">4.5</option>
+                                <option value="5.0">5.0</option> </select>
+                            <label class="white" style="margin-left: 0;">Your comment</label>
+                            <div class="input-control">
+                                <input id="comment" class="input-contains-icon" placeholder="This vendor is superb" type="text" value="" autocomplete="false" required>
+                                        <span class="icon"><i class="fa fa-comments"></i></span>
+                            </div> 
+                            </div>                                
+                            <button id="rate-vendor-button" class="btn-info u-pull-right btn-animated w-30" type="submit">
+                                Submit
+                            </button>
+                    </form>  
+                </div>
+                <div class="row u-no-padding" id="display-all" style="background-color: #1e1f26;">      
                     <div id="default-list" class="col-6" style="padding: 16px;">   
                        <!-- List of vendors is displayed here, even default or found  -->
                     </div>

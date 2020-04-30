@@ -732,3 +732,15 @@ a.tag--grey:hover {
     float: left;
     text-align: center;
 }
+
+#rate-vendor-form{
+    visibility: hidden;
+}
+
+#rate-btn{
+    width: 170px;
+    text-align: center;
+    /* background-color: #888; */
+    background-color: darkgrey;
+    align-self: center;
+}

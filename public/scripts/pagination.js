@@ -163,7 +163,8 @@ function changePage(page){
                                 <span class="fas fa-comment-alt small dark-grey"></span>
                                 
                             </div>
-                        </div>                                
+                        </div>   
+                        <input id="rate-btn" type="button" onclick="rateBtn(${i});" value="RATE THIS VENDOR">                                
                     </div>
                     <space class="medium"></space>`;        
         }
