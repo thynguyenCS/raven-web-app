@@ -44,7 +44,7 @@ function rateBtn(index){
     document.getElementById("rate-form-title").innerHTML = "You are rating " + vendor.name;
     rateForm.addEventListener('submit', e=>{
         e.preventDefault();
-        var rating = parseInt(document.getElementById("rating").value);    
+        var rating = parseFloat(document.getElementById("rating").value);    
         var reviewContent = document.getElementById("comment").value;
         
         // const newRating = averageRating(vendor);
@@ -67,7 +67,7 @@ function rateBtn(index){
         success("Your review is successfully added!");
         window.setTimeout(function(){
           window.location.href = "vendor3.html";
-        }, 5000);
+        }, 2000);
       }).catch(err => {
         console.log(err.message);
       });
