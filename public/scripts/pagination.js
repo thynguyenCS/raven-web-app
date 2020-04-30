@@ -156,6 +156,10 @@ function changePage(page){
                                     <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
                                     <span class="info vendor-info">${vendors[i].location}</span></br>
                                     <span class="info vendor-info">${categories}</span> 
+                                    <p class="tile__buttons u-no-margin">
+                                        <button id="rate-btn" onclick="rateBtn(${i});" class="rate-btn btn-primary btn-tiny uppercase">Rate</button>
+                               
+                                    </p>
                             </div>
                             
                             <div class="col-2 tile__container u-text-right">
@@ -165,8 +169,9 @@ function changePage(page){
                                 <span class="fas fa-comment-alt small dark-grey"></span>
                                 
                             </div>
+                            
                         </div>   
-                        <input id="rate-btn" type="button" onclick="rateBtn(${i});" value="RATE THIS VENDOR">                                
+                                                    
                     </div>
                     <space class="medium"></space>`;        
         }

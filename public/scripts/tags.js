@@ -71,8 +71,6 @@ function initTagList(){
                     document.getElementById('add-tag-button').style.visibility = "hidden";
                 }
             })
-
         })(j);
-        
     }
 }
