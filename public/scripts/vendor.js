@@ -30,6 +30,29 @@ function clearAllTags(){
     // var allTags = tagContainer.getElementsByClassName("tag");
     tagContainer.innerHTML = "";
 }
+
+/**************RATE VENDOR****** */
+function rateBtn(index){
+    let vendor = vendors[index];
+    console.log(vendor.vid);
+    console.log(vendor.name);
+    var rateForm = document.getElementById("rate-vendor-form");    
+    display_all.style.visibility = "hidden";
+    rateForm.style.visibility ="visible";
+    document.getElementById("rate-form-title").innerHTML = "You are rating " + vendor.name;
+    rateForm.addEventListener('submit', e=>{
+        e.preventDefault();
+        var rating = document.getElementById("rating").value;
+        var comment = document.getElementById("comment").value;
+
+        console.log(rating + " " + comment);
+
+        window.location.href = "vendor3.html"
+    })
+    display_all.style.visibility = "hidden";
+    rateForm.style.visibility ="visible";
+    
+}
 /**************SEARCH *************/
 const searchButton = document.getElementById('search-button');
 const inputName = document.getElementById("search-vendor");
