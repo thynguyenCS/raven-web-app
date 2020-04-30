@@ -1,4 +1,3 @@
-
 //  add filter tags to the top
 function addTag(tag){
     var tagContainer = document.getElementById("tag-filter");
@@ -38,22 +37,44 @@ function rateBtn(index){
     console.log(vendor.name);
     var rateForm = document.getElementById("rate-vendor-form");    
     display_all.style.visibility = "hidden";
+    pagination.style.visibility = "hidden";
     rateForm.style.visibility ="visible";
+    //document.getElementsByClassName("pagination-item").style.visibility = "hidden";
+    
     document.getElementById("rate-form-title").innerHTML = "You are rating " + vendor.name;
     rateForm.addEventListener('submit', e=>{
         e.preventDefault();
-        var rating = document.getElementById("rating").value;
-        var comment = document.getElementById("comment").value;
-
-        console.log(rating + " " + comment);
-
-        window.location.href = "vendor3.html"
-    })
-    
+        var rating = parseInt(document.getElementById("rating").value);    
+        var reviewContent = document.getElementById("comment").value;
+        
+        // const newRating = averageRating(vendor);
+        // console.log(newRating)
+        //update the new rating into vendor
+//         db.collection("vendors").where("name", "==", vendor.name).get()
+//         .then(function(querySnapshot) {
+//             querySnapshot.forEach(function(doc) {
+//                 console.log(doc.id, " => ", doc.data());
+//                 db.collection("vendors").doc(doc.id).update({rating: newRating});
+//       });
+//  })
+        db.collection('reviews').add({
+            vendorId: vendor.id,
+            reviewContent: reviewContent,
+            rating: rating,
+            userId: ''
+        }).then(() => {
+        e.preventDefault();
+        success("Your review is successfully added!");
+        window.setTimeout(function(){
+          window.location.href = "vendor3.html";
+        }, 5000);
+      }).catch(err => {
+        console.log(err.message);
+      });
+    });  
     display_all.style.display = "none";
     document.getElementById('display-rate-vendor').style.display = "block";
-    // rateForm.style.visibilit;
-    
+
 }
 /**************SEARCH *************/
 const searchButton = document.getElementById('search-button');
@@ -64,10 +85,7 @@ const not_found = document.getElementById('result-not-found');
 const default_list = document.getElementById('default-list');
 const display_all = document.getElementById('display-all');
 const pagination = document.getElementById('pagination');
-// var vendors = [];
-//console.log(searchButton)
-
-isSearch = false;
+var isSearch = false;
 
 
 // Listener for Search Button
@@ -261,7 +279,7 @@ searchButton.addEventListener('click', (e)=>{
     
 /******Functions to help SEARCH VENDOR *************/
 function foundVendor(data){
-    return new Vendor(data.name, data.location, data.category, data.logo, data.rating)
+    return new Vendor(data.id, data.name, data.location, data.category, data.logo, data.rating)
 }
 function findVendor(name, loc, changes){ 
     for(let i = 0; i < changes.length; i++){

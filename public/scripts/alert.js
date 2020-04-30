@@ -27,3 +27,15 @@ function toggleOnToast(){
 function closeToast(){
   toast.style.display = "none";
 }
+
+
+function success(msg){
+  Swal.fire({
+      icon:'success',
+      title:'<p style="color:white">' + msg + '</p>',
+      width: 420,
+      showConfirmButton: false,
+      background:'#755ee8'
+    })
+
+}

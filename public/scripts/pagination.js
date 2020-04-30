@@ -5,7 +5,8 @@ var vendorTiles = [];
 var max_tags = 3;
 
 class Vendor {
-    constructor(name, location, category, logo, rating){
+    constructor(id, name, location, category, logo, rating){
+        this.id = id;
         this.name = name;
         this.location = location;
         this.category = category;
@@ -18,6 +19,7 @@ class Vendor {
 vendorConverter = {
     toFirestore: function(vendor) {
         return {
+            id: vendor.id,
             name: vendor.name,
             location: vendor.location,
             category: vendor.category,
@@ -27,7 +29,7 @@ vendorConverter = {
     },
     fromFirestore: function(snapshot, options){
         const data = snapshot.data(options);
-        return new Vendor(data.name, data.location, data.category, data.logo, data.rating);
+        return new Vendor(data.id, data.name, data.location, data.category, data.logo, data.rating);
     }
 }
 // this function is triggered in vendor3.html
