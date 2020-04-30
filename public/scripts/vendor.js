@@ -49,8 +49,10 @@ function rateBtn(index){
 
         window.location.href = "vendor3.html"
     })
-    display_all.style.visibility = "hidden";
-    rateForm.style.visibility ="visible";
+    
+    display_all.style.display = "none";
+    document.getElementById('display-rate-vendor').style.display = "block";
+    // rateForm.style.visibilit;
     
 }
 /**************SEARCH *************/
