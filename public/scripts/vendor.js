@@ -52,7 +52,8 @@ searchButton.addEventListener('click', (e)=>{
             // fullList = vendors
             vendors = []
             // clear tags
-            clearAllTags('tag-filter', tags_to_display);
+            clearAllTags();
+            // clearAllTags('tag-filter', tags_to_display);
 
           // User is signed in.
             e.preventDefault();

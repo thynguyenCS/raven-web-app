@@ -24,3 +24,6 @@ function toggleOnToast(){
     toast.style.display = 'block';
   }
 }
+function closeToast(){
+  toast.style.display = "none";
+}

@@ -1,6 +1,7 @@
 body {
     /* background-color: #484f5b; */
-    background-color: black;
+    /* background-color: black; */
+    background-image: url('https://cdn2.unrealengine.com/Fortnite%2FBattle-pass%2Fseason6%2Fheader-bg-1920x1080-a9c4fbc4d94a09059d16b1f2338160eb895c5d3a.jpg');
 }
 .add-vendor-content {
     background-color: #1e1f26;
@@ -8,6 +9,7 @@ body {
     padding: 3rem;
     /* width: 60%; */
     height: auto;
+    /* box-shadow:0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06); */
     /* height: px; */
 }
 .content {
@@ -20,21 +22,15 @@ body {
 
     box-shadow: 0 .05rem .2rem rgba(69,77,93,.3);
 }
-.tag--grey{
-    margin-top: .7rem;
-    margin-bottom: .7rem;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 1.8rem;
-    border-radius: 20px;
-    background-color: #434955;
-    padding: .5rem 1rem .5rem 1rem;
-    font-weight: 500;
-    border: 2px solid #434955;
-    /* border: 2px solid darkgrey; */
+.under-construction {
+    padding-left: 3rem;
+   
 }
-.tag--grey:hover {
-    background-color: #1e1f26;
+.placeholder {
+    height: 100%;
+    color: darkgrey;
+    background-color: #2c303a;
+    /* background-color: transparent; */
 }
 .font-11 {
     font-size: 11px;
@@ -71,9 +67,112 @@ footer {
  
     /* border: #5756bb; */
 }
+.btn-transparent {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 30px;
+    background-color:  #434955;
+    color: white;
+    margin-bottom: .5rem;
+    opacity: 0.7;
+    --btn-border-color: none;
+    /* margin-top: .65rem; */
+}
+.small {
+    height: .5rem;
+}
+.right-border {
+    border-right-width: thin;
+    border-right: 1px solid #4f5563;
+    
+}
+.btn-transparent:focus {
+    opacity: 1;
+    color: white;
+    background-color: #434955;
+    box-shadow: none;
+    border: none;
+}
+.tag-container .tag:last-child {
+    margin-right: .5rem;
+}
+.btn-transparent:hover {
+    color: white;
+    background-color:  #434955;
+    opacity: 1;
+}
+.tag-container .tag--grey {
+    margin-bottom: 1rem;
+}
+.tag--grey{
+    font-size: 12px;
+    color: white;
+    line-height: 1.8rem;
+    
+    border-radius: 20px;
+    background-color: #434955;
+    padding-left: 1rem;
+    /* padding-right: 1rem; */
+    font-weight: 500;
+    border: 2px solid #434955;
+    opacity: 0.8;
+    /* border: 2px solid darkgrey; */
+}
+.tag--grey:hover {
+    opacity: 1;
+    /* border: 2px solid lightgrey; */
+    /* background-color: #000; */
+    /* background-color: #363b45; */
+    /* font-weight: bold; */
+}
+
+
+a.tag--grey:hover {
+    color: white;
+}
 .info {
     display: flex;
     /* flex-direction: column; */
+}
+.list-dropdown {
+    height: 40px;
+}
+.list-dropdown .menu {
+    background-color: #363b45;
+    height: 10rem;
+    top: 75%;
+    max-height: 12rem;
+    overflow: scroll;
+    box-shadow:0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06);
+
+}
+.align-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.menu .menu-item a{
+    color: white;   
+}
+.menu .menu-item .input-control input {
+    height: 40px;
+    border: 1px solid #505766;
+}
+.menu .menu-item a:hover {
+    color: white;
+    background-color: #292d35;
+}
+.transbox {
+    max-height: 200px;
+    height: auto;
+    /* height: 120px; */
+    background-color: transparent;
+}
+.tag.tag--delete {
+    margin-left: .5rem;
+    margin-bottom: 0;
 }
 /* a {
     color:lightgrey;
@@ -126,7 +225,9 @@ img {
     margin-left: 0;
 }
 .toast.toast--error {
-    background-color: #cc4642;
+    text-align: center;
+    background-color:  #2c303a;
+    /* background-color: #cc4642; */
     border: none;
 }
 h7 {

@@ -329,6 +329,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 .btn-transparent {
     color: white;
 }
+
 .w-18 {
     width: 15%;
 }
@@ -345,12 +346,20 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 }
 
 .btn-transparent {
+    background-color: #434955;
     padding-left: 0;
     padding-right: 0;
     font-size: 10px;
+    opacity: 0.8;
+}
+.btn-transparent:hover {
+    opacity: 1;
+    background-color: #434955;
 }
 .btn-transparent:focus {
+    background-color: #434955;
     box-shadow: none;
+    opacity: 1;
 }
 .list-dropdown .menu {
     background-color: #363b45;
@@ -619,12 +628,14 @@ img {
     padding-right: 1rem;
     font-weight: 500;
     border: 2px solid #434955;
+    opacity: 0.8;
     /* border: 2px solid darkgrey; */
 }
 
 .tag--grey:hover {
-    border: 2px solid lightgrey;
-    background-color: #000;
+    opacity: 1;
+    /* border: 2px solid lightgrey; */
+    /* background-color: #000; */
     /* background-color: #363b45; */
     /* font-weight: bold; */
 }

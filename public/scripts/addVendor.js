@@ -13,6 +13,13 @@ const signupButton = document.getElementById('add-vendor-button');
   // Once all inputs are valid, register user credential to firebase
   signupForm.addEventListener('submit', (e)=>{
     e.preventDefault(); // prevent form from submitting
+    if (vendorTags.size == 0){
+      displayToast("Please select at least one category.");
+      setTimeout(() => {
+        closeToast();
+      },3000);
+    } else {
+
     // var string = signupForm.cat.value
     // var arr = string.split(', '); // split string on comma space
     var street = signupForm.street.value
@@ -48,7 +55,9 @@ const signupButton = document.getElementById('add-vendor-button');
       }).catch(err => {
         console.log(err.message);
       });
+    }
     });
+
     function success(msg){
       Swal.fire({
           icon:'success',
@@ -65,3 +74,8 @@ profileButton.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = "profile.html";
 });
+
+
+window.onload = function () {
+  initTagList();
+}

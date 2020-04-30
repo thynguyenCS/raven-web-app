@@ -77,6 +77,7 @@ const btn_next = document.getElementById('next-button');
 const btn_prev = document.getElementById('prev-button');
 const listing_table = document.getElementById('default-list');
 const pagingItems = document.getElementById('pagination');
+const content = document.getElementById("display-all");
 
 function createPagingItems(){
     // let html ="";
@@ -339,7 +340,9 @@ function toggleVendorCard(){
         })(i); 
     }
 }      
-// display vendors as soon as page loads
+
+// everything that needs to appear when page pages
+// display vendors
 window.onload = function() {    
     getVendors()
     .then( fbVendors => {
@@ -347,6 +350,7 @@ window.onload = function() {
             vendors = fbVendors;
         }
         // display page 1 by default
+        if (content.style.display = "none") content.style.display = "";
         createPagingItems();
         changePage(1); 
      })
