@@ -27,11 +27,12 @@ const signupButton = document.getElementById('add-vendor-button');
     var state = signupForm.state.value
     var zip = signupForm.zip.value
     var loc = street + ', ' + city + ', ' + state + ', ' + zip
+    let arr = Array.from(vendorTags)
     db.collection('newVendor').add({
         name: signupForm.name.value,
         // street: signupForm.street.value,
         // category: arr, // signupForm.cat.value,
-        category: ["Unknown"],
+        category: arr,
         logo: "img/ravenCircle.png",
         rating: 0,
         comment: "New Vendor - Waiting for confirm",
