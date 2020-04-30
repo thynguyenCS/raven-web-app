@@ -52,11 +52,7 @@ searchButton.addEventListener('click', (e)=>{
             // fullList = vendors
             vendors = []
             // clear tags
-<<<<<<< HEAD
             clearAllTags('tag-filter', tags_to_display);
-=======
-            clearAllTags();
->>>>>>> parent of 2f91eb1... update tags
 
           // User is signed in.
             e.preventDefault();
