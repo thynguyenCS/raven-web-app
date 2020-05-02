@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/a696b91557.css" media="all">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!-- <link rel="stylesheet"  href="../node_modules/flickity/css/flickity.css" media="screen"> -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" type="text/javascript"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
     
     <!-- Custom stylesheets -->
     <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
@@ -49,6 +53,40 @@
                 <!-- left container, always appear to left of the navigation bar -->
                 <div class="nav-left">
                     <div class="nav-item no-hover">
+                        <div class="list-dropdown">
+                            <button class="btn-transparent btn-dropdown">
+                                Explore </span class="icon"><i class="fas fa-wrapper fa-chevron-down small"></i><span>
+                            </button>
+                            
+                            <ul class="row menu">
+                                <!-- <div class="row u-no-padding"><dt>Categories</dt></div> -->
+                                
+                                <div class="col-6 u-text-left left-sub-menu">
+                                    <dt>Categories</dt>
+                                    <li class="menu-item">
+                                        <a href="#">Education</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Banking</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Grocery</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">A very long tag</a>
+                                    </li>
+                                </div>
+                                <div class="col-6 u-text-left right-sub-menu" >
+                                    </br>
+                                    <li class="menu-item">
+                                        <a href="#">A very long tag</a>
+                                    </li>
+                                </div>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item no-hover">
                         <div class="form-group">
                             <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
                         </div>
@@ -59,26 +97,17 @@
                         </div>
                     </div>
                     <div class="nav-item no-hover">
-                        <button id="search-button" class="btn-primary btn-animated btn-small btn-search" type="submit">Search</button>
+                        <button id="search-button" class="btn--orange btn-animated" type="submit">Search</button>
                     </div>
                 </div>
                 <!-- right container, always appear to the right of the navigation bar -->
-                <div class="nav-right">
-                    <div class="nav-item text-center">
-                        <a href="#">
-                            <span class="icon">
-                                <i class="far fa-wrapper fa-bell" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                    
+                <div class="nav-right">  
                     <div class="nav-item has-sub toggle-hover" id="dropdown">
                         <a class="nav-dropdown-link"><span class="icon"><i class="far fa-user"></i></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <!-- PROFILE -->
                             <li role="menu-item"><a href="#" class="link" id="profile">Profile</a></li>
-                            <!-- <button id="profile">Profile</button> -->
-                            <!-- <a href="#" id="profile" class="link">Profile</a> -->
+
                             <li role="menu-item"><a href="#" class="link" id="logout-button">Log out</a></li>
                         </ul>
                     </div>     
@@ -87,22 +116,6 @@
     </div>
     <!-- END OF HEADER  -->
 
-
-    <!-- ACCOUNT MODAL -->
-    <!-- The Modal -->
-    <!-- <div id="myModal" class="modal"> -->
-        <!-- Modal content -->
-        <!-- <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Profile</h2>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
-            </div>
-        </div>
-    </div> -->
     
 <!-- VENDOR PART -->
     <div class="hero fullscreen">
@@ -117,56 +130,47 @@
                 </a>
             </div>
              <!-- MAIN SIDEBAR -->
-            <div class="tree-nav" id="sidebar" style="background: #1e1f26;">
-                <!-- Display number of results -->
+            <div class="tree-nav" id="sidebar">
+  
                 <div class="content sideBar-content no-bottom-margin">
-                    <dt class="yellow">Explore</dt>
-                    <space class="small"></space>
-                    <div class="tag-container">
-                        <a class="tag tag--grey" href="javascript:addTag('Recommended')"><i class="fas fa-plus tiny"></i>Recommended</a>
-                        <a class="tag tag--grey" href="javascript:addTag('Best Rated')"><i class="fas fa-plus tiny"></i>Best Rated</a>
-                        <a class="tag tag--grey" href="javascript:addTag('Most Reviewed')"><i class="fas fa-plus tiny"></i>Most Reviewed</a>
-                    </div>
+                    <!-- nothing here -->
                 </div>
-                <!-- <space class="small"></space> -->
+
                 <!-- MAIN CONTENT OF SIDEBAR -->
-                <div class="tree-nav-container">
+                <div class="tree-nav-container u-center">
                     <div class="tree">
-                        <!-- FEATURED -->
+                        <!-- SORT --->
                         <div class="tree-item">
-                            <dt class="green">Featured</dt>
+                            <space class="large"></space>
+                           
+                            <span class="myTitle">Sort by</span>
                             <space class="small"></space>
-                                <!-- TAGS -->
-                                <div class="tag-container">
-                                    <a class="tag tag--grey" href="javascript:addTag('Virtual Consultation')"><i class="fas fa-plus tiny"></i>Virtual Consultation</a>
-                                    <a class="tag tag--grey" href="javascript:addTag('Offering a Deal')"><i class="fas fa-plus tiny"></i>Offering a Deal</a>
-                                </div>
-                            </ul>
+                            <!-- SORT BY BEST RATED -->
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="best-rated" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="best-rated">Best Rated</label>
+                            </div>
+                            <!-- SORT BY MOST REVIEWED -->
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="most-reviewed" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="most-reviewed">Most Reviewed</label>
+                            </div>
+                            <div class="divider"></div>
                         </div>
-                        <!-- <space class="small"></space> -->
-                        <!-- CATEGORIES -->
-                        <div class="tree-item" >
-                            <!-- <p class="menu-title uppercase blue">Categories</p> -->
-                            <dt class="blue">Categories</dt>
-                            
-                            <ul class="menu no-side-padding">
-                                <li class="menu-item">
-                                    <a href="#">Education</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">Clothing</a>
-                                </li>
-                        
-                                <li class="menu-item">
-                                    <a href="#">Food</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- REQUEST VENDOR -->
-                        <!-- <space class="large"></space> -->
-                        <div class="divider"></div>
                         <div class="tree-item">
-                            <dt style="color:white;">Couldn't find a vendor?</dt>
+                            <!-- FILTER BY OFFERING A DEAL -->
+                            <span class="myTitle">Filter by</span>
+                            <space class="small"></space>
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="offer-deal" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="offer-deal">Offering a Deal</label>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                      
+                        <!-- REQUEST VENDOR -->
+                        <div class="tree-item">
+                            <dt>Couldn't find a vendor?</dt>
                             <span class="info">If the vendor you are looking for isn't here, add it!</span>
                             <div class="btn-container" style="margin-left: 0;">
                                 <button id="add-button" class="btn-primary btn-animated btn-small btn-add" type="submit">Add a Vendor</button>
@@ -178,87 +182,20 @@
             <!-- MAIN CONTENT (VENDORS) -->
             <div class="tree-nav-content">
                 <space class="x-large"></space>
-                <!-- popular categories -->
-                <h6 class="yellow">Popular Categories</h6>
-                <space class="medium"></space>
-                <div class="row no-side-padding">
-                    <div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://www.agsinger.com/wp-content/uploads/things-changed-education-last-50-years.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Education</p>
-                        </div>
-                       
+                <!-- CAROUSEL (categories) -->
+                <div id="carousel" class="carousel">
+                    <!-- <div class="carousel-cell">
+                        <a class="tag tag--grey" href="#">Recommended</a>
                     </div>
-                    <div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26940973.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Banking</p>
-                        </div>
-                       
-                    </div>
-                    <div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://thumbs.dreamstime.com/b/grocery-store-logo-design-template-fresh-food-shop-label-vector-illustration-white-background-grocery-store-logo-design-117786023.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Grocery</p>
-                        </div>
-                    </div>
-                    <div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 4</p>
-                        </div>
-                    </div><div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 5</p>
-                        </div>
-                    </div><div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 6</p>
-                        </div>
-                    </div><div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 7</p>
-                        </div>
-                    </div><div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 8</p>
-                        </div>
-                    </div><div class="card popular-card">
-                        <div class="card-container popular-card-img">
-                            <div class="card-image" style="background-image: url('https://i.pinimg.com/originals/99/47/4c/99474c387c23f572db091b3d8ea78a47.jpg')"></div>
-                        </div>
-                        <div class="content center">
-                            <p class="white">Category 9</p>
-                        </div>
-                    </div>
+                     -->
                     
                 </div>
-                <!-- end of popular categories -->
+                <!-- end of categories -->
+
                 <space class="medium"></space>
                  <!-- display number of results found -->
                  <h6 class="yellow padded-16" id='num_founds'></h6>
                  <space class="medium"></space>
-                <!-- <div class="divider"></div> -->
                 <space class="medium"></space>
                 <div id="tag-filter" class="tag-container u-no-margin padded-16"> </div>
                 <space class="medium"></space>
@@ -325,7 +262,7 @@
                             </button>
                     </form>  
                 </div>
-                <div class="row u-no-padding" id="display-all" style="background-color: #1e1f26; display:none;">      
+                <div class="row u-no-padding" id="display-all" style="display:none;">      
                     <div id="default-list" class="col-6" style="padding: 16px;">   
                        <!-- List of vendors is displayed here, even default or found  -->
                     </div>
@@ -351,6 +288,29 @@
                         <space class="medium"></space>
     
                     </div> 
+                </div>
+                <div class="modal modal-animated--zoom-in" id="modal-normal">
+                    <a href="#target" class="modal-overlay close-btn" aria-label="Close"></a>
+                    <div class="modal-content" role="document">
+                        <div class="modal-header">
+                            <a href="#components" class="u-pull-right" aria-label="Close"><span class="icon"><i class="fa fa-wrapper fa-times"></i></span></a>
+                            <div class="modal-title">Bank of America</div>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Modal content -->
+                            <div class="u-text-center">
+                                <h3>Max-width: 40rem</h3>
+                                <h4>What is Lorem Ipsum?</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            
+                                <h4>Ipsum</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+                                <h4>Ipsum II</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet luctus venenatis lectus magna. Facilisis gravida neque convallis a cras semper. A iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Erat imperdiet sed euismod nisi porta lorem. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <space class="large"></space>
                 <!-- PAGINATION -->
@@ -467,5 +427,9 @@
   <script src="scripts/pagination.js"></script>
   <script src="scripts/vendor.js"></script>
   <script src="scripts/profile.js"></script>
+  <!-- <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script> -->
+
+  
+
 </body>
 </html>

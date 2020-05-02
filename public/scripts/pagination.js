@@ -158,8 +158,9 @@ function changePage(page){
                                     <span class="info vendor-info">${categories}</span> 
                                     <p class="tile__buttons u-no-margin">
                                         <button id="rate-btn" onclick="rateBtn(${i});" class="rate-btn btn-primary btn-tiny uppercase">Rate</button>
-                               
+                                        <a href="#modal-normal"><button class="rate-btn btn-primary btn-tiny uppercase">View</button></a>
                                     </p>
+                                    
                             </div>
                             
                             <div class="col-2 tile__container u-text-right">
@@ -229,7 +230,7 @@ function displayVendorCard(vendor){
                     </div>
                 </div>
                 <space class="large"></space>
-                <span class="title white no-top-bot-margin">Recent Reviews</span>
+                <span class="title no-top-bot-margin">Recent Reviews</span>
                 <space class="medium"></space>
                 <div class="tile tile--center no-shadow no-side-padding">
                     <div class="tile__icon">
@@ -266,7 +267,7 @@ function displayVendorCard(vendor){
                     </div>
                 </div>
                 <space class="medium"></space>
-                <span class="title white no-top-bot-margin">Location and Hours</span>
+                <span class="title no-top-bot-margin">Location and Hours</span>
                 <space class="medium"></space>
                 <div class="row u-no-padding">
                     <div class="col-7 no-left-padding">
@@ -280,7 +281,7 @@ function displayVendorCard(vendor){
                     </div>
                 </div>
                 <space class="medium"></space>
-                <span class="title white no-top-bot-margin">Service Highlights</span>
+                <span class="title no-top-bot-margin">Service Highlights</span>
                 <space class="medium"></space>
                 <div class="tag-container">
                     ${displayCategoryTags(vendor.category)}
@@ -359,6 +360,7 @@ window.onload = function() {
         }
         // display page 1 by default
         if (content.style.display = "none") content.style.display = "";
+        displayCategories();
         createPagingItems();
         changePage(1); 
      })

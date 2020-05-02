@@ -1,6 +1,10 @@
 body {
     /* background-color: #484f5b; */
-    background-color: #1e1f26;
+    /* background-color: #1e1f26; */
+    background-color: #f0f0f0;
+    /* background-image: url('https://www.xmple.com/wallpaper/violet-gradient-linear-1920x1080-c2-19012b-46007e-a-270-f-14.svg'); */
+    background-position: center;
+    color: #666;
     /* background-color: #363b45; */
 }
 .content {
@@ -11,9 +15,10 @@ body {
     border: none;
     outline: none;
     box-shadow: none;
+    background-color: #f0f0f0;
     /* background-color: #363b45; */
     /* background-color:#24292e; */
-    background-color: #1e1f26;
+    /* background-color: #1e1f26; */
     /* box-shadow: 0 .05rem .2rem rgba(69,77,93,.3); */
 }
 .frame {
@@ -26,18 +31,43 @@ body {
 }
 
 h3 {
-    color:  white;
+    color: #666;
+    /* color:  white; */
 }
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
     /* border-color:#768092; */
-    border-color:  #363b45;
-    background: transparent;
-    color:  white;
+    /* border-color:  #363b45; */
+    /* border; */
+    border: 1px solid #f0f0f0;
+    background-color: #e8e8e8; 
+    /* background: transparent; */
+    color: #666;
+    /* color:  white; */
 }
-.icon {
-    color:  white;
+.btn--orange {
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #ff8a00;
+    color: white;
 }
-
+.btn--orange:hover {
+    background-color: #f08001;
+}
+.icon i{
+    color: #666;
+    /* color:  white; */
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
+    /* background-color: white; */
+    /* background-color: #5a6270; */
+    /* background-color: #434955; */
+    /* background-color: white; */
+    background-color: transparent;
+    box-shadow: none;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    /* border: none; */
+}
 .btn-info {
     margin-top: 0.5rem;
     padding-left: 1rem;
@@ -64,10 +94,11 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
     color:lightgrey;
 } */
 .link {
-    color: lightgrey;
+    color: #666;
+    /* color: lightgrey; */
 }
 .link:hover{
-    color: darkgrey;
+    color: rgb(87, 87, 87);
 }
 
 img {
@@ -105,7 +136,7 @@ img {
 
 }
 h7 {
-    color: white;
+    color: #666;
 }
 .green {
     color: #0dd157;

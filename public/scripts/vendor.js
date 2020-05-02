@@ -1,34 +1,76 @@
+
 //  add filter tags to the top
-function addTag(tag){
-    var tagContainer = document.getElementById("tag-filter");
-    sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();
+// function addTag(tag){
+//     var tagContainer = document.getElementById("tag-filter");
+//     sanitizedTag = tag.replace(/\s+/g, '-').toLowerCase();
 
-    var allTags = tagContainer.getElementsByClassName("tag");
-    for(var i = 0; i < allTags.length; i++){
-        if (allTags[i].classList.contains('animated','fade-in')){
-        allTags[i].classList.remove('animated','fade-in');}
-    }
+//     var allTags = tagContainer.getElementsByClassName("tag");
+//     for(var i = 0; i < allTags.length; i++){
+//         if (allTags[i].classList.contains('animated','fade-in')){
+//         allTags[i].classList.remove('animated','fade-in');}
+//     }
 
-    let tagType = 'class="tag tag--grey animated fadeIn"';
-    if (!tagContainer.contains(document.getElementById(sanitizedTag))){
-        // if (color =="blue") tagType = 'class="tag tag--info animated fadeIn"';
-        // else if(color =="purple") tagType = 'class="tag tag--link animated fadeIn"';
-        // else if(color == "yellow") tagType = 'class="tag tag--warning animated fadeIn"';
-        // else if(color =="red") tagType = 'class="tag tag--primary animated fadeIn"';
-        tagContainer.innerHTML += `<div id="${sanitizedTag}"` + tagType +`>${tag}
-                        <a class="tag tag--delete" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
-    }
-}
+//     let tagType = 'class="tag tag--grey animated fadeIn"';
+//     if (!tagContainer.contains(document.getElementById(sanitizedTag))){
+//         // if (color =="blue") tagType = 'class="tag tag--info animated fadeIn"';
+//         // else if(color =="purple") tagType = 'class="tag tag--link animated fadeIn"';
+//         // else if(color == "yellow") tagType = 'class="tag tag--warning animated fadeIn"';
+//         // else if(color =="red") tagType = 'class="tag tag--primary animated fadeIn"';
+//         tagContainer.innerHTML += `<div id="${sanitizedTag}"` + tagType +`>${tag}
+//                         <a class="tag tag--delete" href="javascript:deleteTag('${sanitizedTag}')"></a></div>`;
+//     }
+// }
 // delete filter tags from the top
-function deleteTag(tag){
-    var tag = document.getElementById(tag);
-    tag.parentNode.removeChild(tag);
+// function deleteTag(tag){
+//     var tag = document.getElementById(tag);
+//     tag.parentNode.removeChild(tag);
+// }
+// function clearAllTags(){
+//     var tagContainer = document.getElementById("tag-filter");
+//     // var allTags = tagContainer.getElementsByClassName("tag");
+//     tagContainer.innerHTML = "";
+// }
+
+const categories = ["Education", "Banking","Clothing","Party Rental Supplier","Entertainment","Electronic",
+            "Sommelier","Stationary Designer","Camera","Florist","Marketing","Communication Consultant"];
+var elem = document.querySelector('.carousel');
+var flkty = new Flickity( elem, {
+    // options
+    // wrapAround: true,
+    // initialIndex: '.is-initial-select',
+    cellAlign: 'left',
+    freeScroll: true,
+    pageDots: false,
+    // contain: true,
+
+});
+function makeCategory(text){
+    var cell = document.createElement('div');
+    cell.className = 'carousel-cell';
+    
+    var category = document.createElement('a');
+    category.className = "tag tag--grey";
+    category.href = "#";
+    category.textContent = text;
+    cell.appendChild(category);
+    return cell;
 }
-function clearAllTags(){
-    var tagContainer = document.getElementById("tag-filter");
-    // var allTags = tagContainer.getElementsByClassName("tag");
-    tagContainer.innerHTML = "";
+
+function displayCategories(){
+    for (var i = 0; i < categories.length; i++){
+        cell = makeCategory(categories[i]);
+        if (i == (categories.length/2)){
+            // cell = makeCategory(categories[i]);
+            cell.className += " is-initial-select";
+        } 
+        flkty.append(cell);
+    }
+    // flkty.select(categories.length/2);
+    console.log("num of cells/categories: " + flkty.cells.length);
 }
+
+
+
 
 /**************RATE VENDOR****** */
 function rateBtn(index){
@@ -95,16 +137,14 @@ searchButton.addEventListener('click', (e)=>{
             e.preventDefault();
             // fullList = vendors
             vendors = []
-            // clear tags
-            clearAllTags();
-            // clearAllTags('tag-filter', tags_to_display);
+            
 
           // User is signed in.
             
             name = inputName.value;
             loc = inputLoc.value;
-            if (name.length > 0) addTag(name);
-            if (loc.length < 0) addTag(loc);
+            // if (name.length > 0) addTag(name);
+            // if (loc.length < 0) addTag(loc);
             isSearch = true;
             db.collection('vendors').orderBy('name').get().then(snap=>{
                 let changes = snap.docChanges()
@@ -130,14 +170,14 @@ searchButton.addEventListener('click', (e)=>{
                     // document.getElementById('display-all').style.display = 'block';
                     // document.getElementById('pagination').style.visibility ='visible';
                     changePage(1);
-                    num_founds.innerHTML = vendors.length + " result found";
+                    num_founds.innerHTML = vendors.length + " result found for '" + name + "'";
                 }                    
                 else if (vendors.length > 1){
                     createPagingItems();
                     display_all.style.display = 'block';
                     pagination.style.visibility = 'visible';
                     changePage(1);
-                    num_founds.innerHTML = vendors.length + " results found";
+                    num_founds.innerHTML = vendors.length + " results found for '" + name + "'";
                 }
             })  
             
