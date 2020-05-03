@@ -44,6 +44,9 @@ var flkty = new Flickity( elem, {
     // contain: true,
 
 });
+
+
+
 function makeCategory(text){
     var cell = document.createElement('div');
     cell.className = 'carousel-cell';

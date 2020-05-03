@@ -1,3 +1,24 @@
+
+var input = document.querySelector('input[name=tags]');
+var suggestKeywords = ["Education", "Banking","Clothing","Party Rental Supplier","Entertainment","Electronic",
+"Sommelier","Stationary Designer","Camera","Florist","Marketing","Communication Consultant"];
+
+// tag inputs
+var settings = {
+  // enforceWhitelist: true,
+  whitelist:suggestKeywords,
+  maxTags: 10,
+      dropdown: {
+        maxItems: 20,           // <- mixumum allowed rendered suggestions
+        classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
+        enabled: 0,             // <- show suggestions on focus
+        closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
+      }
+}
+
+
+var tagify = new Tagify(input, settings);
+
 /******LOG OUT ********/
 const logoutButton = document.getElementById('logout-button');
 logoutButton.addEventListener('click', (e) => {
@@ -7,55 +28,62 @@ logoutButton.addEventListener('click', (e) => {
 });
 
 /******ADD VENDOR ********/
-const signupForm = document.getElementById('add-vendor-form');
-const signupButton = document.getElementById('add-vendor-button');
+const addVendorForm = document.getElementById('add-vendor-form');
+const addVendorButton = document.getElementById('add-vendor-button');
+const addVendorMsg = document.getElementById('vendor-added');
 
   // Once all inputs are valid, register user credential to firebase
-  signupForm.addEventListener('submit', (e)=>{
+  addVendorForm.addEventListener('submit', (e)=>{
+
+    // where is the part of checking for logged-in user??
     e.preventDefault(); // prevent form from submitting
-    if (vendorTags.size == 0){
-      displayToast("Please select at least one category.");
+
+    console.log(input.value); // get tags and print them
+    
+    if (input.value == ''){
+      displayToast("Please select at least one keyword.");
       setTimeout(() => {
         closeToast();
       },3000);
     } else {
 
-    // var string = signupForm.cat.value
-    // var arr = string.split(', '); // split string on comma space
-    var street = signupForm.street.value
-    var city = signupForm.city.value
-    var state = signupForm.state.value
-    var zip = signupForm.zip.value
-    var loc = street + ', ' + city + ', ' + state + ', ' + zip
-    let arr = Array.from(vendorTags)
-    db.collection('newVendor').add({
-        name: signupForm.name.value,
-        // street: signupForm.street.value,
-        // category: arr, // signupForm.cat.value,
-        category: arr,
-        logo: "img/ravenCircle.png",
-        rating: 0,
-        comment: "New Vendor - Waiting for confirm",
-        location: loc
-        // city: signupForm.city.value,
-        // country: signupForm.country.value,
-        // zip: signupForm.zip.value
+      // var string = signupForm.cat.value
+      // var arr = string.split(', '); // split string on comma space
+      var street = addVendorForm.street.value
+      var city = addVendorForm.city.value
+      var state = addVendorForm.state.value
+      var zip = addVendorForm.zip.value
+      var loc = street + ', ' + city + ', ' + state + ', ' + zip
+      // let arr = Array.from(vendorTags)
+      db.collection('newVendor').add({
+          name: addVendorForm.name.value,
+          // street: signupForm.street.value,
+          // category: arr, // signupForm.cat.value,
+          // category: arr,
+          logo: "img/ravenCircle.png",
+          rating: 0,
+          comment: "New Vendor - Waiting for confirm",
+          location: loc
+          // city: signupForm.city.value,
+          // country: signupForm.country.value,
+          // zip: signupForm.zip.value
 
-      }).then(() => {
-        //reset form
-        signupForm.reset();
-        // console.log("success");
-        e.preventDefault();
-        // window.location.href = "vendor3.html";
-        // display confirm message
-        success("Vendor added successfully!");
-        window.setTimeout(function(){
-          // Move to html.index after 2 seconds
-          window.location.href = "vendor3.html";
-        }, 2000);
-      }).catch(err => {
-        console.log(err.message);
-      });
+        }).then(() => {
+          //reset form
+          addVendorForm.reset();
+          e.preventDefault();
+
+          // display confirm message
+          addVendorMsg.style.display = "block";
+          addVendorForm.style.display="none";
+
+          window.setTimeout(function(){
+            // Move to html.index after 2 seconds
+            window.location.href = "vendor3.html";
+          }, 2000);
+        }).catch(err => {
+          console.log(err.message);
+        });
     }
     });
 
@@ -78,5 +106,5 @@ profileButton.addEventListener('click', (e) => {
 
 
 window.onload = function () {
-  initTagList();
+  // initTagList();
 }

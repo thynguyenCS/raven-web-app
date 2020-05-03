@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/a696b91557.css" media="all">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
     
     <!-- Custom stylesheets -->
     <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
@@ -76,118 +81,116 @@
 <!-- MAIN CONTENT (VENDORS) -->
     <div class="hero fullscreen">
         <div class="hero-body">
-            <div class="content center add-vendor-content u-text-left fill-height">
-                <!-- <space class="large"></space> -->
-                <!-- ACCOUNT MODAL -->
-                <!-- <div id="modal-account" class="modal">
-                    <div class="modal-content center-align">
-                    <h4>Account details</h4><br />
-                    <div class="account-details"></div>
-                    </div>
-                </div> -->
-                <div class="row u-no-padding level">
-                    <div class="col-6 right-border">
-                        <h6 class="title white">Add a Vendor</h6>
-                        <span class="info font-11">*This vendor will not be available until it has been approved.</span>
-                        <form id="add-vendor-form" class="frame u-no-padding w-90" method="post" autocomplete="off">
-                            <div class="form-section">
-                                <!-- Vendor's name -->
-                                <label class="white">Name</label>
+            <div class="content center add-vendor-content u-text-left">
+                <div id="vendor-added" class="h-100" style="display: none;">
+                    <h5>Request Submitted</h5>
+                    <div class="font-11">Thank you for submitting a request! Once this vendor has been approved, it will appear on the website.</div>
+
+                </div>
+                <!-- <p class="title">Add a Vendor</p> -->
+                <!-- <span class="font-11">*This vendor will not be available until it has been approved.</span> -->
+                <form id="add-vendor-form" class="frame u-no-padding" method="post" autocomplete="off">
+                    
+                    <h5>Add Vendor</h5>
+                    <div class="font-11">*This vendor will not be available after it has been approved</div>
+                    <div class="form-section">
+                        <!-- Vendor's name -->
+                        
+                        <label>Name</label>
+                        <div class="input-control">
+                            <input id="name" class="input-contains-icon" placeholder="Offical Pal"
+                            type="text" value="" autocomplete="false" required>
+                            <span class="icon"><i class="fa fa-chevron-tie"></i></span>
+                            
+                        </div>
+                        <!-- Vendor's address -->
+                        <label style="margin-left: 0;">Adresss</label>
+                        <div class="input-control">
+                            <input id="street" class="input-contains-icon" placeholder="123 Main St"
+                            type="text" value="" autocomplete="false" required>
+                            <span class="icon"><i class="fas fa-location-arrow"></i></span>
+                        </div>
+                        <!-- city, state -->
+                        <div class="row u-no-padding fluid-container">
+                            <div class="col-6" style="padding-left: 0;">
                                 <div class="input-control">
-                                    <input id="name" class="input-contains-icon" placeholder="Offical Pal"
-                                    type="text" value="" autocomplete="false" required>
-                                    <span class="icon"><i class="fas fa-chevron-tie"></i></span>
-                                    
-                                </div>
-                                <!-- Vendor's address -->
-                                <label class="white" style="margin-left: 0;">Adresss</label>
-                                <div class="input-control">
-                                    <input id="street" class="input-contains-icon" placeholder="123 Main St"
-                                    type="text" value="" autocomplete="false" required>
-                                    <span class="icon"><i class="fas fa-location-arrow"></i></span>
-                                </div>
-                                <!-- city, state -->
-                                <div class="row u-no-padding fluid-container">
-                                    <div class="col-6" style="padding-left: 0;">
-                                        <div class="input-control">
-                                            <input id="city" class="input-contains-icon" placeholder="City"
-                                            type="text" value="" autocomplete="false" required>
-                                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6" style="padding-right: 0;">
-                                        <div class="input-control">
-                                            <input id="state" class="input-contains-icon" placeholder="State"
-                                            type="text" value="" autocomplete="false" required>
-                                            <span class="icon"><i class="fas fa-globe-americas"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- zip code -->
-                                <div class="input-control">
-                                    <input id="zip" class="input-contains-icon" placeholder="Zip"
+                                    <input id="city" class="input-contains-icon" placeholder="City"
                                     type="text" value="" autocomplete="false" required>
                                     <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                                 </div>
-                                <!-- select up to 3 tags (categories) -->
-                                <div class="row u-no-padding">
-                                    <div class="col-9 u-no-padding">
-                                        <label class="white" style="margin-left: 0;">Categories</label>    
-                                        <span class="info font-11">Select up to 3 categories.</span>
-                                    </div>
-                                    <div class="col-3 u-no-padding align-right" style="margin-top: .5rem;">
-                                        <!-- button to add tags, which triggers a dropdown list -->
-                                        <div class="list-dropdown">
-                                            <button id="add-tag-button" type="button" class="btn-transparent btn-dropdown">
-                                                </span class="icon">
-                                                <i class="fa fa-plus" style="padding-right: .5rem;"></i>
-                                                <i class="fa fa-tag"></i><span>
-                                            </button>
-                                            <ul id="tag-dropdown" class="menu">
-                                                <li class="menu-item">
-                                                    <div class="input-control">
-                                                        <input id="tag-input" class="input-contains-icon" placeholder="Search a tag..." onkeyup="filterTags()" type="text">
-                                                    <span class="icon"><i class="fa fa-search"></i></span>
-                                                    </div>     
-                                                </li>
-                                                <!-- list of tags the user will choose from -->
-                                                <div id="tags"> 
-                                                    <!-- populate with JS -->
-
-                                                </div>
-                                                
-                                            </ul>
-                                        </div>    
-                                    </div>
-                                </div>
-                            
-                                <space class="medium"></space>
-                                <!-- This box contains tags that are selected by user -->
-                                <div class="transbox">
-                                    <!-- <div class="row u-no-padding"> -->
-                                    <div id="selected-tags" class="tag-container" style="margin-bottom: 0;">
-                                    </div>
-                                    <!-- display error msg -->
-                                    <div id="error" class="toast toast--error" style="display:none;">
-                                    </div>                        
-                                </div>
-                                <space class="medium"></space>
-                                <button id="add-vendor-button" class="btn-info u-pull-left btn-animated w-30" type="submit">
-                                    Submit
-                                </butto>              
                             </div>
-                            <!-- error msg 
+                            <div class="col-6" style="padding-right: 0;">
+                                <div class="input-control">
+                                    <input id="state" class="input-contains-icon" placeholder="State"
+                                    type="text" value="" autocomplete="false" required>
+                                    <span class="icon"><i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- zip code -->
+                        <div class="input-control">
+                            <input id="zip" class="input-contains-icon" placeholder="Zip"
+                            type="text" value="" autocomplete="false" required>
+                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        </div>
+                        <!-- select up to 3 tags (categories) -->
+                        <label style="margin-left: 0;">Categories</label></br>
+                        <span class="font-11">Select/write up to 10 keywords</span>
+                        <!-- <space class="small"></space> -->
+                        <div class="input-control">
+                            <input name='tags' placeholder='' value=''>
+                        </div>
+
+                        <!-- <div class="row u-no-padding">
+                            <div class="col-9 u-no-padding">
+                                <label style="margin-left: 0;">Categories</label>    
+                                <span class="info font-11">Select up to 3 categories.</span>
+                            </div>
+                            <div class="col-3 u-no-padding align-right" style="margin-top: .5rem;">
+                             
+                                <div class="list-dropdown">
+                                    <button id="add-tag-button" type="button" class="btn-transparent btn-dropdown">
+                                        </span class="icon">
+                                        <i class="fa fa-plus" style="padding-right: .5rem;"></i>
+                                        <i class="fa fa-tag"></i><span>
+                                    </button>
+                                    <ul id="tag-dropdown" class="menu">
+                                        <li class="menu-item">
+                                            <div class="input-control">
+                                                <input id="tag-input" class="input-contains-icon" placeholder="Search a tag..." onkeyup="filterTags()" type="text">
+                                            <span class="icon"><i class="fa fa-search"></i></span>
+                                            </div>     
+                                        </li>
+                                       
+                                        <div id="tags"> 
+                              
+                                        </div>
+                                        
+                                    </ul>
+                                </div>    
+                            </div>
+                        </div> -->
                     
-                            <div id="success" class="toast toast--success" style="display:none;">
-                            </div> -->
-                    
-                            
-                    
-                    
-                        </form>
-            
+                        <div id="error" class="toast toast--error" style="height: 960px; display:none;"></div>
+                        
+                        <space class="medium"></space>
+                        <button id="add-vendor-button" class="btn--orange u-pull-left btn-animated w-30" type="submit">
+                            Submit
+                        </button>              
                     </div>
-                    <div class="col-6">
+                    <!-- error msg 
+            
+                    <div id="success" class="toast toast--success" style="display:none;">
+                    </div> -->
+            
+                    
+            
+            
+                </form>
+                
+            
+                    <!-- </div> -->
+                    <!-- <div class="col-6">
                         <div class="under-construction">
                             <div class="placeholder">
                             <div class="placeholder-icon">
@@ -202,15 +205,11 @@
                         
                     </div>
                     
-                </div>
-            
+                </div> -->
+            </div>
         </div>
-    </div>
 
-
-
-
-<!-- FOOTER -->
+        <!-- FOOTER -->
     <footer>
         <div class="row level">
             <div class="col-4">
@@ -268,6 +267,12 @@
         </div>        
     </footer>
 <!-- END OF FOOTER -->
+    </div>
+
+
+
+
+
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>

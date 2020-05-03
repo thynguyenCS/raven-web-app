@@ -49,28 +49,28 @@ function deleteTag(){
     }
 }
 
-function initTagList(){
-    var tags = document.getElementById('tags');
-    // var a = dropdown.getElementsByClassName('a');
-    let html = "";
-    for (var i = 0; i < allTags.length; i ++){
-        html += `<li class="menu-item">
-                    <a href="#">${allTags[i]}</a>
-                </li>`;
+// function initTagList(){
+//     var tags = document.getElementById('tags');
+//     // var a = dropdown.getElementsByClassName('a');
+//     let html = "";
+//     for (var i = 0; i < allTags.length; i ++){
+//         html += `<li class="menu-item">
+//                     <a href="#">${allTags[i]}</a>
+//                 </li>`;
         
-    }
-    tags.innerHTML = html;
-    var a = tags.getElementsByTagName("a");
-    for (var j = 0; j < a.length; j++){
-        (function (index){
-            a[index].addEventListener('click', () => {
+//     }
+//     tags.innerHTML = html;
+//     var a = tags.getElementsByTagName("a");
+//     for (var j = 0; j < a.length; j++){
+//         (function (index){
+//             a[index].addEventListener('click', () => {
                 
-                vendorTags.add(a[index].innerText || a[index].textContent);
-                displayVendorTags();
-                if (vendorTags.size == 3 ){
-                    document.getElementById('add-tag-button').style.visibility = "hidden";
-                }
-            })
-        })(j);
-    }
-}
+//                 vendorTags.add(a[index].innerText || a[index].textContent);
+//                 displayVendorTags();
+//                 if (vendorTags.size == 3 ){
+//                     document.getElementById('add-tag-button').style.visibility = "hidden";
+//                 }
+//             })
+//         })(j);
+//     }
+// }

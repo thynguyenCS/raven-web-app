@@ -1,14 +1,19 @@
 body {
     /* background-color: #484f5b; */
     /* background-color: black; */
-    background-image: url('https://cdn2.unrealengine.com/Fortnite%2FBattle-pass%2Fseason6%2Fheader-bg-1920x1080-a9c4fbc4d94a09059d16b1f2338160eb895c5d3a.jpg');
+    background-color: rgb(244, 244, 244);
+    color: #666;
+    /* background-image: url('https://cdn2.unrealengine.com/Fortnite%2FBattle-pass%2Fseason6%2Fheader-bg-1920x1080-a9c4fbc4d94a09059d16b1f2338160eb895c5d3a.jpg'); */
 }
 .add-vendor-content {
-    background-color: #1e1f26;
+    /* background-color: white; */
+    /* background-color: #1e1f26; */
     /* margin-left: 2rem; */
     padding: 3rem;
+    border: none;
     /* width: 60%; */
     height: auto;
+    box-shadow: none;
     /* box-shadow:0 8px 20px 0 rgba(42,51,83,.12),0 5px 5px rgba(0,0,0,.06); */
     /* height: px; */
 }
@@ -20,17 +25,19 @@ body {
     border-radius: 10px;
     /* background-color: #363b45; */
 
-    box-shadow: 0 .05rem .2rem rgba(69,77,93,.3);
+    /* box-shadow: 0 .05rem .2rem rgba(69,77,93,.3); */
 }
 .under-construction {
     padding-left: 3rem;
    
 }
-.placeholder {
+::placeholder {
+    font-size: 14px;
     height: 100%;
-    color: darkgrey;
-    background-color: #2c303a;
-    /* background-color: transparent; */
+    color: #666;
+
+    /* background-color: #2c303a; */
+    background-color: transparent;
 }
 .font-11 {
     font-size: 11px;
@@ -38,17 +45,38 @@ body {
 .padded {
     padding: 36px;
 }
-h3 {
-    color:  white;
-}
+
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select {
+    font-size: 14px;
     /* border-color:#768092; */
-    border-color:  #363b45;
-    background: transparent;
-    color:  white;
+    border: 1px solid #f0f0f0;
+    background-color: #e8e8e8; 
+    /* background: transparent; */
+    color: #666;
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
+    font-size: 14px;
+    /* background-color: white; */
+    /* background-color: #5a6270; */
+    /* background-color: #434955; */
+    /* background-color: white; */
+    background-color: transparent;
+    box-shadow: none;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    /* border: none; */
+}
+.btn--orange {
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #ff8a00;
+    color: white;
+}
+.btn--orange:hover {
+    background-color: #f08001;
 }
 .icon {
-    color:  white;
+    color:  #666;
 }
 
 footer {
@@ -107,40 +135,55 @@ footer {
     margin-bottom: 1rem;
 }
 .tag--grey{
-    font-size: 12px;
-    color: white;
-    line-height: 1.8rem;
-    
-    border-radius: 20px;
-    background-color: #434955;
+    /* font-size: 12px; */
+    /* color: white; */
+    color: #666;
+    font-weight: 600;
+    /* line-height: 1.8rem; */
+    border-radius: 8px;
+    /* background-color: #f0f0f0; */
+    background-color: #e8e8e8;
+    /* background-color: #434955; */
+    box-sizing: content-box;
+    font-size: 14px;
+    height: 40px;
+    min-height: 1em;
+    min-width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 41px;
+    padding: 0 18px;
+    /* padding-top: .5rem;
+    padding-bottom: .5rem;
     padding-left: 1rem;
-    /* padding-right: 1rem; */
-    font-weight: 500;
-    border: 2px solid #434955;
-    opacity: 0.8;
+    padding-right: 1rem; */
+    font-weight: 600;
+    border: none;
+    /* opacity: 0.8; */
     /* border: 2px solid darkgrey; */
 }
+
 .tag--grey:hover {
+    transition: none;
     opacity: 1;
-    /* border: 2px solid lightgrey; */
-    /* background-color: #000; */
-    /* background-color: #363b45; */
-    /* font-weight: bold; */
+    background-color: #dfdfdf;
+    /* background-color: #e8e8e8; */
+    color: #666;
 }
 
 
-a.tag--grey:hover {
-    color: white;
-}
 .info {
-    display: flex;
+    display: block;
+    /* display: flex; */
     /* flex-direction: column; */
 }
 .list-dropdown {
     height: 40px;
 }
 .list-dropdown .menu {
-    background-color: #363b45;
+    background-color: white;
+    /* background-color: #363b45; */
     height: 10rem;
     top: 75%;
     max-height: 12rem;
@@ -154,14 +197,14 @@ a.tag--grey:hover {
     justify-content: flex-end;
 }
 .menu .menu-item a{
-    color: white;   
+    color: #666;  
 }
-.menu .menu-item .input-control input {
+/* .menu .menu-item .input-control input {
     height: 40px;
     border: 1px solid #505766;
-}
+} */
 .menu .menu-item a:hover {
-    color: white;
+    color: black;
     background-color: #292d35;
 }
 .transbox {
@@ -178,10 +221,10 @@ a.tag--grey:hover {
     color:lightgrey;
 } */
 .link {
-    color: lightgrey;
+    color: #666;
 }
 .link:hover{
-    color: darkgrey;
+    color: black;
 }
 
 img {
@@ -190,24 +233,33 @@ img {
 .header {
     padding-left: 12px;
     padding-right: 12px;
-    background-color: #1e1f26;
+    background-color: white;
+    /* background-color: #1e1f26; */
     /* background-color: #24292e; */
 }
 .header a{
-    color: white;
+    color: #666;
 }
 .header a:hover{
-    color: white;
+    color: black;
 }
-.title {
-    color: white;
+.subtitle{
+    font: 14px;
+    color: #666;
+    font-weight: 700;
 }
+/* .title {
+    color: white;
+} */
+
 .nav-item .dropdown-menu {
-    background-color: #363b45;
-    border-color:#363b45;
+    background-color: white;
+    color: #666;
+    /* background-color: #363b45; */
+    /* border-color:#363b45; */
 }
-.icon {
-    color: white;
+::placeholder {
+    color: #666;
 }
 .form-group {
     margin: 1rem 0;
@@ -221,15 +273,50 @@ img {
     box-shadow: none;
 }
 .toast {
+
+    /* padding-left: 0; */
     border-radius: 4px;
     margin-left: 0;
 }
+.toast p {
+    font-size: 14px;
+}
 .toast.toast--error {
-    text-align: center;
-    background-color:  #2c303a;
+    padding:0;
+    text-align: left;
+    background-color: transparent;
+    color: red;
+    /* background-color:  #2c303a; */
     /* background-color: #cc4642; */
     border: none;
 }
-h7 {
-    color: white;
+label {
+    margin-left: 0;
+    font-size: 14px;
+    font-weight: 700;
 }
+.tagify__input:focus {
+    border: none;
+    box-shadow: none;
+    /* background-color: #e8e8e8; */
+}
+.tags-look .tagify__dropdown__item{
+    display: inline-block;
+    border-radius: 3px;
+    padding: .3em .5em;
+    border: 1px solid #CCC;
+    background: #F3F3F3;
+    margin: .2em;
+    font-size: .85em;
+    color: black;
+    transition: 0s;
+  }
+  
+  .tags-look .tagify__dropdown__item--active{
+    color: black;
+  }
+  
+  .tags-look .tagify__dropdown__item:hover{
+    background: lightyellow;
+    border-color: gold;
+  }
