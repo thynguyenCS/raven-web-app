@@ -321,6 +321,13 @@ label {
     box-shadow: none;
     /* background-color: #e8e8e8; */
 }
+.btn-transparent:hover {
+
+    color: #666;
+    background-color: #f0f0f0;
+    background-color: #e1e1e1;
+
+}
 .tags-look .tagify__dropdown__item{
     display: inline-block;
     border-radius: 3px;

@@ -118,7 +118,7 @@
 
     
 <!-- VENDOR PART -->
-    <div class="hero fullscreen">
+    <!-- <div class="hero fullscreen"> -->
         <div class="tree-nav-body">
             <!-- This part is hidden and only visible when screen size is small -->
             <!-- don't bother this one yet -->
@@ -131,13 +131,16 @@
             </div>
              <!-- MAIN SIDEBAR -->
             <div class="tree-nav" id="sidebar">
-  
-                <div class="content sideBar-content no-bottom-margin">
-                    <!-- nothing here -->
+                <div class="content">
+                    <h6>Title</h6>
                 </div>
+                <!-- <div class="content sideBar-content no-bottom-margin">
+                
+                </div> -->
 
                 <!-- MAIN CONTENT OF SIDEBAR -->
-                <div class="tree-nav-container u-center">
+                <div class="tree-nav-container">
+                    <space class="large"></space>
                     <div class="tree">
                         <!-- SORT --->
                         <div class="tree-item">
@@ -183,13 +186,13 @@
             <div class="tree-nav-content">
                 <space class="x-large"></space>
                 <!-- CAROUSEL (categories) -->
-                <div id="carousel" class="carousel">
+                <!-- <div id="carousel" class="carousel"> -->
                     <!-- <div class="carousel-cell">
                         <a class="tag tag--grey" href="#">Recommended</a>
                     </div>
                      -->
                     
-                </div>
+                <!-- </div> -->
                 <!-- end of categories -->
 
                 <space class="medium"></space>
@@ -262,56 +265,78 @@
                             </button>
                     </form>  
                 </div>
-                <div class="row u-no-padding" id="display-all" style="display:none;">      
-                    <div id="default-list" class="col-6" style="padding: 16px;">   
+                <div  id="display-all" style="display:none;">      
+                    <div id="default-list" class="fluid-container vendor-container">  
+                       
+                        <div class="tile vendor-tile unselected">
+                            
+                                <div class="tile__icon u-pull-left">
+                                    <figure class="avatar vendor-avatar">
+                                        <img src="img/raven.PNG">
+                                    </figure>
+                                </div>
+                                <div class="tile__container"> 
+                                        <h6 class="tile__title u-no-margin">Vendor</b></h6>
+                                        <span class="info vendor-info">Location</span>
+                                        
+                                        <!-- <p class="tile__buttons u-no-margin">
+                                            <button id="rate-btn" onclick="rateBtn(${i});" class="rate-btn btn-primary btn-tiny uppercase">Rate</button>
+                                            
+                                        </p>
+                                         -->
+                                </div>
+                                <div class="tile__container vendor__content">
+                                    <span class="info vendor-industry">Florist</span>
+                                
+                                    <span class="info vendor-info dark-grey">10</span>
+                                    
+                                </div>
+                                
+                            
+                                                        
+                        </div> 
+                        <div class="tile vendor-tile unselected">
+                            <div class="row tile-content w-100">
+                                <div class="col-3 tile__icon fill-height center">
+                                    <figure class="avatar vendor-avatar">
+                                        <img class="w-100 h-100" src=${vendors[i].logo}>
+                                    </figure>
+                                </div>
+                                <div class="col-7 tile__container"> 
+                                        <h6 class="tile__title u-no-margin">ghgh}</b></h6>
+                                        <span class="info vendor-info">sdsd</span></br>
+                                        <span class="info vendor-info">sdsd</span> 
+                                        <p class="tile__buttons u-no-margin">
+                                            <button id="rate-btn" onclick="rateBtn(${i});" class="rate-btn btn-primary btn-tiny uppercase">Rate</button>
+                                            <a href="#modal-normal"><button class="rate-btn btn-primary btn-tiny uppercase">View</button></a>
+                                        </p>
+                                        
+                                </div>
+                                
+                                <div class="col-2 tile__container u-text-right">
+                                    <span class="info vendor-info dark-grey">4</span>
+                                    <span class="fa fa-star small checked dark-grey"></span></br>
+                                    <span class="info vendor-info dark-grey">10</span>
+                                    <span class="fas fa-comment-alt small dark-grey"></span>
+                                    
+                                </div>
+                                
+                            </div>   
+                                                        
+                        </div> 
+                        
                        <!-- List of vendors is displayed here, even default or found  -->
                     </div>
                     <!-- View of one vendor when click on it -->
-                    <div class="col-6" style="padding: 16 16 48 16px;">
+                    <!-- <div class="col-6" style="padding: 16 16 48 16px;">
                         <div id="toggle-vendor-card" class="card u-flex u-flex-column h-699 u-no-margin sticky" style="display:none;">
-                            <!-- <div class="card-container h-20">
-                                <div class="card-image"></div>
-                                <div class="title-container">
-                                    
-                                    <p class="title">Vendor A</p>
-                                    <span class="subtitle">San Jose, CA</span>
-                                </div>
-                            </div>
-                            <div class="content" style="margin-left: 3rem;">
-                                <p>This is vendor A.</p>
-                            </div>
-                            <div class="action-bar u-center">
-                                <button class="btn btn-save">SAVE</button>
-                                <button class="btn btn-learn">LEARN MORE</button>
-                            </div>                             -->
+                           
                         </div>
                         <space class="medium"></space>
     
-                    </div> 
+                    </div>  -->
                 </div>
-                <div class="modal modal-animated--zoom-in" id="modal-normal">
-                    <a href="#target" class="modal-overlay close-btn" aria-label="Close"></a>
-                    <div class="modal-content" role="document">
-                        <div class="modal-header">
-                            <a href="#components" class="u-pull-right" aria-label="Close"><span class="icon"><i class="fa fa-wrapper fa-times"></i></span></a>
-                            <div class="modal-title">Bank of America</div>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Modal content -->
-                            <div class="u-text-center">
-                                <h3>Max-width: 40rem</h3>
-                                <h4>What is Lorem Ipsum?</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            
-                                <h4>Ipsum</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            
-                                <h4>Ipsum II</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet luctus venenatis lectus magna. Facilisis gravida neque convallis a cras semper. A iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Erat imperdiet sed euismod nisi porta lorem. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <space class="large"></space>
                 <!-- PAGINATION -->
                 <div class="row u-no-padding">
@@ -386,7 +411,7 @@
         </footer>
     
 
-    </div>
+    <!-- </div> -->
     
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>

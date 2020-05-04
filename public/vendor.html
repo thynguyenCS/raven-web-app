@@ -1,0 +1,406 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <!-- <link href="../../res/cirrus.min.css" type="text/css" rel="stylesheet" />
+    <link href="../../res/app.css" type="text/css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.5.4/dist/cirrus.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/a696b91557.css" media="all">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!-- Tagify -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    <!-- FLICKITY -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" type="text/javascript"></script>
+    
+    <!-- Custom stylesheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/index2.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <!-- icon -->
+    <link rel = "icon" href = "img/ravenCircle.png" type = "image/x-icon"> 
+    <title>Raven</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header header-fixed unselectable header-animated">
+        <!-- The web app's logo, this part will always be visibe -->
+        <!-- <div class="row"> -->
+            <div class="header-brand">
+                <div class="nav-item no-hover">
+                    <a href="main.html"><img src=img/ravenCircle.png alt="raven" style="width: 30px;"></a>
+                    <h6 class="title"><a href="main.html">Raven</a></h6>
+                </div>
+                <!-- this part is a hidden dropdown menu because it only appears for touch-enabled devices -->
+                <!-- but we don't need to deal with it yet -->
+                <!-- <div class="nav-item nav-btn" id="header-btn">
+                    <span>First Item</span>
+                    <span>Second Item</span>
+                    <span>Third Item</span>
+                </div> -->
+            </div>
+        
+            <!-- The adjacent container (of the logo) that holds dropdown menus, links, buttons, etc -->
+            <!-- This part will be hidden for touch-enabled devices and a dropdown menu is shown instead (we dont deal with this yet) -->
+            <div class="header-nav" id="header-menu">
+                <!-- left container, always appear to left of the navigation bar -->
+                <div class="nav-left">
+                    <div class="nav-item no-hover">
+                        <div class="list-dropdown">
+                            <button class="btn-transparent btn-dropdown">
+                                Explore </span class="icon"><i class="fas fa-wrapper fa-chevron-down small"></i><span>
+                            </button>
+                            
+                            <ul class="row menu">
+                                <!-- <div class="row u-no-padding"><dt>Categories</dt></div> -->
+                                <div class="col-6 u-text-left left-sub-menu">
+                                    <dt>Categories</dt>
+                                    <li class="menu-item">
+                                        <a href="#">Education</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Banking</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Grocery</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">A very long tag</a>
+                                    </li>
+                                </div>
+                                <div class="col-6 u-text-left right-sub-menu" >
+                                    </br>
+                                    <li class="menu-item">
+                                        <a href="#">A very long tag</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item no-hover">
+                        <div class="form-group">
+                            <input class="form-group-input"  id="search-vendor" type="search" placeholder="Search a vendor...">
+                        </div>
+                    </div>
+                    <div class="nav-item no-hover">
+                        <div class="form-group">
+                            <input class="form-group-input" id="search-loc" type="search" placeholder="Search a location...">
+                        </div>
+                    </div>
+                    <div class="nav-item no-hover">
+                        <button id="search-button" class="btn--orange btn-animated" type="submit">Search</button>
+                    </div>
+                </div>
+                <!-- right container, always appear to the right of the navigation bar -->
+                <div class="nav-right">  
+                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                        <a class="nav-dropdown-link"><span class="icon"><i class="far fa-user"></i></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- PROFILE -->
+                            <li role="menu-item"><a href="#" class="link" id="profile">Profile</a></li>
+
+                            <li role="menu-item"><a href="#" class="link" id="logout-button">Log out</a></li>
+                        </ul>
+                    </div>     
+                </div>
+            </div>
+    </div>
+    <!-- END OF HEADER -->
+        
+    <!-- BODY -->
+        <div class="tree-nav-body">
+            <div class="tree-nav-header">
+                <!-- DONT NEED TO DEAL WITH THIS (FOR TABLET ONLY) -->
+                <a href="#sidebar" class="u-hide-tablet">
+                    <span class="icon">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </div>
+            <!-- SIDE BAR -->
+            <div class="tree-nav" id="sidebar">
+                <div class="content">
+                    <!-- <h6>Title</h6> -->
+                </div>
+                <div class="tree-nav-container">
+                    <space class="large"></space>
+                    <div class="tree">
+                        <!-- SORT --->
+                        <div class="tree-item">
+                            <space class="large"></space> 
+                            <span class="myTitle">Sort by</span>
+                            <space class="small"></space>
+                            <!-- SORT BY BEST RATED -->
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="best-rated" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="best-rated">Best Rated</label>
+                            </div>
+                            <!-- SORT BY MOST REVIEWED -->
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="most-reviewed" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="most-reviewed">Most Reviewed</label>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                        <div class="tree-item">
+                            <!-- FILTER BY OFFERING A DEAL -->
+                            <span class="myTitle">Filter by</span>
+                            <space class="small"></space>
+                            <div class="form-ext-control form-ext-checkbox">
+                                <input id="offer-deal" class="form-ext-input" type="checkbox">
+                                <label class="form-ext-label" for="offer-deal">Offering a Deal</label>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                      
+                        <!-- REQUEST VENDOR -->
+                        <div class="tree-item">
+                            <dt>Couldn't find a vendor?</dt>
+                            <span class="info">If the vendor you are looking for isn't here, add it!</span>
+                            <div class="btn-container" style="margin-left: 0;">
+                                <button id="add-button" class="btn-primary btn-animated btn-small btn-add" type="submit">Add a Vendor</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#sidebar-close" id="sidebar-close" class="tree-nav-close"></a>
+            <!-- END OF SIDE BAR -->
+ 
+            <!-- MAIN CONTENT -->
+                <div class="tree-nav-content">
+                    <space class="large"></space>
+                    <space class="large"></space>
+                    <!-- CATEGORIES -->
+                    <div id="carousel" class="carousel">
+                        <div class="carousel-cell">
+                        </div>
+                    </div>   
+
+                    <!-- NUMBER OF RESULTS FOUND -->
+                    <h6 class="yellow padded-16" id='num_founds'></h6>
+                    <space class="large"></space>
+
+                    <!-- This shows a message if there's no result found. -->
+                    <!-- toggle using javascript -->
+                    <div class="row u-no-padding">
+                        <div id="result-not-found" class="row" style="display: none;">
+                            <div class="col-12">
+                                <div class="tile u-no-padding">
+                                    <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                        <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                        <h6 class="tile__title u-no-margin">We cannot find what you were looking for.</b></h6>
+                                        <span class="tile__subtitle">Please try a different keyword or submit a request.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- This shows a message if user is not logged in -->
+                    <!-- toggle using javascript -->
+                    <div class="row u-no-padding">
+                        <div id="user-not-logged-in" class="row" style="display: none;">
+                            <div class="col-12">
+                                <div class="tile u-no-padding">
+                                    <div class="tile__container w-100 u-text-center" style="padding: 20px;">
+                                        <span class="icon"><i class="fas fa-exclamation-circle" style="line-height: 2;"></i></span>
+                                        <h6 class="tile__title u-no-margin">You are not logged in.</b></h6>
+                                        <span class="tile__subtitle">Only user can see this page.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DISPLAY VENDORS -->
+                    <div  id="display-all">      
+                        <!-- THIS LIST SHOW DEFAULT VENDORS/SEARCHED VENDORS FOR NOW -->
+                        <div id="default-list" class="vendor-list">  
+                            <div class="card vendor-tile">
+                                <div class="content vendor-content h-90">
+                                    <div class="tile u-text-left">
+                                        <!-- VENDOR'S LOGO -->
+                                        <div class="tile__icon">
+                                            <figure class="avatar vendor-avatar">
+                                                <img src="https://organicthemes.com/demo/profile/files/2018/05/profile-pic-132x132.jpg" alt="Person">
+                                            </figure>
+                                        </div>
+                                        <!-- VENDOR'S NAME AND LOCATION -->
+                                        <div class="tile__container">
+                                            <p class="tile__title"><a href="vendorPage.html">Joanne Doe</a></p>
+                                            <p class="tile__subtitle">City, State</a></p>
+                                        </div>
+                                    </div>
+                                    <space class="small"></space>
+                                    <!-- VENDOR'S FIRST CATEGORY -->
+                                    <p class="tile__bigTitle">Stationary Designer</p>
+                                    <p class="tile__subtitle"><a class="link"><i class="fas fa-wrapper fa-external-link-alt"></i> www.jdoe.xyz</a></p>
+                                    <space class="medium"></space>
+                                    <!-- SOME TEXT ABOUT VENDOR -->
+                                    <p class="vendor-text">This is some sample text spam spam spam spam spam spam spam. </p>
+                                </div>
+                                <div class="card-footer content w-100 h-10 u-pull-left">
+                                    <div class="row u-no-padding">
+                                        <div class="col u-no-padding">
+                                            <!-- RATING STARS -->
+                                            <span class="fa fa-star checked yellow"></span>
+                                            <span class="fa fa-star checked yellow"></span>
+                                            <span class="fa fa-star checked yellow"></span>
+                                            <span class="fa fa-star yellow"></span>
+                                            <span class="fa fa-star checked yellow"></span>
+                                        </div>
+                                        <div class="col u-no-padding u-text-right">
+                                            <!-- NUMBER OF REVIEWS -->
+                                            <span class="vendor-review">10 Reviews </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- View of one vendor when click on it -->
+                        <!-- <div class="col-6" style="padding: 16 16 48 16px;">
+                            <div id="toggle-vendor-card" class="card u-flex u-flex-column h-699 u-no-margin sticky" style="display:none;">
+                               
+                            </div>
+                            <space class="medium"></space>
+        
+                        </div>  -->
+                    </div>
+                    <!-- END OF VENDORS -->
+
+                    <space class="large"></space>
+                    <!-- PAGINATION -->
+                    <div class="row u-no-padding">    
+                            <div id="pagination" class="pagination">              
+                            </div>
+                    </div>
+
+                    <space class="large"></space>
+                </div>
+        </div>
+
+        
+<!-- FOOTER -->
+    <footer>
+        <div class="row level">
+            <div class="col-4">
+                <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
+            </div>
+            <div class="col-4">
+                <figure class="fig ">
+                    <img class="hover-grow" src="img/ravenCircle.png" width="15%">
+                </figure>
+                <div class="row center">
+                    <div class="col-3 offset-left">
+                        <a href="#">
+                            EN
+                        </a>
+                    </div>
+                    <div class="col-3 offset-right">
+                        <a href="#">
+                            FR
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row w-50 fluid-container center">
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-facebook large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-twitter large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-instagram large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-fluid">
+                        <a href="#">
+                            <span class="icon">
+                                <i class="fa fa-wrapper fa-vimeo large" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </footer>
+<!-- END OF FOOTER -->
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8edToE3CAv33r6qTD7Lp-A62HWq7P-Sk",
+    authDomain: "raven-c24a9.firebaseapp.com",
+    databaseURL: "https://raven-c24a9.firebaseio.com",
+    projectId: "raven-c24a9",
+    storageBucket: "raven-c24a9.appspot.com",
+    messagingSenderId: "943246302988",
+    appId: "1:943246302988:web:a9f8a382e223fc71b23329",
+    measurementId: "G-051571D12T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  //make auth and firestore reference
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+</script>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40470494-2"></script>
+  <script src="https://use.fontawesome.com/a696b91557.js"></script>
+  <script src="scripts/alert.js"></script>
+  <script src="scripts/pagination.js"></script>
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/profile.js"></script>
+  <!-- <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script> -->
+
+
+</body>
+</html>

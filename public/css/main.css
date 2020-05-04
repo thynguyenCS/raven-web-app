@@ -81,7 +81,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
 
 footer {
     background-color:  #1e1f26;
-    margin-top: 0;
+    /* margin-top: 0; */
 }
 .btn-info {
     /* margin-top: 0.5rem; */
@@ -360,7 +360,8 @@ label {
   .value-proposition {
       height:  300px;
       width: 100%;
-      padding-top: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
       /* margin-bottom: 35px; */
       background-color: #e0e0e0;
       /* background-color: rgb(153, 153, 153); */
@@ -377,6 +378,8 @@ label {
   .value-title {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       color: black;
       font-size: 18px;
       font-weight: 700;
@@ -389,3 +392,7 @@ label {
       font-size: 18px;
       font-weight: 700;
   }
+.value-img {
+    width: 2.2rem;
+    height: 2.2rem;
+}

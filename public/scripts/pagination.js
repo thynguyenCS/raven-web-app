@@ -144,37 +144,45 @@ function changePage(page){
     let html = "";
     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++){
         if (vendors[i]){
+            let ratings = displayRatings(vendors[i].rating);
             let categories = display3Categories(vendors[i].category);
-            html =  `<div class="tile vendor-tile unselected">
-                        <div class="row tile-content w-100">
-                            <div class="col-3 tile__icon fill-height center">
-                                <figure class="avatar vendor-avatar">
-                                    <img class="w-100 h-100" src=${vendors[i].logo}>
-                                </figure>
-                            </div>
-                            <div class="col-7 tile__container"> 
-                                    <h6 class="tile__title u-no-margin">${vendors[i].name}</b></h6>
-                                    <span class="info vendor-info">${vendors[i].location}</span></br>
-                                    <span class="info vendor-info">${categories}</span> 
-                                    <p class="tile__buttons u-no-margin">
-                                        <button id="rate-btn" onclick="rateBtn(${i});" class="rate-btn btn-primary btn-tiny uppercase">Rate</button>
-                                        <a href="#modal-normal"><button class="rate-btn btn-primary btn-tiny uppercase">View</button></a>
-                                    </p>
-                                    
-                            </div>
-                            
-                            <div class="col-2 tile__container u-text-right">
-                                <span class="info vendor-info dark-grey">${(Math.round(vendors[i].rating * 10) / 10).toFixed(1)}</span>
-                                <span class="fa fa-star small checked dark-grey"></span></br>
-                                <span class="info vendor-info dark-grey">10</span>
-                                <span class="fas fa-comment-alt small dark-grey"></span>
+            html = `
+            <div class="card vendor-tile">
                                 
-                            </div>
-                            
-                        </div>   
-                                                    
-                    </div>
-                    <space class="medium"></space>`;        
+                                <div class="content vendor-content h-90">
+                                    <div class="tile u-text-left">
+                                        <div class="tile__icon">
+                                            <figure class="avatar vendor-avatar">
+                                                <img src="${vendors[i].logo}" alt="Person">
+                                            </figure>
+                                        </div>
+                                        
+                                        <div class="tile__container">
+                                            <p class="tile__title">${vendors[i].name}</p>
+                                            <p class="tile__subtitle">${vendors[i].location}</p>
+                                        </div>
+                                    </div>
+                                    <space class="small"></space>
+                                    <p class="tile__bigTitle">${vendors[i].category[0]}</p>
+                                    <p class="tile__subtitle"><a class="link" href="vendorPage.html"></i> Learn More</a></p>
+                                    <space class="medium"></space>
+                                    <p class="vendor-text">This is some sample text spam spam spam spam spam spam spam. </p>
+                                </div>
+                                <div class="card-footer content w-100 h-10 u-pull-left">
+                                    <div class="row u-no-padding">
+                                        <div class="col u-no-padding">
+                                            ${ratings}
+                                        </div>
+                                        <div class="col u-no-padding u-text-right">
+                                            <span class="vendor-review">10 reviews</span>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                                
+                            </div>`;
         }
         listing_table.innerHTML += html;
 
@@ -186,7 +194,7 @@ function changePage(page){
 
     // each time user changes page, populate vendorTiles again
     vendorTiles = document.querySelectorAll('.vendor-tile');
-    toggleVendorCard(); // make all vendors in vendorTiles unselected at first
+    // toggleVendorCard(); // make all vendors in vendorTiles unselected at first
     selectVendor(0);  // then make the first vendor selected by default
 }
 // display categories on vendor tile (maxmium 3 tags)
@@ -311,11 +319,11 @@ function displayCategoryTags(categories){
 }
 // when a vendor tile is clicked, change its background color and populate vendor card
 function selectVendor(selectIndex){
-    var vendorCard = document.getElementById('toggle-vendor-card');
+    // var vendorCard = document.getElementById('toggle-vendor-card');
     vendorTiles[selectIndex].classList.add('selected');
     vendorTiles[selectIndex].classList.remove('unselected');
-    vendorCard.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + selectIndex]);
-    vendorCard.style.display ="block";
+    // vendorCard.innerHTML = displayVendorCard(vendors[(current_page-1)*records_per_page + selectIndex]);
+    // vendorCard.style.display ="block";
     
     for (var i = 0; i < vendorTiles.length; i++) {
         (function (index){ 
