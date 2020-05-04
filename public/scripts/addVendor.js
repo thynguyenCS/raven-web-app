@@ -18,6 +18,9 @@ var settings = {
 
 
 var tagify = new Tagify(input, settings);
+// call inputs.value to get tags selected by user
+
+
 
 /******LOG OUT ********/
 const logoutButton = document.getElementById('logout-button');

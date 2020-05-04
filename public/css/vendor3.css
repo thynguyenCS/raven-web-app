@@ -47,7 +47,7 @@ body {
     border:1px solid #e4e4e4;
 }
 .icon {
-    color: white;
+    color: #666;
 }
 .form-group {
     margin: 0 0rem;
@@ -946,9 +946,9 @@ img {
     border-radius: 8px;
     color: #666;
     padding-left: .5rem;
-    background: linear-gradient(to right, rgba(244,244,244,1) 0%, rgba(240,240,240,1) 30%, rgba(232,232,232,0.25) 100%);
+    background: linear-gradient(to right, rgba(244,244,244,1) 0%, rgba(240,240,240,1) 30%, rgba(240,240,240,0.25) 100%);
     /* background: linear-gradient(to right, rgba(244,244,244,1) 0%, rgba(244,244,244,0.67) 47%, rgba(232,232,232,0.3) 100%); */
-    width: 170px;
+    width: 140px;
     height: 40px;
 }
 .flickity-button.flickity-prev-next-button.next {
@@ -959,7 +959,7 @@ img {
     padding-right: .5rem;
     background: linear-gradient(to right,rgba(240,240,240,0.25) 0%, rgba(244,244,244,1) 70%, rgba(244,244,244,1) 100%);
     /* background: linear-gradient(to right, rgba(244,244,244,0.3) 0%, rgba(232,232,232,0.3) 0%, rgba(244,244,244,0.67) 53%, rgba(244,244,244,1) 100%); */
-    width: 170px;
+    width: 140px;
     height: 40px;
 }
 .flickity-button.flickity-prev-next-button.previous:hover {
@@ -969,7 +969,7 @@ img {
     color: black;
     background: linear-gradient(to right, rgba(244,244,244,1) 0%, rgba(240,240,240,1) 30%, rgba(240,240,240,0.25) 100%);
     /* background: linear-gradient(to right, rgba(244,244,244,1) 0%, rgba(244,244,244,0.67) 47%, rgba(232,232,232,0.3) 100%); */
-    width: 170px;
+    width: 140px;
     height: 40px;
 }
 .flickity-button.flickity-prev-next-button.next:hover {
@@ -979,7 +979,7 @@ img {
     color: black;
     background: linear-gradient(to right,rgba(240,240,240,0.25) 0%, rgba(244,244,244,1) 70%, rgba(244,244,244,1) 100%);
     /* background: linear-gradient(to right, rgba(244,244,244,0.3) 0%, rgba(232,232,232,0.3) 0%, rgba(244,244,244,0.67) 53%, rgba(244,244,244,1) 100%); */
-    width: 170px;
+    width: 140px;
     height: 40px;
 }
 .flickity-button:disabled {
