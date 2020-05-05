@@ -101,6 +101,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 submit_review.addEventListener("submit", e=>{
     e.preventDefault();
     submit_review.style.display = "none";
+    leave_review.style.display = "block";
+
     var reviewTime = new Date();
     var reviewTimeStr = reviewTime.toUTCString();
     var review_content = document.getElementById("review-content");        
