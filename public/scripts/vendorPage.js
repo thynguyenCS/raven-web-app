@@ -5,6 +5,7 @@
 //     console.log(yes)
 // })
 //get the list of reviews of the corresponding vendor
+
 var userName = localStorage.getItem("userName");
 var userEmail = localStorage.getItem("userEmail");
 console.log(userEmail + " " + userName);
@@ -30,7 +31,7 @@ db.collection("reviews").orderBy("vendorId").get().then(snap=>{
                 </div>
                 <div class="tile__container" >
                     ${data.rating} <span class="fa fa-star checked yellow"></span>                    
-                    <p class="tile__title u-no-margin">${userName}</p>
+                    <p class="tile__title u-no-margin">${data.user}</p>
                     <p class="tile__subtitle u-no-margin">${data.reviewContent}</p>
                     <span class="info">${data.date}</span>
                     <p class="tile__buttons u-no-margin">                        
@@ -86,6 +87,17 @@ review_button.addEventListener('click', () => {
 
 var rateValue = '';
 var reviewValue = '';
+var reviewer = '';
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        db.collection('users').doc(user.uid).get().then(doc => {
+                
+            // Display some data from the object
+            reviewer += doc.data().displayName
+
+        });
+    }
+});
 submit_review.addEventListener("submit", e=>{
     e.preventDefault();
     var reviewTime = new Date();
@@ -104,7 +116,8 @@ submit_review.addEventListener("submit", e=>{
         reviewContent: reviewValue,
         rating: rateValue,
         date: reviewTimeStr,
-        user: localStorage.getItem("userEmail")    
+        // user: localStorage.getItem("userEmail")    
+        user: reviewer
     }).then(()=>{
         //reset the form
         for(let i=0;i<rating.length;i++){
