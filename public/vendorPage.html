@@ -175,7 +175,7 @@
                         <ul class="tabs u-pull-left">
                             <li><a>About</a></li>
                             <li><a>Pictures</a></li>
-                            <li class="selected"><a>Reviews (1)</a></li>
+                            <li class="selected"><a id="total-reviews"></a></li>
                         </ul>
                     </div>
                     <space class="large">
@@ -183,7 +183,7 @@
               
                 <div class="reviews">
                     <!-- section to submit a review -->
-                    <div id="submit-review" style="display:none;">
+                    <form id="submit-review" style="display:none;">
                         <span id="rating" class="rating">
                             <input id="rating5" type="radio" name="rating" value="5">
                             <label for="rating5">5</label>
@@ -191,14 +191,14 @@
                             <label for="rating4">4</label>
                             <input id="rating3" type="radio" name="rating" value="3">
                             <label for="rating3">3</label>
-                            <input id="rating2" type="radio" name="rating" value="2" checked>
+                            <input id="rating2" type="radio" name="rating" value="2">
                             <label for="rating2">2</label>
                             <input id="rating1" type="radio" name="rating" value="1">
                             <label for="rating1">1</label>
                         </span>
-                        <div id="review-text" class="col-12 review-text"><textarea type="text" placeholder="Your Review"></textarea></div>
+                        <div id="review-text" class="col-12 review-text"><textarea type="text" placeholder="Your Review" id="review-content"></textarea></div>
                         <button id="submit-review" class="btn--orange bt-animated btn-tiny review-button u-pull-right">Submit</button>
-                    </div>
+                    </form>
                     <!-- displays msg "leave a review" -->
                     <div id="leave-review" class="leave-review u-center">
                         <button id="review-button" class="btn--orange btn-small review-button">Leave a Review</button>

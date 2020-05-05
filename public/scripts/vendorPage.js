@@ -1,13 +1,18 @@
+//get the list of reviews of the corresponding vendor
 var reviewsHTML = '';
-//console.log(reviewsHTML)
 var reviewsList = document.getElementById("reviews-list");
 
 db.collection("reviews").orderBy("vendorId").get().then(snap=>{
+    var vendorRating = 0;
+    var countReviews = 0;
     let changes = snap.docChanges();
     changes.forEach(change=>{
         data = change.doc.data();
+        //display the reviews
         if(data.vendorId == showingVendor.id){
-           reviewsHTML += 
+            countReviews++;
+            vendorRating += parseFloat(data.rating);
+            reviewsHTML += 
            `<div class="tile review-tile">
                 <div class="tile__icon">
                     <figure class="avatar">
@@ -24,18 +29,39 @@ db.collection("reviews").orderBy("vendorId").get().then(snap=>{
                     </p>
                 </div>
             </div>`;    
-        console.log(reviewsHTML)       
         }
     });   
+    document.getElementById("total-reviews").innerHTML = `Reviews (${countReviews})`,
     reviewsList.innerHTML = reviewsHTML;
+    //calculate the new average rating and store back to vendor.rating
+    if(countReviews == 0){
+        console.log("nothing")
+    }
+    else{
+        console.log(vendorRating + " " + countReviews)
+        let avg = (vendorRating/countReviews).toFixed(1);
+        db.collection("vendors").doc(showingVendor.id).update({
+            rating: avg
+
+        })
+        
+    }
+    
+    
 });
 
 
+//Modify the html element corresponding with the vendor
+//console.log(localStorage.getItem("showingVendor"));
+let showingVendor = JSON.parse(localStorage.getItem("showingVendor"));
+document.getElementById("vendor-name").innerHTML = showingVendor.name;
+document.getElementById("vendor-loc").innerHTML = showingVendor.location;
+document.getElementById("vendor-category").innerHTML = createCategoryStr(showingVendor.category);
+document.getElementById("vendor-logo").src = showingVendor.logo;
+document.getElementById("vendor-rating").innerHTML =  ` ${showingVendor.rating} <span class="fa fa-star yellow"></span>`
+ 
 
-
-
-
-//console.log(localStorage.getItem("reviews"))
+//Review
 var review_button = document.getElementById('review-button');
 var review_text = document.getElementById('review-text');
 var submit_review = document.getElementById('submit-review');
@@ -45,16 +71,40 @@ review_button.addEventListener('click', () => {
     submit_review.style.display = "block";
     leave_review.style.display = "none";
 })
-//Modify the html element corresponding with the vendor
-//console.log(localStorage.getItem("showingVendor"));
-let showingVendor = JSON.parse(localStorage.getItem("showingVendor"));
-document.getElementById("vendor-name").innerHTML = showingVendor.name;
-document.getElementById("vendor-loc").innerHTML = showingVendor.location;
-document.getElementById("vendor-category").innerHTML = createCategoryStr(showingVendor.category);
-document.getElementById("vendor-logo").src = showingVendor.logo;
-document.getElementById("vendor-rating").innerHTML =  ` ${showingVendor.rating} <span class="fa fa-star yellow"></span>`
+//Function to rate vendor after clicking Leave a review button
 
-//getting the list of reviews
+
+var rateValue = '';
+var reviewValue = '';
+submit_review.addEventListener("submit", e=>{
+    e.preventDefault();
+    var review_content = document.getElementById("review-content");        
+    var rating = document.getElementsByName("rating"); 
+    reviewValue = review_content.value;       
+    for(let i = 0; i < rating.length; i++){
+        if(rating[i].checked){
+            rateValue= rating[i].value;
+        }
+    } 
+    db.collection("reviews").add({
+        vendorId: showingVendor.id,
+        reviewContent: reviewValue,
+        rating: rateValue
+    }).then(()=>{
+        //reset the form
+        for(let i=0;i<rating.length;i++){
+            rating[i].checked = false;
+        }   
+        review_content.value = "";  
+    });     
+});
+
+
+
+
+
+
+
 
 
 

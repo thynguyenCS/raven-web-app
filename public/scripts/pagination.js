@@ -1,5 +1,5 @@
 var current_page = 1;
-var records_per_page = 10;
+var records_per_page = 12;
 var vendors = [];
 var vendorTiles = [];
 var max_tags = 3;
