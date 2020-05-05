@@ -147,42 +147,36 @@ function changePage(page){
             let ratings = displayRatings(vendors[i].rating);
             let categories = display3Categories(vendors[i].category);
             html = `
-            <div class="card vendor-tile">
-                                
-                                <div class="content vendor-content h-90">
-                                    <div class="tile u-text-left">
-                                        <div class="tile__icon">
-                                            <figure class="avatar vendor-avatar">
-                                                <img src="${vendors[i].logo}" alt="Person">
-                                            </figure>
-                                        </div>
-                                        
-                                        <div class="tile__container">
-                                            <p class="tile__title"><a class="vendor-link" href="vendorPage.html">${vendors[i].name}</a></p>
-                                            <p class="tile__subtitle">${vendors[i].location}</p>
-                                        </div>
-                                    </div>
-                                    <space class="small"></space>
-                                    <p class="tile__bigTitle">${vendors[i].category[0]}</p>
-                                    <p class="tile__subtitle"><a class="link" href="vendorPage.html"></i> Learn More</a></p>
-                                    <space class="medium"></space>
-                                    <p class="vendor-text">This is some sample text spam spam spam spam spam spam spam. </p>
-                                </div>
-                                <div class="card-footer content w-100 h-10 u-pull-left">
-                                    <div class="row u-no-padding">
-                                        <div class="col u-no-padding">
-                                            ${ratings}
-                                        </div>
-                                        <div class="col u-no-padding u-text-right">
-                                            <span class="vendor-review">10 reviews</span>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    
-                                </div>
-                                
-                            </div>`;
+            <div class="card vendor-tile">                                
+                <div class="content vendor-content h-90">
+                    <div class="tile u-text-left">
+                        <div class="tile__icon">
+                            <figure class="avatar vendor-avatar">
+                                <img src="${vendors[i].logo}" alt="Person">
+                            </figure>
+                        </div>                        
+                        <div class="tile__container">
+                            <p class="tile__title"><a class="vendor-link" href="vendorPage.html">${vendors[i].name}</a></p>
+                            <p class="tile__subtitle">${vendors[i].location}</p>
+                        </div>
+                    </div>
+                    <space class="small"></space>
+                    <p class="tile__bigTitle">${vendors[i].category[0]}</p>
+                    <p class="tile__subtitle"><a class="link" href="javascript:displayVendorPage(${i})"></i> Learn More</a></p>
+                    <space class="medium"></space>
+                    <p class="vendor-text">This is some sample text spam spam spam spam spam spam spam. </p>
+                </div>
+                <div class="card-footer content w-100 h-10 u-pull-left">
+                    <div class="row u-no-padding">
+                        <div class="col u-no-padding">
+                            ${ratings}
+                        </div>
+                        <div class="col u-no-padding u-text-right">
+                            <span class="vendor-review">10 reviews</span>
+                        </div>
+                    </div>         
+                </div>
+            </div>`;
         }
         listing_table.innerHTML += html;
 
@@ -197,6 +191,32 @@ function changePage(page){
     // toggleVendorCard(); // make all vendors in vendorTiles unselected at first
     selectVendor(0);  // then make the first vendor selected by default
 }
+
+//get the data of the chosen vendor to be viewed in vendorPage
+function displayVendorPage(index){
+    let v = vendors[index];
+    var vendor = {
+        id: v.id,
+        name: v.name,
+        location: v.location,
+        category: v.category,
+        logo: v.logo,
+        rating: v.rating        
+    }
+    
+    // db.collection("reviews").orderBy("vendorId").get().then(snap=>{
+    //     //let reviews = []
+    //     let changes = snap.docChanges();
+    //     changes.forEach(change => {
+    //         console.log(change.doc.data());
+    //         reviews += change.doc.data().reviewContent + ',';
+    //     })
+    //     localStorage.setItem("reviews", reviews);
+    // })
+    localStorage.setItem("showingVendor", JSON.stringify(vendor));
+    window.location.href = "vendorPage.html";
+}
+
 // display categories on vendor tile (maxmium 3 tags)
 function display3Categories(categories){
     var html = "";

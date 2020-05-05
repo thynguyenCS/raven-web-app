@@ -132,22 +132,23 @@
                         <div class="tile tile--center">
                             <div class="tile__container h-100">
                                 
-                                <h1 class="tile__bigTitle" style="margin: 0;">Joanne Doe</h1>
-                                <p class="tile__subtitle vendor-industry">Florist</p>
+                                <h1 class="tile__bigTitle" id="vendor-name" style="margin: 0;"></h1>
+                                <p class="tile__subtitle vendor-industry" id="vendor-category"></p>
                                 
                                 
                                 <space class="small"></space>
-                                <p class="tile__smallTitle">
-                                <span class="fa fa-star checked yellow"></span>
+                                <p class="tile__smallTitle" id="vendor-rating">
+                                <!-- <span class="fa fa-star checked yellow"></span>
                                 <span class="fa fa-star checked yellow"></span>
                                 <span class="fa fa-star checked yellow"></span>
                                 <span class="fa fa-star yellow"></span>
-                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span> -->
                                 </p>
                             </div>
                             <div class="tile__icon">
                                 <figure class="avatar vendor-avatar">
-                                    <img src="https://organicthemes.com/demo/profile/files/2018/05/profile-pic-132x132.jpg" alt="Person">
+                                    <!-- <img src="https://organicthemes.com/demo/profile/files/2018/05/profile-pic-132x132.jpg" alt="Person"> -->
+                                    <img id="vendor-logo">
                                 </figure>
                             </div>
                             
@@ -160,10 +161,12 @@
                 <!-- VENDOR'S LOCATION -->
                 <div class="location">
                     <h4 class="vendor-location">Location</h4>
+                    <h7 class="vendor-text" id="vendor-loc"></h7>
+
                     <!-- <space class="small"></space> -->
-                    <h7 class="vendor-text">1098 Ruge Dr</h7>
+                    <!-- <h7 class="vendor-text">1098 Ruge Dr</h7>
                     <h7 class="vendor-text">San Jose, CA</h7>
-                    <h7 class="vendor-text">95112</h7>
+                    <h7 class="vendor-text">95112</h7> -->
                 </div>
                 <space class="large"></space>
                 <!-- TABS -->
@@ -202,13 +205,14 @@
                     </div>
                     <!-- Reviews from users -->
                     <space class="large"></space>
-                    <div class="tile review-tile">
+                    <div id="reviews-list"></div>
+                    <!-- <div class="tile review-tile">
                         <div class="tile__icon">
                             <figure class="avatar">
                                 <img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png">
                             </figure>
                         </div>
-                        <div class="tile__container">
+                        <div class="tile__container" >
                             <span class="fa fa-star checked yellow"></span>
                             <span class="fa fa-star checked yellow"></span>
                             <span class="fa fa-star checked yellow"></span>
@@ -222,15 +226,8 @@
                                 <button class="btn-tiny uppercase">Reply</button>
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                
-
-
-
-
-
-
             </div>
         </div>
 
