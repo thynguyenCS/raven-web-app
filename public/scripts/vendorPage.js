@@ -88,6 +88,7 @@ var rateValue = '';
 var reviewValue = '';
 submit_review.addEventListener("submit", e=>{
     e.preventDefault();
+    submit_review.style.display = "none";
     var reviewTime = new Date();
     var reviewTimeStr = reviewTime.toUTCString();
     var review_content = document.getElementById("review-content");        
@@ -112,6 +113,7 @@ submit_review.addEventListener("submit", e=>{
         }   
         review_content.value = "";  
     });     
+
 });
 
 // Function to convert the category array to string

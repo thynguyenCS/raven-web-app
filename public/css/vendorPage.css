@@ -759,3 +759,11 @@ label {
 .tab-container li{
     width: 100px;
 }
+.content.page-content {
+    /* max-height: 1000px; */
+    /* overflow-y: scroll; */
+}
+.reviews {
+    max-height: 1000px;
+    overflow-y: scroll;
+}
