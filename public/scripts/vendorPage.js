@@ -1,4 +1,13 @@
+// var userEmail = (localStorage.getItem("userEmail"))
+// var userName = ''
+// db.collection("users").then(()=>{
+
+//     console.log(yes)
+// })
 //get the list of reviews of the corresponding vendor
+var userName = localStorage.getItem("userName");
+var userEmail = localStorage.getItem("userEmail");
+console.log(userEmail + " " + userName);
 var reviewsHTML = '';
 var reviewsList = document.getElementById("reviews-list");
 
@@ -21,9 +30,9 @@ db.collection("reviews").orderBy("vendorId").get().then(snap=>{
                 </div>
                 <div class="tile__container" >
                     ${data.rating} <span class="fa fa-star checked yellow"></span>                    
-                    <p class="tile__title u-no-margin">Robert Downey Jr.</p>
+                    <p class="tile__title u-no-margin">${userName}</p>
                     <p class="tile__subtitle u-no-margin">${data.reviewContent}</p>
-                    <span class="info">23 minutes ago</span>
+                    <span class="info">${data.date}</span>
                     <p class="tile__buttons u-no-margin">                        
                     <button class="btn-tiny uppercase">Reply</button>
                     </p>
@@ -35,14 +44,15 @@ db.collection("reviews").orderBy("vendorId").get().then(snap=>{
     reviewsList.innerHTML = reviewsHTML;
     //calculate the new average rating and store back to vendor.rating
     if(countReviews == 0){
-        console.log("nothing")
+        db.collection("vendors").doc(showingVendor.id).update({
+            rating: 0
+        })
     }
     else{
         console.log(vendorRating + " " + countReviews)
         let avg = (vendorRating/countReviews).toFixed(1);
         db.collection("vendors").doc(showingVendor.id).update({
             rating: avg
-
         })
         
     }
@@ -78,6 +88,8 @@ var rateValue = '';
 var reviewValue = '';
 submit_review.addEventListener("submit", e=>{
     e.preventDefault();
+    var reviewTime = new Date();
+    var reviewTimeStr = reviewTime.toUTCString();
     var review_content = document.getElementById("review-content");        
     var rating = document.getElementsByName("rating"); 
     reviewValue = review_content.value;       
@@ -86,10 +98,13 @@ submit_review.addEventListener("submit", e=>{
             rateValue= rating[i].value;
         }
     } 
+    
     db.collection("reviews").add({
         vendorId: showingVendor.id,
         reviewContent: reviewValue,
-        rating: rateValue
+        rating: rateValue,
+        date: reviewTimeStr,
+        user: localStorage.getItem("userEmail")    
     }).then(()=>{
         //reset the form
         for(let i=0;i<rating.length;i++){
@@ -98,24 +113,6 @@ submit_review.addEventListener("submit", e=>{
         review_content.value = "";  
     });     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Function to convert the category array to string
 function createCategoryStr(category){

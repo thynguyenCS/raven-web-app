@@ -19,6 +19,7 @@ loginForm.addEventListener('submit', (e) => {
         const password = loginForm['login-password'].value;  
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
+            localStorage.setItem("userEmail", email);
             document.getElementById('error').style.display = 'none';
             loginForm.reset();
             window.setTimeout(function(){
