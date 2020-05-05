@@ -169,7 +169,9 @@ function changePage(page){
                 <div class="card-footer content w-100 h-10 u-pull-left">
                     <div class="row u-no-padding">
                         <div class="col u-no-padding">
-                            ${ratings}
+                            ${vendors[i].rating}
+                            <span class="fa fa-star checked yellow"></span>
+                            
                         </div>
                         <div class="col u-no-padding u-text-right">
                             <span class="vendor-review">10 reviews</span>

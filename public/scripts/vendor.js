@@ -161,6 +161,7 @@ searchButton.addEventListener('click', (e)=>{
                     display_all.innerHTML = "";
                     display_all.style.display = 'none';
                     pagination.style.visibility = 'hidden';
+                    
                     // document.getElementById('default-list').innerHTML = "";
                     // document.getElementById('display-all').style.display = 'none';
                     // document.getElementById('pagination').style.visibility ='hidden';
