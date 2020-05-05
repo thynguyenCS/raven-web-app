@@ -164,7 +164,7 @@ function changePage(page){
                     <p class="tile__bigTitle">${vendors[i].category[0]}</p>
                     <p class="tile__subtitle"><a class="link" href="javascript:displayVendorPage(${i})"></i> Learn More</a></p>
                     <space class="medium"></space>
-                    <p class="vendor-text">This is some sample text spam spam spam spam spam spam spam. </p>
+                    <p class="vendor-text">This is our slogan.</p>
                 </div>
                 <div class="card-footer content w-100 h-10 u-pull-left">
                     <div class="row u-no-padding">

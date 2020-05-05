@@ -736,6 +736,10 @@ label {
     max-height: 700px;
 }
 .leave-review {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     border-radius: 8px;
     padding: 3rem;
