@@ -1,4 +1,9 @@
-
+/******VIEW PROFILE ********/
+const profileButton = document.getElementById('profile');
+profileButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "profile.html";
+});
 /******LOG OUT ********/
 const logoutButton = document.getElementById('logout-button');
 logoutButton.addEventListener('click', (e) => {
