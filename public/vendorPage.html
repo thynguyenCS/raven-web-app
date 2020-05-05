@@ -122,65 +122,85 @@
         
     <!-- BODY -->
  
-    <div class="hero fullscreen">
-        <div class="hero-body u-center">
-            <div class="w-70 h-100" style="position: relative">
-                
+    <div class="hero fullscreen">       
+         <div class="hero-body">
+            <div class="content w-50 h-100" style="position: relative">                
                 <space class="large"></space>
-                <div class="card vendor-card">
-                   
+                 <!-- VENDOR'S CARD  -->
+                <div class="card vendor-card"> 
                     <div class="content vendor-content">
                         <div class="tile tile--center">
+                            <div class="tile__container h-100">
+                                
+                                <h1 class="tile__bigTitle" style="margin: 0;">Joanne Doe</h1>
+                                <p class="tile__subtitle vendor-industry">Florist</p>
+                                
+                                
+                                <space class="small"></space>
+                                <p class="tile__smallTitle">
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                <span class="fa fa-star yellow"></span>
+                                <span class="fa fa-star checked yellow"></span>
+                                </p>
+                            </div>
                             <div class="tile__icon">
                                 <figure class="avatar vendor-avatar">
                                     <img src="https://organicthemes.com/demo/profile/files/2018/05/profile-pic-132x132.jpg" alt="Person">
                                 </figure>
                             </div>
                             
-                            <div class="tile__container">
-                                <p class="tile__bigTitle" style="font-size: 2rem;">Joanne Doe</p>
-                                <p class="tile__subtitle vendor-industry">Florist</p>
-                                <space class="small"></space>
-                                <div class="tag-container">
-                                    <div class="tag tag--grey">
-                                        Tag 1
-                                       
-                                    </div>
-                                    <div class="tag tag--grey">
-                                        Tag 2
-                                      
-                                    </div>
-                                    <div class="tag tag--grey">
-                                        Tag 3
-                                   
-                                    </div>
-                                    <div class="tag tag--grey">
-                                        Tag 4
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+
+                        </div> 
+                        <!-- end of vendor info-->
                     </div>
                     
                 </div>
-                
+                <!-- VENDOR'S LOCATION -->
+                <div class="location">
+                    <h4 class="vendor-location">Location</h4>
+                    <!-- <space class="small"></space> -->
+                    <h7 class="vendor-text">1098 Ruge Dr</h7>
+                    <h7 class="vendor-text">San Jose, CA</h7>
+                    <h7 class="vendor-text">95112</h7>
+                </div>
+                <space class="large"></space>
                 <!-- TABS -->
-                <div class="vendor-tabs w-100 pull-left">
-                    <div class="tab-container w-50 tabs-fill">
-                        <ul class="tags">
+                <div class="vendor-tabs w-100">
+                    <div class="tab-container">
+                        <ul class="tabs u-pull-left">
                             <li><a>About</a></li>
                             <li><a>Pictures</a></li>
-                            <li class="selected"><a>Reviews</a></li>
-                            <!-- <li class="selected"><a>Me</a></li> -->
+                            <li class="selected"><a>Reviews (1)</a></li>
                         </ul>
                     </div>
+                    <space class="large">
                 </div>
-                <!-- Tab's content (about/picture/review) toggle with JS -->
-                <div class="reviews w-50 pull-left">
-                    <space class="large"></space>
-                    <button class="btn--orange btn-small">Leave a Review</button>
+              
+                <div class="reviews">
+                    <!-- section to submit a review -->
+                    <div id="submit-review" style="display:none;">
+                        <span id="rating" class="rating">
+                            <input id="rating5" type="radio" name="rating" value="5">
+                            <label for="rating5">5</label>
+                            <input id="rating4" type="radio" name="rating" value="4">
+                            <label for="rating4">4</label>
+                            <input id="rating3" type="radio" name="rating" value="3">
+                            <label for="rating3">3</label>
+                            <input id="rating2" type="radio" name="rating" value="2" checked>
+                            <label for="rating2">2</label>
+                            <input id="rating1" type="radio" name="rating" value="1">
+                            <label for="rating1">1</label>
+                        </span>
+                        <div id="review-text" class="col-12 review-text"><textarea type="text" placeholder="Your Review"></textarea></div>
+                        <button id="submit-review" class="btn--orange bt-animated btn-tiny review-button u-pull-right">Submit</button>
+                    </div>
+                    <!-- displays msg "leave a review" -->
+                    <div id="leave-review" class="leave-review u-center">
+                        <button id="review-button" class="btn--orange btn-small review-button">Leave a Review</button>
+                    </div>
+                    <!-- Reviews from users -->
                     <space class="large"></space>
                     <div class="tile review-tile">
                         <div class="tile__icon">
@@ -189,11 +209,16 @@
                             </figure>
                         </div>
                         <div class="tile__container">
+                            <span class="fa fa-star checked yellow"></span>
+                            <span class="fa fa-star checked yellow"></span>
+                            <span class="fa fa-star checked yellow"></span>
+                            <span class="fa fa-star yellow"></span>
+                            <span class="fa fa-star checked yellow"></span>
                             <p class="tile__title u-no-margin">Robert Downey Jr.</p>
                             <p class="tile__subtitle u-no-margin">Beautiful flowers. Fast delivery before my daughter's birthday.</p>
                             <span class="info">23 minutes ago</span>
                             <p class="tile__buttons u-no-margin">
-                                <button class="btn-primary btn-tiny uppercase">Like</button>
+                                
                                 <button class="btn-tiny uppercase">Reply</button>
                             </p>
                         </div>
@@ -208,65 +233,67 @@
 
             </div>
         </div>
+
+        <footer>
+            <div class="row level">
+                <div class="col-4">
+                    <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
+                </div>
+                <div class="col-4">
+                    <figure class="fig ">
+                        <img class="hover-grow" src="img/ravenCircle.png" width="15%">
+                    </figure>
+                    <div class="row center">
+                        <div class="col-3 offset-left">
+                            <a href="#">
+                                EN
+                            </a>
+                        </div>
+                        <div class="col-3 offset-right">
+                            <a href="#">
+                                FR
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row w-50 fluid-container center">
+                        <div class="col-fluid">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fa fa-wrapper fa-facebook large" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-fluid">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fa fa-wrapper fa-twitter large" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-fluid">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fa fa-wrapper fa-instagram large" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-fluid">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fa fa-wrapper fa-vimeo large" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </footer>
     </div>
         
 <!-- FOOTER -->
-    <footer>
-        <div class="row level">
-            <div class="col-4">
-                <p class="white font-bold" style="letter-spacing: 0; font-size: 1.3rem;"><span class="faded">© 2020</span> Raven</p>
-            </div>
-            <div class="col-4">
-                <figure class="fig ">
-                    <img class="hover-grow" src="img/ravenCircle.png" width="15%">
-                </figure>
-                <div class="row center">
-                    <div class="col-3 offset-left">
-                        <a href="#">
-                            EN
-                        </a>
-                    </div>
-                    <div class="col-3 offset-right">
-                        <a href="#">
-                            FR
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="row w-50 fluid-container center">
-                    <div class="col-fluid">
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa fa-wrapper fa-facebook large" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-fluid">
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa fa-wrapper fa-twitter large" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-fluid">
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa fa-wrapper fa-instagram large" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-fluid">
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa fa-wrapper fa-vimeo large" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </footer>
+    
 <!-- END OF FOOTER -->
 
 
@@ -313,6 +340,7 @@
   <script src="scripts/pagination.js"></script>
   <script src="scripts/vendor.js"></script>
   <script src="scripts/profile.js"></script>
+  <script src="scripts/vendorPage.js"></script>
   <!-- <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script> -->
 
 

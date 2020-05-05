@@ -108,6 +108,7 @@ input .form-ext-input{
     border-radius: 0px;
 }
 .form-ext-control .form-ext-input:checked ~ .form-ext-label::before {
+    
 
     /* background-color: orange; */
     border: none;
@@ -124,7 +125,7 @@ input .form-ext-input{
 .form-ext-control .form-ext-label {
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     color: #666;
     line-height: 2;
     /* color: white; */
@@ -634,5 +635,16 @@ label {
     color: #666;
 }
 .vendor-link:hover {
+    cursor: pointer;
     color: black;
+}
+.add-vendor-section {
+    display: flex;
+    flex-direction: column;
+    height:  300px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* margin-bottom: 35px; */
+    background-color: #e0e0e0;
 }

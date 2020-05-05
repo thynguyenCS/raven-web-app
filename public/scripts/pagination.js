@@ -158,7 +158,7 @@ function changePage(page){
                                         </div>
                                         
                                         <div class="tile__container">
-                                            <p class="tile__title">${vendors[i].name}</p>
+                                            <p class="tile__title"><a class="vendor-link" href="vendorPage.html">${vendors[i].name}</a></p>
                                             <p class="tile__subtitle">${vendors[i].location}</p>
                                         </div>
                                     </div>
