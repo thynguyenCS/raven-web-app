@@ -366,6 +366,7 @@ window.onload = function() {
         if(!isSearch){
             vendors = fbVendors;
         }
+        
         // display page 1 by default
         if (content.style.display = "none") content.style.display = "";
         displayCategories();

@@ -130,6 +130,7 @@ const not_found = document.getElementById('result-not-found');
 const default_list = document.getElementById('default-list');
 const display_all = document.getElementById('display-all');
 const pagination = document.getElementById('pagination');
+var searchedVendors = [];
 var isSearch = false;
 
 
@@ -202,14 +203,14 @@ searchButton.addEventListener('click', (e)=>{
                     // fullList = vendors
                     vendors = []
                     // clear tags
-                    clearAllTags();
+                    // clearAllTags();
         
                   // User is signed in.
                     e.preventDefault();
                     name = inputName.value;
                     loc = inputLoc.value;
-                    if (name.length > 0) addTag(name);
-                    if (loc.length < 0) addTag(loc);
+                    // if (name.length > 0) addTag(name);
+                    // if (loc.length < 0) addTag(loc);
                     isSearch = true;
                     db.collection('vendors').orderBy('name').get().then(snap=>{
                         let changes = snap.docChanges()
@@ -383,6 +384,7 @@ addVendor.addEventListener('click', (e)=>{
 /******VIEW PROFILE ********/
 const profileButton = document.getElementById('profile');
 profileButton.addEventListener('click', (e) => {
+
     e.preventDefault();
     window.location.href = "profile.html";
 });

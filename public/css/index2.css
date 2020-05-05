@@ -131,7 +131,9 @@ img {
     margin-left: 0;
 }
 .toast.toast--error {
-    background-color:  #2c303a;
+    background-color: #f03d4d;
+    color: white;
+    /* background-color:  #2c303a; */
     border: none;
 
 }

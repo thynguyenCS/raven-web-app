@@ -62,11 +62,11 @@
                     </div>
                 </div>
                 <!-- right container, always appear to the right of the navigation bar -->
-                <div class="nav-right">
-                    <div class="nav-item no-hover text-center">
+                <div  class="nav-right">
+                    <div id="header-login" class="nav-item no-hover text-center" style="display: none;">
                         <a href="index.html">Login</a>
                     </div>
-                    <div class="nav-item no-hover text-center">
+                    <div id="header-signup" class="nav-item no-hover text-center" style="display: none;">
                         <a href="signup2.html">
                             <button class="btn--orange">Sign up</button>
                         </a>
@@ -74,7 +74,7 @@
                     </div>
                     
                     <!-- this should only appear if user is logged in -->
-                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                    <div class="nav-item has-sub toggle-hover" id="dropdown" style="display: none;">
                         <a class="nav-dropdown-link"><span class="icon"><i class="far fa-user"></i></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="menu-item"><a href="#" class="link" id="profile">Profile</a></li>
@@ -101,15 +101,14 @@
                             <b>Now in <div class="tag tag--orange">BETA</div></b>
                         </div>
 
-                        <div class="form-group">
-                            <div class="autocomplete">
-
-                            </div>
-                            <input type="text" placeholder="Enter a keyword.">
-                            <button class="form-group-btn btn--orange">
-                                Search
+                        <!-- <div class="form-group"> -->
+                            <!-- <input id="main-search-vendor"  type="search" placeholder="Vendor"> -->
+                            <!-- <input id="main-search-loc" type="text" placeholder="Location"> -->
+                            <button id="main-search-button" type="submit" class="form-group-btn btn--orange">
+                                Explore
                             </button>
-                        </div>
+                            
+                        <!-- </div> -->
 
                     </div>
 
@@ -264,7 +263,8 @@
   <script src="scripts/alert.js"></script>
   <!-- <script src="scripts/addVendor.js"></script> -->
   <script src="scripts/main.js"></script>
-  
+  <!-- <script src="scripts/vendor.js"></script> -->
+ 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
 </body>

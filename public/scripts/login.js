@@ -23,7 +23,7 @@ loginForm.addEventListener('submit', (e) => {
             loginForm.reset();
             window.setTimeout(function(){
                 // Move to html.index after 2 seconds
-                window.location.href = "vendor.html";
+                window.location.href = "main.html";
               }, 1000);
             
         }).catch(err => {

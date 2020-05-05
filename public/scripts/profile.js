@@ -3,7 +3,7 @@ const logoutButton = document.getElementById('logout-button');
 logoutButton.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    window.location.href = "index.html";
+    window.location.href = "main.html";
 });
 
 /******VIEW PROFILE ********/
@@ -19,10 +19,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         });
     } else {
+        window.location.href = "index.html";
         // Display some data from the object:
         // document.getElementById("userEmail").innerHTML = "Please login to view profile";
-        document.getElementById('display-all').style.display="none";
-        document.getElementById('user-not-logged-in').style.display = "block";
+        // document.getElementById('display-all').style.display="none";
+        // document.getElementById('user-not-logged-in').style.display = "block";
         console.log('not logged in');
 
     }

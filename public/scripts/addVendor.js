@@ -84,7 +84,7 @@ const addVendorMsg = document.getElementById('vendor-added');
 
                 window.setTimeout(function(){
                   // Move to html.index after 2 seconds
-                  window.location.href = "vendor3.html";
+                  window.location.href = "vendor.html";
                 }, 2000);
               }).catch(err => {
                 console.log(err.message);
@@ -117,6 +117,13 @@ profileButton.addEventListener('click', (e) => {
 });
 
 
-window.onload = function () {
-  // initTagList();
-}
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log('logged in');
+
+  } else {
+    window.location.href = "index.html";  
+
+  }
+  
+});
