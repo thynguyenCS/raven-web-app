@@ -18,7 +18,7 @@ This app's purpose is to provide a platform where users can easily find informat
 - JavaScript with Firebase functions
 ### Database:
 - Cloud Firestore
-### Contributions:
+# Contributions:
 <b>Tuong Chu</b>: Responsible for implementing the visual of the application's web pages and write functions that display the vendors.</br>
 <b>Thy Nguyen</b>: Write search algorithm and responsible for functions related to ratings and reviews.</br>
 <b>Toan Dao</b>: Handle user authentication, adding vendors and restricting access for nonusers.</br>
