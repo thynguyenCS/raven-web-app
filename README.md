@@ -12,7 +12,8 @@ This app's purpose is to provide a platform where users can easily find informat
 - Ratings and reviews 
 # Technologies 
 ### Front end: 
-- Vanilla JavaScript, HTML
+- JavaScript
+- HTML
 - Ciruss CSS (open-source framework)
 ### Back end:
 - JavaScript with Firebase functions
